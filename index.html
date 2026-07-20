@@ -165,8 +165,15 @@
   .post-card .title { font-size: .9rem; font-weight: 600; margin-bottom: 6px; }
   .post-metrics { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: .8rem; color: var(--text-secondary); }
   .post-metrics b { color: var(--text-primary); font-variant-numeric: tabular-nums; }
-  .post-metrics .mult { color: var(--delta-up); font-weight: 600; }
-  .post-metrics .mult.low { color: var(--text-muted); }
+  .mult { font-weight: 600; color: var(--text-secondary); }
+  .mult.hot { color: var(--delta-up); }
+  .mult.low { color: var(--delta-down); }
+  .tier-chip {
+    display: inline-block; font-size: .72rem; font-weight: 700;
+    padding: 1px 8px; border-radius: 999px; white-space: nowrap;
+  }
+  .tier-chip.hot { background: var(--accent-wash); color: var(--delta-up); }
+  .tier-chip.low { background: var(--accent-wash); color: var(--delta-down); }
   .hl-card {
     background: var(--accent-wash); border-left: 4px solid var(--series-1);
     border-radius: 8px; padding: 10px 14px; margin-bottom: 8px;
@@ -337,16 +344,25 @@
     <div class="controls">
       <label for="d-select">日期</label>
       <select id="d-select"></select>
-      <span class="hint">倍數為該篇觸及相對同平臺近30日平均的比值</span>
     </div>
+    <div class="hl-card" id="d-formula" style="font-weight:400"></div>
 
     <h2 class="sec">當日貼文成效</h2>
     <p class="sec-note" id="d-note"></p>
     <div id="d-posts"></div>
 
-    <h2 class="sec">近 14 日每日最佳貼文</h2>
-    <p class="sec-note">每日互動最高的貼文(FB+IG 合併排序);點日期選單可回看該日全部貼文</p>
-    <div class="tbl-scroll"><table class="data" id="d-best-table"></table></div>
+    <h2 class="sec">近 14 日每日最佳貼文(FB / IG 分別排序)</h2>
+    <p class="sec-note">各平臺每日互動最高的一篇;點日期選單可回看該日全部貼文</p>
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="plat-chip fb">Facebook</span> 每日最佳</h3>
+        <div class="tbl-scroll"><table class="data" id="d-best-fb"></table></div>
+      </div>
+      <div class="card">
+        <h3><span class="plat-chip ig">Instagram</span> 每日最佳</h3>
+        <div class="tbl-scroll"><table class="data" id="d-best-ig"></table></div>
+      </div>
+    </div>
   </section>
 
   <!-- ================= 年度趨勢與 KPI ================= -->
@@ -799,11 +815,26 @@
     }
   }
   const platName = { fb: "Facebook", ig: "Instagram" };
+  const HOT = 2.0, LOW = 0.5;   // 爆款/低於水準門檻(相對平均倍數)
+  const tierOf = m => m >= HOT ? "hot" : m < LOW ? "low" : "";
   function multHtml(p) {
     if (!avgReach[p.plat]) return "";
     const m = p.reach / avgReach[p.plat];
-    return `<span class="mult${m < 1 ? " low" : ""}">×${m.toFixed(1)} 平均</span>`;
+    return `<span class="mult ${tierOf(m)}">×${m.toFixed(1)}</span>`;
   }
+  function tierChip(p) {
+    if (!avgReach[p.plat]) return "";
+    const t = tierOf(p.reach / avgReach[p.plat]);
+    if (t === "hot") return '<span class="tier-chip hot">🔥 爆款</span>';
+    if (t === "low") return '<span class="tier-chip low">▼ 低於水準</span>';
+    return "";
+  }
+  document.getElementById("d-formula").innerHTML =
+    `<b>相對平均的計算方式</b>:該篇貼文「觸及人數」÷ 同平臺近 30 日每篇平均觸及` +
+    `(目前基準:FB 平均 ${fmt(avgReach.fb)}、IG 平均 ${fmt(avgReach.ig)},隨每次數據更新重算)。` +
+    `<br>標記規則:×${HOT.toFixed(1)} 以上 → <span class="tier-chip hot">🔥 爆款</span>&nbsp;;` +
+    `×${LOW.toFixed(1)} 以下 → <span class="tier-chip low">▼ 低於水準</span>&nbsp;;其間為一般水準。` +
+    `<span style="color:var(--text-muted)">(注意:發佈未滿2~3天的貼文數字仍在累積,倍數會偏低)</span>`;
   function renderDay() {
     const date = dSelect.value;
     const dayPosts = posts.filter(p => p.date === date).sort((a, b) => b.interactions - a.interactions);
@@ -816,10 +847,11 @@
           <span class="plat-chip ${p.plat}">${platName[p.plat]}</span>
           <span class="topic-chip">${esc(p.topic)}</span>
           ${i === 0 && dayPosts.length > 1 && p.interactions > 0 ? '<span class="best-chip">★ 本日最佳</span>' : ""}
+          ${tierChip(p)}
         </div>
         <div class="title" title="${esc(p.title)}">${esc(clip(p.title, 64)) || "(無標題)"}</div>
         <div class="post-metrics">
-          <span>觸及 <b>${fmt(p.reach)}</b> ${multHtml(p)}</span>
+          <span>觸及 <b>${fmt(p.reach)}</b> ${multHtml(p)} 平均</span>
           <span>互動 <b>${fmt(p.interactions)}</b></span>
           <span>按讚 <b>${fmt(p.likes)}</b></span>
           <span>留言 <b>${fmt(p.comments)}</b></span>
@@ -830,14 +862,20 @@
   }
   dSelect.addEventListener("change", renderDay);
   function buildDayTable() {
-    document.getElementById("d-best-table").innerHTML =
-      `<tr><th>日期</th><th>平臺</th><th>主題</th><th>標題</th><th>觸及</th><th>互動</th><th>相對平均</th></tr>` +
-      postDates.slice(0, 14).map(dt => {
-        const best = posts.filter(p => p.date === dt).sort((a, b) => b.interactions - a.interactions)[0];
-        return `<tr><td>${dayLabel(dt)}</td><td style="text-align:center">${best.plat.toUpperCase()}</td>` +
-               `<td>${esc(best.topic)}</td><td style="white-space:normal" title="${esc(best.title)}">${esc(clip(best.title, 40))}</td>` +
-               `<td>${fmt(best.reach)}</td><td>${fmt(best.interactions)}</td><td>${multHtml(best) || "—"}</td></tr>`;
-      }).join("");
+    for (const [plat, elId] of [["fb", "d-best-fb"], ["ig", "d-best-ig"]]) {
+      const platDates = [...new Set(posts.filter(p => p.plat === plat).map(p => p.date))]
+        .sort().reverse().slice(0, 14);
+      document.getElementById(elId).innerHTML =
+        `<tr><th>日期</th><th>主題</th><th>標題</th><th>觸及</th><th>互動</th><th>相對平均</th></tr>` +
+        platDates.map(dt => {
+          const best = posts.filter(p => p.date === dt && p.plat === plat)
+            .sort((a, b) => b.interactions - a.interactions)[0];
+          return `<tr><td>${dayLabel(dt)}</td><td>${esc(best.topic)}</td>` +
+                 `<td style="white-space:normal" title="${esc(best.title)}">${esc(clip(best.title, 26))}</td>` +
+                 `<td>${fmt(best.reach)}</td><td>${fmt(best.interactions)}</td>` +
+                 `<td>${multHtml(best) || "—"} ${tierChip(best)}</td></tr>`;
+        }).join("");
+    }
   }
 
   /* ============================================================
