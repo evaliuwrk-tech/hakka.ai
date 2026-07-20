@@ -1568,8 +1568,8 @@ const DASHBOARD_DATA = {
     2145
    ],
    [
-    488,
-    616,
+    451,
+    615,
     2077
    ]
   ]
@@ -1610,7 +1610,7 @@ const DASHBOARD_DATA = {
     714,
     1311,
     1895,
-    1950
+    1965
    ],
    "reach": [
     5943,
@@ -1619,7 +1619,7 @@ const DASHBOARD_DATA = {
     11069,
     21853,
     45266,
-    43827
+    45592
    ],
    "shares": [
     80,
@@ -1628,7 +1628,7 @@ const DASHBOARD_DATA = {
     447,
     1197,
     1418,
-    834
+    835
    ],
    "comments": [
     34,
@@ -1637,7 +1637,7 @@ const DASHBOARD_DATA = {
     132,
     287,
     487,
-    334
+    338
    ],
    "views": [
     13340,
@@ -1646,7 +1646,7 @@ const DASHBOARD_DATA = {
     23364,
     41746,
     63524,
-    58077
+    58693
    ],
    "interactions": [
     718,
@@ -1655,7 +1655,7 @@ const DASHBOARD_DATA = {
     1296,
     2870,
     3791,
-    3142
+    3162
    ]
   },
   "ig": {
@@ -2041,17 +2041,17 @@ const DASHBOARD_DATA = {
       "reach": 1234,
       "shares": 47,
       "comments": 9,
-      "views": 2053,
+      "views": 2055,
       "interactions": 141
      },
      "機動貼文": {
       "posts": 9,
-      "likes": 1388,
-      "reach": 36353,
-      "shares": 404,
-      "comments": 247,
-      "views": 41828,
-      "interactions": 2060
+      "likes": 1403,
+      "reach": 36686,
+      "shares": 405,
+      "comments": 251,
+      "views": 42407,
+      "interactions": 2080
      },
      "日常情境互動": {
       "posts": 3,
@@ -2059,7 +2059,7 @@ const DASHBOARD_DATA = {
       "reach": 787,
       "shares": 65,
       "comments": 10,
-      "views": 1444,
+      "views": 1447,
       "interactions": 148
      },
      "AI主播": {
@@ -2068,16 +2068,16 @@ const DASHBOARD_DATA = {
       "reach": 797,
       "shares": 16,
       "comments": 9,
-      "views": 1056,
+      "views": 1061,
       "interactions": 73
      },
      "今天吃什麼": {
       "posts": 3,
       "likes": 66,
-      "reach": 458,
+      "reach": 1327,
       "shares": 32,
       "comments": 11,
-      "views": 2568,
+      "views": 2573,
       "interactions": 109
      },
      "疊字疊起來": {
@@ -2086,16 +2086,16 @@ const DASHBOARD_DATA = {
       "reach": 1341,
       "shares": 48,
       "comments": 12,
-      "views": 2474,
+      "views": 2482,
       "interactions": 139
      },
      "客家音樂": {
       "posts": 3,
       "likes": 74,
-      "reach": 618,
+      "reach": 1181,
       "shares": 59,
       "comments": 14,
-      "views": 2257,
+      "views": 2268,
       "interactions": 147
      },
      "社會議題": {
@@ -2104,7 +2104,7 @@ const DASHBOARD_DATA = {
       "reach": 621,
       "shares": 93,
       "comments": 12,
-      "views": 1446,
+      "views": 1447,
       "interactions": 163
      },
      "客庄生活": {
@@ -2113,7 +2113,7 @@ const DASHBOARD_DATA = {
       "reach": 1618,
       "shares": 70,
       "comments": 10,
-      "views": 2951,
+      "views": 2953,
       "interactions": 162
      }
     }
@@ -2466,7 +2466,7 @@ const DASHBOARD_DATA = {
     831,
     450,
     965,
-    625,
+    640,
     461
    ],
    "reach": [
@@ -2481,7 +2481,7 @@ const DASHBOARD_DATA = {
     24516,
     9519,
     22586,
-    13399,
+    15164,
     10948
    ],
    "shares": [
@@ -2496,7 +2496,7 @@ const DASHBOARD_DATA = {
     266,
     409,
     386,
-    274,
+    275,
     302
    ],
    "comments": [
@@ -2511,7 +2511,7 @@ const DASHBOARD_DATA = {
     161,
     150,
     104,
-    77,
+    81,
     167
    ],
    "interactions": [
@@ -2526,7 +2526,7 @@ const DASHBOARD_DATA = {
     1253,
     1005,
     1464,
-    984,
+    1004,
     937
    ]
   },
@@ -2905,10 +2905,10 @@ const DASHBOARD_DATA = {
     "topic": "客家音樂",
     "title": "🎸DaBangNi 打幫你樂團【客家阿婆】🎸 這首歌的旋律真的非常洗腦🎶 聽過一次就忘不掉啦🤣 但除了洗腦的旋律 它的歌詞也是充滿正能量🤩 以「女生不管如何都要勇敢做自己」為宗旨👏 讓人聽完會心一笑😆 📍阿婆：祖母、奶奶、年長老婆婆的尊稱📍 四縣腔：aˊ poˇ / aˊ po 海陸腔：a+ po 大埔腔：a+ poˇ 饒平腔：aˇ po【aˇ poˋ】 詔安腔：aˇ pooˋ 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #阿婆 #奶奶 #客家阿婆 #哈客網路學院 #每日一客語 #逐日一客語 #客家 #hakka 多媒體 哈客網路學院 Hakka e-Learning Center",
     "likes": 35,
-    "reach": 0,
+    "reach": 563,
     "shares": 56,
     "comments": 7,
-    "views": 1111,
+    "views": 1122,
     "interactions": 98
    },
    {
@@ -2944,7 +2944,7 @@ const DASHBOARD_DATA = {
     "reach": 9985,
     "shares": 45,
     "comments": 32,
-    "views": 10283,
+    "views": 10293,
     "interactions": 425
    },
    {
@@ -2956,7 +2956,7 @@ const DASHBOARD_DATA = {
     "reach": 630,
     "shares": 43,
     "comments": 4,
-    "views": 1156,
+    "views": 1164,
     "interactions": 81
    },
    {
@@ -2992,7 +2992,7 @@ const DASHBOARD_DATA = {
     "reach": 509,
     "shares": 16,
     "comments": 6,
-    "views": 666,
+    "views": 671,
     "interactions": 44
    },
    {
@@ -3001,10 +3001,10 @@ const DASHBOARD_DATA = {
     "topic": "今天吃什麼",
     "title": "【客家甜水粄｜黑糖香甜Q彈】 黑糖香甜、口感QQ的甜水粄 是很多人熟悉的客家傳統點心🤎 材料其實不複雜 掌握「熱糖水慢慢倒、邊倒邊攪」 做出來口感會更Q彈✨ 👉 簡單做法 1️⃣ 黑糖、水和鹽放入鍋中煮滾 2️⃣ 玉米粉、在來米粉和水先攪拌均勻 3️⃣ 熱黑糖水慢慢倒入粉漿，邊倒邊攪成糊狀 4️⃣ 裝入容器後，放進蒸鍋蒸15～20分鐘 5️⃣ 放涼後就可以享用啦😋 💡 小撇步 多攪拌幾次，甜水粄口感會更Q；剛蒸好偏軟，放涼後會更好切。 🍯水粄仔【碗仔粄】：碗粄，用碗裝米漿蒸成的米食糕點🍯 四縣腔：suiˋ banˋ eˇ【suiˋ banˋ eˋ】【vonˋ eˋ banˋ】 海陸腔：【水粄】",
     "likes": 33,
-    "reach": 0,
+    "reach": 869,
     "shares": 30,
     "comments": 4,
-    "views": 1534,
+    "views": 1539,
     "interactions": 67
    },
    {
@@ -3036,12 +3036,12 @@ const DASHBOARD_DATA = {
     "plat": "fb",
     "topic": "機動貼文",
     "title": "❗巴威颱風強勢來襲❗ 請大家務必提前準備好充足的防颱物資與飲用水 颱風影響期間乖乖待在室內，安全第一👍 一起平安等待風雨過去🙏 📍詳細資訊請留意中央氣象局📍 #颱風 #巴威颱風 #防颱準備 相片 已多文發佈 哈客網路學院 Hakka e-Learning Center、hakka_e.learning_center",
-    "likes": 23,
-    "reach": 0,
-    "shares": 0,
-    "comments": 6,
-    "views": 584,
-    "interactions": 29
+    "likes": 38,
+    "reach": 333,
+    "shares": 1,
+    "comments": 10,
+    "views": 1153,
+    "interactions": 49
    },
    {
     "date": "2026-07-09",
@@ -3052,7 +3052,7 @@ const DASHBOARD_DATA = {
     "reach": 299,
     "shares": 2,
     "comments": 4,
-    "views": 488,
+    "views": 491,
     "interactions": 30
    },
    {
@@ -3076,7 +3076,7 @@ const DASHBOARD_DATA = {
     "reach": 290,
     "shares": 2,
     "comments": 2,
-    "views": 496,
+    "views": 498,
     "interactions": 32
    },
    {
@@ -3100,7 +3100,7 @@ const DASHBOARD_DATA = {
     "reach": 1446,
     "shares": 39,
     "comments": 7,
-    "views": 2519,
+    "views": 2521,
     "interactions": 105
    },
    {
@@ -3124,7 +3124,7 @@ const DASHBOARD_DATA = {
     "reach": 240,
     "shares": 41,
     "comments": 5,
-    "views": 611,
+    "views": 612,
     "interactions": 73
    },
    {
