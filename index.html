@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="哈客網路學院網站流量(GA4)與 FB/IG 社群媒體監測儀表板">
+<title>哈客網路學院 數據監測平台</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    color-scheme: light;
+    --page:           #f9f9f7;
+    --surface-1:      #fcfcfb;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --grid:           #e1e0d9;
+    --baseline:       #c3c2b7;
+    --border:         rgba(11,11,11,0.10);
+    --series-1:       #2a78d6;  /* 藍(FB/主要) */
+    --series-2:       #1baf7a;  /* 湖綠(IG/次要) */
+    --series-3:       #eda100;  /* 黃 */
+    --series-4:       #008300;  /* 綠 */
+    --series-5:       #4a3aa7;  /* 紫 */
+    --series-other:   #a3a29b;  /* 其他=灰 */
+    --delta-up:       #006300;
+    --delta-down:     #d03b3b;
+    --good:           #0ca30c;
+    --accent-wash:    #eaf2fc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --page:           #0d0d0d;
+      --surface-1:      #1a1a19;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --grid:           #2c2c2a;
+      --baseline:       #383835;
+      --border:         rgba(255,255,255,0.10);
+      --series-1:       #3987e5;
+      --series-2:       #199e70;
+      --series-3:       #c98500;
+      --series-4:       #008300;
+      --series-5:       #9085e9;
+      --series-other:   #6f6e68;
+      --delta-up:       #0ca30c;
+      --delta-down:     #e66767;
+      --good:           #0ca30c;
+      --accent-wash:    #16273c;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--page);
+    color: var(--text-primary);
+    font-family: "Segoe UI", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  header.topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--surface-1);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px 0;
+  }
+  .topbar-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; }
+  header.topbar h1 { font-size: 1.2rem; font-weight: 700; }
+  header.topbar .sub { color: var(--text-secondary); font-size: .82rem; }
+  .tabs { display: flex; gap: 4px; margin-top: 8px; }
+  .tabs button {
+    appearance: none; border: none; background: none; cursor: pointer;
+    font: inherit; font-size: .92rem; color: var(--text-secondary);
+    padding: 8px 16px; border-bottom: 3px solid transparent;
+  }
+  .tabs button.active { color: var(--series-1); font-weight: 700; border-bottom-color: var(--series-1); }
+  .tabs button:hover { color: var(--text-primary); }
+
+  main { max-width: 1180px; margin: 0 auto; padding: 22px 20px 60px; }
+  .view { display: none; }
+  .view.active { display: block; }
+
+  .controls { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
+  .controls label { font-size: .9rem; color: var(--text-secondary); }
+  .controls select {
+    font: inherit; font-size: .95rem; padding: 6px 10px;
+    background: var(--surface-1); color: var(--text-primary);
+    border: 1px solid var(--baseline); border-radius: 8px;
+  }
+  .controls .hint { font-size: .8rem; color: var(--text-muted); }
+
+  h2.sec {
+    font-size: 1.08rem; font-weight: 700; margin: 26px 0 4px;
+    padding-left: 10px; border-left: 4px solid var(--series-1);
+  }
+  h2.sec:first-of-type { margin-top: 0; }
+  .sec-note { color: var(--text-muted); font-size: .8rem; margin-bottom: 14px; padding-left: 14px; }
+  .subhead { font-size: .92rem; font-weight: 700; margin: 14px 0 8px; display: flex; align-items: center; gap: 8px; }
+  .subhead .dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); gap: 10px; margin-bottom: 14px; }
+  .tile {
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 14px; min-width: 0;
+  }
+  .tile .k { font-size: .78rem; color: var(--text-secondary); }
+  .tile .v { font-size: 1.42rem; font-weight: 700; margin: 2px 0; }
+  .tile .d { font-size: .75rem; color: var(--text-muted); min-height: 1.2em; }
+  .tile .d .up   { color: var(--delta-up);   font-weight: 600; }
+  .tile .d .down { color: var(--delta-down); font-weight: 600; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  @media (max-width: 980px) { .grid3 { grid-template-columns: 1fr; } }
+  @media (max-width: 860px) { .grid2 { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 16px 10px; min-width: 0;
+  }
+  .card h3 { font-size: .93rem; font-weight: 600; margin-bottom: 2px; }
+  .card .cap { font-size: .76rem; color: var(--text-muted); margin-bottom: 8px; }
+  .card.wide { grid-column: 1 / -1; }
+  .chart-box { position: relative; height: 270px; }
+  .chart-box.tall { height: 330px; }
+  .empty-note { color: var(--text-muted); font-size: .85rem; padding: 30px 10px; text-align: center; }
+
+  .plat-toggle { display: inline-flex; gap: 0; border: 1px solid var(--baseline); border-radius: 8px; overflow: hidden; }
+  .plat-toggle button {
+    appearance: none; border: none; background: var(--surface-1); color: var(--text-secondary);
+    font: inherit; font-size: .82rem; padding: 5px 14px; cursor: pointer;
+  }
+  .plat-toggle button.active { background: var(--series-1); color: #fff; font-weight: 600; }
+
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); gap: 12px; }
+  .kpi-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .kpi-card .name { font-size: .88rem; font-weight: 600; }
+  .kpi-card .rate { font-size: 1.75rem; font-weight: 700; margin: 3px 0 2px; }
+  .kpi-card .meta { font-size: .75rem; color: var(--text-secondary); }
+  .meter { height: 9px; border-radius: 5px; background: var(--grid); margin: 9px 0 6px; overflow: hidden; }
+  .meter .fill { height: 100%; border-radius: 5px; background: var(--series-1); }
+  .kpi-card .badge {
+    display: inline-block; font-size: .72rem; font-weight: 600;
+    padding: 1px 8px; border-radius: 999px; margin-top: 4px;
+    background: var(--accent-wash); color: var(--delta-up);
+  }
+  details.tbl { margin-top: 12px; }
+  details.tbl summary { cursor: pointer; font-size: .84rem; color: var(--series-1); }
+  table.data {
+    width: 100%; border-collapse: collapse; margin-top: 8px;
+    font-size: .8rem; background: var(--surface-1);
+  }
+  table.data th, table.data td {
+    border: 1px solid var(--grid); padding: 5px 8px; text-align: right;
+    font-variant-numeric: tabular-nums; white-space: nowrap;
+  }
+  table.data th { background: var(--accent-wash); color: var(--text-primary); text-align: center; }
+  table.data td:first-child { text-align: left; }
+  table.data tr.total td { font-weight: 700; border-top: 2px solid var(--baseline); }
+  table.data td .up   { color: var(--delta-up);   font-weight: 600; }
+  table.data td .down { color: var(--delta-down); font-weight: 600; }
+  table.data tr.grp td { background: var(--accent-wash); font-weight: 700; text-align: left; }
+  .tbl-scroll { overflow-x: auto; }
+
+  footer.src {
+    max-width: 1180px; margin: 0 auto; padding: 0 20px 40px;
+    color: var(--text-muted); font-size: .76rem;
+  }
+  footer.src li { margin-left: 1.2em; }
+  #no-chartjs { display: none; background: var(--accent-wash); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; font-size: .85rem; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-row">
+    <h1>哈客網路學院 數據監測平台</h1>
+    <span class="sub" id="updated-note"></span>
+  </div>
+  <nav class="tabs" id="tabs">
+    <button data-view="month" class="active">月報</button>
+    <button data-view="week">週比較</button>
+    <button data-view="trend">年度趨勢與KPI</button>
+  </nav>
+</header>
+
+<main>
+  <div id="no-chartjs">圖表元件載入失敗:請確認網路連線後重新整理(數據表格仍可正常檢視)。</div>
+
+  <!-- ================= 月報 ================= -->
+  <section class="view active" id="view-month">
+    <div class="controls">
+      <label for="m-select">月份</label>
+      <select id="m-select"></select>
+      <span class="hint">各指標括號內為與前月比較</span>
+    </div>
+
+    <h2 class="sec">網站流量(GA4)</h2>
+    <p class="sec-note">使用者人數口徑=活躍使用者</p>
+    <div class="tiles" id="m-ga4-tiles"></div>
+    <div class="grid3">
+      <div class="card">
+        <h3>流量管道</h3>
+        <p class="cap">初次造訪管道 × 活躍使用者</p>
+        <div class="chart-box"><canvas id="m-channels"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>裝置分布</h3>
+        <p class="cap">活躍使用者</p>
+        <div class="chart-box"><canvas id="m-devices"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>熱門頁面 Top 10</h3>
+        <p class="cap">瀏覽量(頁面標題)</p>
+        <div class="chart-box" id="m-pages-box"><canvas id="m-pages"></canvas></div>
+      </div>
+    </div>
+
+    <div id="m-social-block">
+      <h2 class="sec">社群媒體成效(FB / IG 分列)</h2>
+      <p class="sec-note">互動為平臺原生值,非按讚+留言+分享之和</p>
+      <div class="subhead"><span class="dot" style="background:var(--series-1)"></span>Facebook</div>
+      <div class="tiles" id="m-fb-tiles"></div>
+      <div class="subhead"><span class="dot" style="background:var(--series-2)"></span>Instagram</div>
+      <div class="tiles" id="m-ig-tiles"></div>
+
+      <h2 class="sec">貼文主題分類統計</h2>
+      <p class="sec-note" id="m-topics-note"></p>
+      <div class="grid2">
+        <div class="card">
+          <h3>各主題觸及(FB vs IG)</h3>
+          <p class="cap">依 FB+IG 合計觸及排序</p>
+          <div class="chart-box tall"><canvas id="m-topics"></canvas></div>
+        </div>
+        <div class="card">
+          <h3 style="display:flex;justify-content:space-between;align-items:center">
+            <span>主題明細</span>
+            <span class="plat-toggle" id="m-topic-toggle">
+              <button data-plat="fb" class="active">Facebook</button>
+              <button data-plat="ig">Instagram</button>
+            </span>
+          </h3>
+          <div class="tbl-scroll"><table class="data" id="m-topics-table"></table></div>
+        </div>
+      </div>
+    </div>
+    <div id="m-social-empty" style="display:none">
+      <h2 class="sec">社群媒體成效</h2>
+      <p class="sec-note">社群自 115年1月 起開始經營,此月份尚無社群數據。</p>
+    </div>
+  </section>
+
+  <!-- ================= 週比較 ================= -->
+  <section class="view" id="view-week">
+    <div class="controls">
+      <label for="w-select">週次</label>
+      <select id="w-select"></select>
+      <span class="hint">自動與上一週比較(週一~週日)</span>
+    </div>
+
+    <h2 class="sec">網站流量(GA4)</h2>
+    <p class="sec-note">活躍使用者以「日均」呈現(跨日不重複計算需以月口徑為準)</p>
+    <div class="tiles" id="w-ga4-tiles"></div>
+    <div class="subhead"><span class="dot" style="background:var(--series-1)"></span>Facebook</div>
+    <div class="tiles" id="w-fb-tiles"></div>
+    <div class="subhead"><span class="dot" style="background:var(--series-2)"></span>Instagram</div>
+    <div class="tiles" id="w-ig-tiles"></div>
+
+    <h2 class="sec">本週 vs 上週 對照表</h2>
+    <div class="tbl-scroll"><table class="data" id="w-table"></table></div>
+
+    <h2 class="sec">近 13 週趨勢</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3>工作階段(週合計)</h3>
+        <p class="cap">GA4</p>
+        <div class="chart-box"><canvas id="w-sess"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>觸及人數(週合計)</h3>
+        <p class="cap">FB 與 IG 分列</p>
+        <div class="chart-box"><canvas id="w-reach"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>互動次數(週合計)</h3>
+        <p class="cap">FB 與 IG 分列</p>
+        <div class="chart-box"><canvas id="w-inter"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 年度趨勢與 KPI ================= -->
+  <section class="view" id="view-trend">
+    <h2 class="sec">網站流量趨勢(近 12 個月)</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>使用者人數月趨勢</h3>
+        <p class="cap">活躍使用者與新使用者</p>
+        <div class="chart-box"><canvas id="t-users"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>工作階段月趨勢</h3>
+        <p class="cap">GA4</p>
+        <div class="chart-box"><canvas id="t-sessions"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>瀏覽量月趨勢</h3>
+        <p class="cap">GA4</p>
+        <div class="chart-box"><canvas id="t-pv"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>流量管道組成</h3>
+        <p class="cap">初次造訪管道 × 活躍使用者</p>
+        <div class="chart-box"><canvas id="t-channels"></canvas></div>
+      </div>
+    </div>
+    <details class="tbl">
+      <summary>檢視數據表(網站流量逐月)</summary>
+      <div class="tbl-scroll"><table class="data" id="t-web-table"></table></div>
+    </details>
+
+    <h2 class="sec">社群媒體趨勢(FB / IG 分列)</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>觸及人數月趨勢</h3>
+        <p class="cap">FB 與 IG 分列</p>
+        <div class="chart-box"><canvas id="t-reach"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>互動次數月趨勢</h3>
+        <p class="cap">FB 與 IG 分列(平臺原生值)</p>
+        <div class="chart-box"><canvas id="t-inter"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Facebook 互動組成</h3>
+        <p class="cap">按讚/留言/分享(逐月)</p>
+        <div class="chart-box"><canvas id="t-fb-engage"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Instagram 互動組成</h3>
+        <p class="cap">按讚/留言/分享(逐月)</p>
+        <div class="chart-box"><canvas id="t-ig-engage"></canvas></div>
+      </div>
+    </div>
+    <details class="tbl">
+      <summary>檢視數據表(社群逐月,FB/IG 分列)</summary>
+      <div class="tbl-scroll"><table class="data" id="t-social-table"></table></div>
+    </details>
+
+    <h2 class="sec">社群 KPI 達成情形</h2>
+    <p class="sec-note" id="kpi-note"></p>
+    <div class="kpi-grid" id="kpi-cards"></div>
+    <details class="tbl" open>
+      <summary>KPI 達成追蹤表</summary>
+      <div class="tbl-scroll"><table class="data" id="t-kpi-table"></table></div>
+    </details>
+  </section>
+</main>
+
+<footer class="src">
+  <p><strong>資料來源與口徑</strong></p>
+  <ul>
+    <li>網站流量:Google Analytics 4(哈客網路學院,資源 322296549,時區 Asia/Taipei);使用者人數一律採「活躍使用者」。GA4 數值會回溯微調,與歷史報告快照有 0.1~0.3% 落差屬正常。</li>
+    <li>流量管道:初次造訪管道(firstUserDefaultChannelGroup)× 活躍使用者;「其他」含影音、AI 助理等少量來源。</li>
+    <li>熱門頁面:細分頁面標題自 114年12月 起設定,先前月份無明細;「首頁(異版標題)」「(未設定子標題)」為網站頁面標題設定不同所致,GA4 分列計算。</li>
+    <li>社群媒體:FB_IG_流量報告_統計圖表.xlsx 逐篇彙總;互動為 FB/IG 平臺原生值;週次以貼文發佈日期歸屬(週一~週日),僅列完整週。</li>
+    <li>週比較之 GA4 活躍使用者為每日活躍之平均(日均),跨日去重之精確口徑以月數據為準。</li>
+    <li>KPI:「115年社群行銷KPI設定」基線值 +5% 為年度目標;達成率=當月 FB+IG 合計 ÷ 年度目標值。</li>
+  </ul>
+</footer>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  const D = DASHBOARD_DATA;
+  const G = D.ga4, S = D.social;
+  const fmt = n => Math.round(n).toLocaleString("zh-TW");
+  const pct = (n, d = 1) => (n * 100).toFixed(d) + "%";
+  const cssVar = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  const mmss = sec => `${Math.floor(sec / 60)}分${String(Math.round(sec % 60)).padStart(2, "0")}秒`;
+  const SOC_METRICS = [
+    ["posts", "貼文數"], ["reach", "觸及"], ["interactions", "互動"],
+    ["likes", "按讚"], ["comments", "留言"], ["shares", "分享"]
+  ];
+
+  document.getElementById("updated-note").textContent =
+    `資料期間:${G.months[0]}~${D.latestLabel}(週數據至最新完整週)|更新日期:${D.updated}`;
+
+  /* ---------- 共用元件 ---------- */
+  function deltaHtml(cur, before) {
+    if (before == null || before === 0) return "—";
+    const r = (cur - before) / before;
+    const cls = r >= 0 ? "up" : "down";
+    return `<span class="${cls}">${r >= 0 ? "▲" : "▼"}${pct(Math.abs(r))}</span> 較${arguments[2] || "前月"}`;
+  }
+  function tile(k, v, d) {
+    return `<div class="tile"><div class="k">${k}</div><div class="v">${v}</div><div class="d">${d}</div></div>`;
+  }
+
+  if (typeof Chart === "undefined") {
+    document.getElementById("no-chartjs").style.display = "block";
+  } else {
+    Chart.defaults.font.family = "'Segoe UI','Microsoft JhengHei',sans-serif";
+    Chart.defaults.animation = false;   // 同步繪製:開頁即完整顯示,亦避免背景分頁不觸發動畫影格
+  }
+
+  const registry = {};   // canvasId -> Chart
+  function makeChart(id, cfg) {
+    if (typeof Chart === "undefined") return;
+    if (registry[id]) registry[id].destroy();
+    registry[id] = new Chart(document.getElementById(id), cfg);
+    registry[id].resize();   // 明確依容器尺寸重繪(部分環境不觸發自動 resize)
+  }
+  const C = () => ({
+    ink2: cssVar("--text-secondary"), muted: cssVar("--text-muted"),
+    grid: cssVar("--grid"), surface: cssVar("--surface-1"),
+    s1: cssVar("--series-1"), s2: cssVar("--series-2"), s3: cssVar("--series-3"),
+    s5: cssVar("--series-5"), sOther: cssVar("--series-other")
+  });
+  const numTicks = { callback: v => v >= 10000 ? (v / 10000) + "萬" : fmt(v) };
+  function baseOpts(extra = {}) {
+    const c = C();
+    Chart.defaults.color = c.muted;
+    Chart.defaults.borderColor = c.grid;
+    return Object.assign({
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { labels: { color: c.ink2, boxWidth: 12, boxHeight: 12, usePointStyle: true } },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}:${fmt(ctx.parsed.y ?? ctx.parsed.x)}` } }
+      },
+      scales: {
+        x: { grid: { display: false } },
+        y: { beginAtZero: true, ticks: numTicks, grid: { color: c.grid } }
+      }
+    }, extra);
+  }
+  const lineDs = (color, label, data) => ({
+    label, data, borderColor: color, backgroundColor: color,
+    borderWidth: 2, pointRadius: 0, pointHoverRadius: 5, tension: 0.25
+  });
+  function hbarOpts(tooltipTitle) {
+    const c = C();
+    return {
+      indexAxis: "y", responsive: true, maintainAspectRatio: false,
+      layout: { padding: { right: 54 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: Object.assign(
+          { label: ctx => ` ${ctx.dataset.label}:${fmt(ctx.parsed.x)}` },
+          tooltipTitle ? { title: tooltipTitle } : {}) },
+        valueLabels: { enabled: true }
+      },
+      scales: {
+        x: { beginAtZero: true, ticks: numTicks, grid: { color: c.grid } },
+        y: { grid: { display: false }, ticks: { color: c.ink2, autoSkip: false, font: { size: 11 } } }
+      }
+    };
+  }
+  // 橫向長條圖:於長條尾端標數值
+  if (typeof Chart !== "undefined") {
+    Chart.register({
+      id: "valueLabels",
+      afterDatasetsDraw(chart, _, opts) {
+        if (!opts || !opts.enabled) return;
+        const { ctx } = chart;
+        ctx.save();
+        ctx.font = "11px 'Segoe UI','Microsoft JhengHei',sans-serif";
+        ctx.fillStyle = cssVar("--text-secondary");
+        ctx.textAlign = "left"; ctx.textBaseline = "middle";
+        chart.data.datasets.forEach((ds, di) => {
+          chart.getDatasetMeta(di).data.forEach((el, i) => {
+            if (ds.data[i] != null) ctx.fillText(fmt(ds.data[i]), el.x + 5, el.y);
+          });
+        });
+        ctx.restore();
+      }
+    });
+  }
+
+  /* ============================================================
+     月報視圖
+     ============================================================ */
+  const mSelect = document.getElementById("m-select");
+  G.keys.forEach((k, i) => {
+    const opt = document.createElement("option");
+    opt.value = i; opt.textContent = G.months[i];
+    mSelect.appendChild(opt);
+  });
+  mSelect.value = G.keys.length - 1;
+  let topicPlat = "fb";
+
+  function socialIdx(key) { return S.monthKeys.indexOf(key); }
+
+  function renderMonth() {
+    const i = +mSelect.value, key = G.keys[i], label = G.months[i];
+    const p = i > 0 ? i - 1 : null;
+    // GA4 指標卡
+    const specs = [
+      ["活躍使用者", G.activeUsers, fmt], ["新使用者", G.newUsers, fmt],
+      ["工作階段", G.sessions, fmt], ["瀏覽量", G.pageViews, fmt],
+      ["互動率", G.engagementRate, v => pct(v)], ["平均工作階段時長", G.avgDurationSec, mmss]
+    ];
+    document.getElementById("m-ga4-tiles").innerHTML = specs.map(([k2, arr, f]) =>
+      tile(k2, f(arr[i]), p == null ? "—" : deltaHtml(arr[i], arr[p]))).join("");
+
+    // 流量管道 / 裝置(橫向長條)
+    const c = C();
+    makeChart("m-channels", {
+      type: "bar",
+      data: {
+        labels: G.channels.names,
+        datasets: [{ label: "活躍使用者", data: G.channels.names.map(n => G.channels.series[n][i]),
+                     backgroundColor: c.s1, borderRadius: 4, maxBarThickness: 20 }]
+      },
+      options: hbarOpts()
+    });
+    makeChart("m-devices", {
+      type: "bar",
+      data: {
+        labels: G.devices.names,
+        datasets: [{ label: "活躍使用者", data: G.devices.names.map(n => G.devices.series[n][i]),
+                     backgroundColor: c.s1, borderRadius: 4, maxBarThickness: 20 }]
+      },
+      options: hbarOpts()
+    });
+
+    // 熱門頁面
+    const pages = G.topPagesByMonth[key];
+    const box = document.getElementById("m-pages-box");
+    if (pages) {
+      box.innerHTML = '<canvas id="m-pages"></canvas>';
+      makeChart("m-pages", {
+        type: "bar",
+        data: {
+          labels: pages.map(pg => pg[0].length > 12 ? pg[0].slice(0, 11) + "…" : pg[0]),
+          datasets: [{ label: "瀏覽量", data: pages.map(pg => pg[1]),
+                       backgroundColor: c.s1, borderRadius: 4, maxBarThickness: 15 }]
+        },
+        options: hbarOpts(items => pages[items[0].dataIndex][0])
+      });
+    } else {
+      delete registry["m-pages"];
+      box.innerHTML = '<div class="empty-note">該月份頁面標題尚未細分,無明細數據<br>(細分標題自 114年12月 起)</div>';
+    }
+
+    // 社群(FB/IG 分列)
+    const si = socialIdx(key);
+    const hasSocial = si >= 0 && (S.fb.posts[si] + S.ig.posts[si]) > 0;
+    document.getElementById("m-social-block").style.display = hasSocial ? "" : "none";
+    document.getElementById("m-social-empty").style.display = hasSocial ? "none" : "";
+    if (!hasSocial) return;
+
+    const sp = si > 0 ? si - 1 : null;
+    for (const [plat, elId] of [["fb", "m-fb-tiles"], ["ig", "m-ig-tiles"]]) {
+      document.getElementById(elId).innerHTML = SOC_METRICS.map(([m, name]) =>
+        tile(name, fmt(S[plat][m][si]), sp == null ? "—" : deltaHtml(S[plat][m][si], S[plat][m][sp]))).join("");
+    }
+
+    // 主題統計
+    document.getElementById("m-topics-note").textContent =
+      `${label} 各貼文主題成效;圖表為 FB/IG 觸及對照,表格可切換平臺檢視完整指標。`;
+    const tf = S.topics.fb[key] || {}, ti = S.topics.ig[key] || {};
+    const names = [...new Set([...Object.keys(tf), ...Object.keys(ti)])];
+    names.sort((a, b) => ((tf[b]?.reach || 0) + (ti[b]?.reach || 0)) - ((tf[a]?.reach || 0) + (ti[a]?.reach || 0)));
+    makeChart("m-topics", {
+      type: "bar",
+      data: {
+        labels: names,
+        datasets: [
+          { label: "Facebook", data: names.map(n => tf[n]?.reach || 0), backgroundColor: c.s1, borderRadius: 3, maxBarThickness: 14 },
+          { label: "Instagram", data: names.map(n => ti[n]?.reach || 0), backgroundColor: c.s2, borderRadius: 3, maxBarThickness: 14 }
+        ]
+      },
+      options: Object.assign(hbarOpts(), {
+        plugins: Object.assign(hbarOpts().plugins, {
+          legend: { display: true, labels: { color: c.ink2, boxWidth: 12, boxHeight: 12, usePointStyle: true } },
+          valueLabels: { enabled: false }
+        })
+      })
+    });
+    renderTopicTable(key);
+  }
+
+  function renderTopicTable(key) {
+    const src = S.topics[topicPlat][key] || {};
+    const names = Object.keys(src).sort((a, b) => (src[b].reach || 0) - (src[a].reach || 0));
+    const cols = [["posts", "則數"], ["likes", "按讚"], ["reach", "觸及"],
+                  ["interactions", "互動"], ["comments", "留言"], ["shares", "分享"]];
+    const total = {};
+    cols.forEach(([m]) => total[m] = names.reduce((s2, n) => s2 + (src[n][m] || 0), 0));
+    document.getElementById("m-topics-table").innerHTML =
+      `<tr><th>貼文主題</th>${cols.map(([, n]) => `<th>${n}</th>`).join("")}</tr>` +
+      names.map(n => `<tr><td>${n}</td>${cols.map(([m]) => `<td>${fmt(src[n][m] || 0)}</td>`).join("")}</tr>`).join("") +
+      `<tr class="total"><td>合計</td>${cols.map(([m]) => `<td>${fmt(total[m])}</td>`).join("")}</tr>`;
+  }
+  document.getElementById("m-topic-toggle").addEventListener("click", e => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+    topicPlat = btn.dataset.plat;
+    document.querySelectorAll("#m-topic-toggle button").forEach(b => b.classList.toggle("active", b === btn));
+    renderTopicTable(G.keys[+mSelect.value]);
+  });
+  mSelect.addEventListener("change", renderMonth);
+
+  /* ============================================================
+     週比較視圖
+     ============================================================ */
+  const weeks = S.weeks;   // 各完整週的週一(ISO 日期),與 GA4 daily 起點對齊
+  function weekLabel(iso) {
+    const d = new Date(iso + "T00:00:00");
+    const e = new Date(d); e.setDate(d.getDate() + 6);
+    const f = x => `${x.getMonth() + 1}/${x.getDate()}`;
+    return `${f(d)}~${f(e)}`;
+  }
+  // GA4 週彙總(daily 自 weeks[0] 起連續逐日)
+  function ga4Week(wi) {
+    const rows = G.daily.slice(wi * 7, wi * 7 + 7);
+    if (rows.length < 7) return null;
+    const sum = j => rows.reduce((s2, r) => s2 + r[j], 0);
+    return { auAvg: Math.round(sum(0) / 7), sessions: sum(1), pv: sum(2) };
+  }
+  const wSelect = document.getElementById("w-select");
+  weeks.forEach((w, i) => {
+    if (i === 0) return;   // 第一週無上週可比
+    const opt = document.createElement("option");
+    opt.value = i; opt.textContent = weekLabel(w);
+    wSelect.appendChild(opt);
+  });
+  wSelect.value = weeks.length - 1;
+
+  function renderWeek() {
+    const i = +wSelect.value, p = i - 1;
+    const cur = ga4Week(i), prev = ga4Week(p);
+    document.getElementById("w-ga4-tiles").innerHTML = [
+      tile("日均活躍使用者", fmt(cur.auAvg), deltaHtml(cur.auAvg, prev.auAvg, "上週")),
+      tile("工作階段", fmt(cur.sessions), deltaHtml(cur.sessions, prev.sessions, "上週")),
+      tile("瀏覽量", fmt(cur.pv), deltaHtml(cur.pv, prev.pv, "上週"))
+    ].join("");
+    for (const [plat, wk, elId] of [["fb", S.weeklyFb, "w-fb-tiles"], ["ig", S.weeklyIg, "w-ig-tiles"]]) {
+      document.getElementById(elId).innerHTML = SOC_METRICS.map(([m, name]) =>
+        tile(name, fmt(wk[m][i]), deltaHtml(wk[m][i], wk[m][p], "上週"))).join("");
+    }
+    // 對照表
+    const rows = [];
+    rows.push(["grp", `網站流量(GA4)`]);
+    rows.push(["日均活躍使用者", prev.auAvg, cur.auAvg]);
+    rows.push(["工作階段", prev.sessions, cur.sessions]);
+    rows.push(["瀏覽量", prev.pv, cur.pv]);
+    rows.push(["grp", "Facebook"]);
+    SOC_METRICS.forEach(([m, name]) => rows.push([name, S.weeklyFb[m][p], S.weeklyFb[m][i]]));
+    rows.push(["grp", "Instagram"]);
+    SOC_METRICS.forEach(([m, name]) => rows.push([name, S.weeklyIg[m][p], S.weeklyIg[m][i]]));
+    document.getElementById("w-table").innerHTML =
+      `<tr><th>指標</th><th>上週(${weekLabel(weeks[p])})</th><th>本週(${weekLabel(weeks[i])})</th><th>增減</th><th>增減率</th></tr>` +
+      rows.map(r => {
+        if (r[0] === "grp") return `<tr class="grp"><td colspan="5">${r[1]}</td></tr>`;
+        const [name, a, b] = r, diff = b - a;
+        const rate = a === 0 ? "—" : `<span class="${diff >= 0 ? "up" : "down"}">${diff >= 0 ? "+" : ""}${pct(diff / a)}</span>`;
+        return `<tr><td>${name}</td><td>${fmt(a)}</td><td>${fmt(b)}</td>` +
+               `<td><span class="${diff >= 0 ? "up" : "down"}">${diff >= 0 ? "+" : ""}${fmt(diff)}</span></td><td>${rate}</td></tr>`;
+      }).join("");
+  }
+  wSelect.addEventListener("change", renderWeek);
+
+  function buildWeekCharts() {
+    const c = C();
+    const labels = weeks.map(weekLabel);
+    makeChart("w-sess", {
+      type: "bar",
+      data: { labels, datasets: [{ label: "工作階段", data: weeks.map((_, i) => ga4Week(i).sessions),
+                                   backgroundColor: c.s1, borderRadius: 4, maxBarThickness: 22 }] },
+      options: baseOpts({ plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` 工作階段:${fmt(ctx.parsed.y)}` } } } })
+    });
+    makeChart("w-reach", {
+      type: "line",
+      data: { labels, datasets: [lineDs(c.s1, "Facebook", S.weeklyFb.reach), lineDs(c.s2, "Instagram", S.weeklyIg.reach)] },
+      options: baseOpts()
+    });
+    makeChart("w-inter", {
+      type: "line",
+      data: { labels, datasets: [lineDs(c.s1, "Facebook", S.weeklyFb.interactions), lineDs(c.s2, "Instagram", S.weeklyIg.interactions)] },
+      options: baseOpts()
+    });
+  }
+
+  /* ============================================================
+     年度趨勢與 KPI 視圖
+     ============================================================ */
+  // 社群趨勢僅取「完整月份」(與 GA4 最新月對齊,排除進行中月份)
+  const latestKey = G.keys[G.keys.length - 1];
+  const sTrendN = S.monthKeys.filter(k => k <= latestKey).length;
+  const sLabels = S.monthLabels.slice(0, sTrendN);
+  const sArr = (plat, m) => S[plat][m].slice(0, sTrendN);
+
+  function buildTrend() {
+    const c = C();
+    makeChart("t-users", {
+      type: "line",
+      data: { labels: G.months, datasets: [lineDs(c.s1, "活躍使用者", G.activeUsers), lineDs(c.s2, "新使用者", G.newUsers)] },
+      options: baseOpts()
+    });
+    makeChart("t-sessions", {
+      type: "bar",
+      data: { labels: G.months, datasets: [{ label: "工作階段", data: G.sessions, backgroundColor: c.s1, borderRadius: 4, maxBarThickness: 24 }] },
+      options: baseOpts({ plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` 工作階段:${fmt(ctx.parsed.y)}` } } } })
+    });
+    makeChart("t-pv", {
+      type: "bar",
+      data: { labels: G.months, datasets: [{ label: "瀏覽量", data: G.pageViews, backgroundColor: c.s1, borderRadius: 4, maxBarThickness: 24 }] },
+      options: baseOpts({ plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` 瀏覽量:${fmt(ctx.parsed.y)}` } } } })
+    });
+    const chColors = [c.s1, c.s2, c.s3, c.s5, c.sOther];
+    makeChart("t-channels", {
+      type: "bar",
+      data: {
+        labels: G.months,
+        datasets: G.channels.names.map((n, i) => ({
+          label: n, data: G.channels.series[n],
+          backgroundColor: chColors[i], borderColor: c.surface, borderWidth: 1.5, maxBarThickness: 36
+        }))
+      },
+      options: baseOpts({ scales: { x: { stacked: true, grid: { display: false } },
+                                    y: { stacked: true, beginAtZero: true, ticks: numTicks, grid: { color: c.grid } } } })
+    });
+    makeChart("t-reach", {
+      type: "line",
+      data: { labels: sLabels, datasets: [lineDs(c.s1, "Facebook", sArr("fb", "reach")), lineDs(c.s2, "Instagram", sArr("ig", "reach"))] },
+      options: baseOpts()
+    });
+    makeChart("t-inter", {
+      type: "line",
+      data: { labels: sLabels, datasets: [lineDs(c.s1, "Facebook", sArr("fb", "interactions")), lineDs(c.s2, "Instagram", sArr("ig", "interactions"))] },
+      options: baseOpts()
+    });
+    for (const [plat, id] of [["fb", "t-fb-engage"], ["ig", "t-ig-engage"]]) {
+      makeChart(id, {
+        type: "bar",
+        data: {
+          labels: sLabels,
+          datasets: [
+            { label: "按讚", data: sArr(plat, "likes"), backgroundColor: c.s1, borderColor: c.surface, borderWidth: 1.5, maxBarThickness: 36 },
+            { label: "留言", data: sArr(plat, "comments"), backgroundColor: c.s2, borderColor: c.surface, borderWidth: 1.5, maxBarThickness: 36 },
+            { label: "分享", data: sArr(plat, "shares"), backgroundColor: c.s3, borderColor: c.surface, borderWidth: 1.5, maxBarThickness: 36 }
+          ]
+        },
+        options: baseOpts({ scales: { x: { stacked: true, grid: { display: false } },
+                                      y: { stacked: true, beginAtZero: true, ticks: numTicks, grid: { color: c.grid } } } })
+      });
+    }
+  }
+
+  // 趨勢視圖靜態表格與 KPI(一次渲染)
+  document.getElementById("t-web-table").innerHTML =
+    `<tr><th>月份</th><th>活躍使用者</th><th>新使用者</th><th>工作階段</th><th>瀏覽量</th><th>互動率</th><th>平均時長</th></tr>` +
+    G.months.map((m, i) =>
+      `<tr><td>${m}</td><td>${fmt(G.activeUsers[i])}</td><td>${fmt(G.newUsers[i])}</td><td>${fmt(G.sessions[i])}</td>` +
+      `<td>${fmt(G.pageViews[i])}</td><td>${pct(G.engagementRate[i])}</td><td>${mmss(G.avgDurationSec[i])}</td></tr>`).join("");
+
+  document.getElementById("t-social-table").innerHTML =
+    `<tr><th rowspan="2">月份</th><th colspan="6">Facebook</th><th colspan="6">Instagram</th></tr>` +
+    `<tr>${"<th>貼文</th><th>觸及</th><th>互動</th><th>按讚</th><th>留言</th><th>分享</th>".repeat(2)}</tr>` +
+    sLabels.map((m, i) => {
+      const cells = plat => ["posts", "reach", "interactions", "likes", "comments", "shares"]
+        .map(k => `<td>${fmt(S[plat][k][i])}</td>`).join("");
+      return `<tr><td>${m}</td>${cells("fb")}${cells("ig")}</tr>`;
+    }).join("");
+
+  document.getElementById("kpi-note").textContent =
+    `依「115年社群行銷KPI設定」,達成率=${D.latestLabel} FB+IG 合計 ÷ 年度目標值(基線 +5%)。`;
+  document.getElementById("kpi-cards").innerHTML = D.kpi.map(k => {
+    const rate = k.current / k.target, ok = rate >= 1;
+    return `<div class="kpi-card">
+      <div class="name">${k.name}</div>
+      <div class="rate">${(rate * 100).toFixed(1)}%</div>
+      <div class="meter"><div class="fill" style="width:${Math.min(100, rate * 100)}%;${ok ? "background:var(--good)" : ""}"></div></div>
+      <div class="meta">${D.latestLabel}成果 ${fmt(k.current)}|年度目標 ${fmt(k.target)}(基線 ${fmt(k.baseline)})</div>
+      ${ok ? '<span class="badge">✓ 已達成</span>' : '<span class="badge" style="color:var(--delta-down)">未達成</span>'}
+    </div>`;
+  }).join("");
+  document.getElementById("t-kpi-table").innerHTML =
+    `<tr><th>指標項目</th><th>KPI基線值</th><th>年度目標(+5%)</th><th>${D.latestLabel}成果</th><th>較基線成長數</th><th>較基線成長率</th><th>KPI達成率</th><th>達成情形</th></tr>` +
+    D.kpi.map(k => {
+      const g2 = k.current - k.baseline;
+      return `<tr><td>${k.name}</td><td>${fmt(k.baseline)}</td><td>${fmt(k.target)}</td><td>${fmt(k.current)}</td>` +
+        `<td>+${fmt(g2)}</td><td>+${pct(g2 / k.baseline, 2)}</td>` +
+        `<td>${pct(k.current / k.target, 1)}</td><td>${k.current >= k.target ? "已達成" : "未達成"}</td></tr>`;
+    }).join("");
+
+  /* ---------- 視圖切換 ---------- */
+  const built = { month: false, week: false, trend: false };
+  function buildView(v) {
+    if (v === "month") renderMonth();
+    else if (v === "week") { renderWeek(); buildWeekCharts(); }
+    else buildTrend();
+    built[v] = true;
+  }
+  function showView(v) {
+    document.querySelectorAll(".view").forEach(el => el.classList.toggle("active", el.id === "view-" + v));
+    document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("active", b.dataset.view === v));
+    if (!built[v]) buildView(v);
+    // 只重繪當前視圖的圖表(隱藏視圖容器寬度為 0,resize 會把圖清空)
+    const visible = document.getElementById("view-" + v);
+    Object.values(registry).forEach(ch => { if (visible.contains(ch.canvas)) ch.resize(); });
+  }
+  document.getElementById("tabs").addEventListener("click", e => {
+    const btn = e.target.closest("button");
+    if (btn) showView(btn.dataset.view);
+  });
+
+  buildView("month");
+  if (window.matchMedia) {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+      // 只重建當前視圖;其餘標記為未建,待切換時以新配色重建
+      const activeView = document.querySelector(".view.active").id.replace("view-", "");
+      Object.keys(built).forEach(v => { if (v !== activeView) built[v] = false; });
+      buildView(activeView);
+    });
+  }
+})();
+</script>
+</body>
+</html>
