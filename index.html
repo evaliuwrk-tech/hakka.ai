@@ -352,7 +352,7 @@
     <div id="d-posts"></div>
 
     <h2 class="sec">近 14 日每日最佳貼文(FB / IG 分別排序)</h2>
-    <p class="sec-note">各平臺每日互動最高的一篇;點日期選單可回看該日全部貼文</p>
+    <p class="sec-note">各平臺每日成效最佳的一篇(依平臺原生互動值排序),按讚/留言/分享分列;點日期選單可回看該日全部貼文</p>
     <div class="grid2">
       <div class="card">
         <h3><span class="plat-chip fb">Facebook</span> 每日最佳</h3>
@@ -852,11 +852,11 @@
         <div class="title" title="${esc(p.title)}">${esc(clip(p.title, 64)) || "(無標題)"}</div>
         <div class="post-metrics">
           <span>觸及 <b>${fmt(p.reach)}</b> ${multHtml(p)} 平均</span>
-          <span>互動 <b>${fmt(p.interactions)}</b></span>
           <span>按讚 <b>${fmt(p.likes)}</b></span>
           <span>留言 <b>${fmt(p.comments)}</b></span>
           <span>分享 <b>${fmt(p.shares)}</b></span>
           <span>瀏覽 <b>${fmt(p.views)}</b></span>
+          <span style="color:var(--text-muted)">互動合計 ${fmt(p.interactions)}</span>
         </div>
       </div>`).join("") || '<p class="empty-note">該日無貼文</p>';
   }
@@ -866,13 +866,13 @@
       const platDates = [...new Set(posts.filter(p => p.plat === plat).map(p => p.date))]
         .sort().reverse().slice(0, 14);
       document.getElementById(elId).innerHTML =
-        `<tr><th>日期</th><th>主題</th><th>標題</th><th>觸及</th><th>互動</th><th>相對平均</th></tr>` +
+        `<tr><th>日期</th><th>主題</th><th>標題</th><th>觸及</th><th>按讚</th><th>留言</th><th>分享</th><th>相對平均</th></tr>` +
         platDates.map(dt => {
           const best = posts.filter(p => p.date === dt && p.plat === plat)
             .sort((a, b) => b.interactions - a.interactions)[0];
           return `<tr><td>${dayLabel(dt)}</td><td>${esc(best.topic)}</td>` +
-                 `<td style="white-space:normal" title="${esc(best.title)}">${esc(clip(best.title, 26))}</td>` +
-                 `<td>${fmt(best.reach)}</td><td>${fmt(best.interactions)}</td>` +
+                 `<td style="white-space:normal" title="${esc(best.title)}">${esc(clip(best.title, 20))}</td>` +
+                 `<td>${fmt(best.reach)}</td><td>${fmt(best.likes)}</td><td>${fmt(best.comments)}</td><td>${fmt(best.shares)}</td>` +
                  `<td>${multHtml(best) || "—"} ${tierChip(best)}</td></tr>`;
         }).join("");
     }
