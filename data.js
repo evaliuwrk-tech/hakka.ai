@@ -1053,7 +1053,7 @@ const DASHBOARD_DATA = {
     30,
     39,
     43,
-    20
+    31
    ],
    "likes": [
     603,
@@ -1062,7 +1062,7 @@ const DASHBOARD_DATA = {
     714,
     1311,
     1895,
-    1365
+    1950
    ],
    "reach": [
     5943,
@@ -1071,7 +1071,7 @@ const DASHBOARD_DATA = {
     11069,
     21853,
     45266,
-    32858
+    43827
    ],
    "shares": [
     80,
@@ -1080,7 +1080,7 @@ const DASHBOARD_DATA = {
     447,
     1197,
     1418,
-    353
+    834
    ],
    "comments": [
     34,
@@ -1089,7 +1089,7 @@ const DASHBOARD_DATA = {
     132,
     287,
     487,
-    139
+    334
    ],
    "views": [
     13340,
@@ -1098,7 +1098,7 @@ const DASHBOARD_DATA = {
     23364,
     41746,
     63524,
-    41620
+    58077
    ],
    "interactions": [
     718,
@@ -1107,7 +1107,7 @@ const DASHBOARD_DATA = {
     1296,
     2870,
     3791,
-    1874
+    3142
    ]
   },
   "ig": {
@@ -1118,7 +1118,7 @@ const DASHBOARD_DATA = {
     30,
     39,
     43,
-    39
+    43
    ],
    "likes": [
     322,
@@ -1127,7 +1127,7 @@ const DASHBOARD_DATA = {
     547,
     958,
     778,
-    338
+    523
    ],
    "reach": [
     4843,
@@ -1136,7 +1136,7 @@ const DASHBOARD_DATA = {
     3554,
     6608,
     6376,
-    2674
+    4328
    ],
    "shares": [
     27,
@@ -1145,7 +1145,7 @@ const DASHBOARD_DATA = {
     76,
     108,
     39,
-    2
+    6
    ],
    "comments": [
     4,
@@ -1154,7 +1154,7 @@ const DASHBOARD_DATA = {
     55,
     205,
     271,
-    61
+    83
    ],
    "views": [
     14657,
@@ -1163,7 +1163,7 @@ const DASHBOARD_DATA = {
     11221,
     17013,
     17126,
-    7636
+    11601
    ],
    "interactions": [
     358,
@@ -1172,7 +1172,7 @@ const DASHBOARD_DATA = {
     686,
     1240,
     1103,
-    411
+    632
    ]
   },
   "topics": {
@@ -1488,85 +1488,85 @@ const DASHBOARD_DATA = {
     },
     "202607": {
      "語錄系列": {
-      "posts": 2,
-      "likes": 44,
-      "reach": 522,
-      "shares": 22,
-      "comments": 4,
-      "views": 900,
-      "interactions": 70
+      "posts": 3,
+      "likes": 84,
+      "reach": 1234,
+      "shares": 47,
+      "comments": 9,
+      "views": 2053,
+      "interactions": 141
      },
      "機動貼文": {
-      "posts": 6,
-      "likes": 1047,
-      "reach": 26884,
-      "shares": 211,
-      "comments": 100,
-      "views": 31376,
-      "interactions": 1373
+      "posts": 9,
+      "likes": 1388,
+      "reach": 36353,
+      "shares": 404,
+      "comments": 247,
+      "views": 41828,
+      "interactions": 2060
      },
      "日常情境互動": {
-      "posts": 2,
-      "likes": 36,
-      "reach": 555,
-      "shares": 33,
-      "comments": 5,
-      "views": 962,
-      "interactions": 74
+      "posts": 3,
+      "likes": 73,
+      "reach": 787,
+      "shares": 65,
+      "comments": 10,
+      "views": 1444,
+      "interactions": 148
      },
      "AI主播": {
-      "posts": 2,
-      "likes": 30,
-      "reach": 667,
-      "shares": 0,
-      "comments": 3,
-      "views": 830,
-      "interactions": 33
+      "posts": 3,
+      "likes": 48,
+      "reach": 797,
+      "shares": 16,
+      "comments": 9,
+      "views": 1056,
+      "interactions": 73
      },
      "今天吃什麼": {
-      "posts": 2,
-      "likes": 46,
-      "reach": 1104,
-      "shares": 4,
-      "comments": 5,
-      "views": 1928,
-      "interactions": 55
+      "posts": 3,
+      "likes": 66,
+      "reach": 458,
+      "shares": 32,
+      "comments": 11,
+      "views": 2568,
+      "interactions": 109
      },
      "疊字疊起來": {
-      "posts": 2,
-      "likes": 45,
-      "reach": 841,
-      "shares": 1,
-      "comments": 5,
-      "views": 1477,
-      "interactions": 52
+      "posts": 3,
+      "likes": 78,
+      "reach": 1341,
+      "shares": 48,
+      "comments": 12,
+      "views": 2474,
+      "interactions": 139
      },
      "客家音樂": {
-      "posts": 2,
-      "likes": 37,
-      "reach": 616,
-      "shares": 4,
-      "comments": 6,
-      "views": 1148,
-      "interactions": 47
+      "posts": 3,
+      "likes": 74,
+      "reach": 618,
+      "shares": 59,
+      "comments": 14,
+      "views": 2257,
+      "interactions": 147
      },
      "社會議題": {
-      "posts": 1,
-      "likes": 24,
-      "reach": 235,
-      "shares": 40,
-      "comments": 4,
-      "views": 567,
-      "interactions": 68
+      "posts": 2,
+      "likes": 58,
+      "reach": 621,
+      "shares": 93,
+      "comments": 12,
+      "views": 1446,
+      "interactions": 163
      },
      "客庄生活": {
-      "posts": 1,
-      "likes": 56,
-      "reach": 1434,
-      "shares": 38,
-      "comments": 7,
-      "views": 2432,
-      "interactions": 102
+      "posts": 2,
+      "likes": 81,
+      "reach": 1618,
+      "shares": 70,
+      "comments": 10,
+      "views": 2951,
+      "interactions": 162
      }
     }
    },
@@ -1783,88 +1783,88 @@ const DASHBOARD_DATA = {
     },
     "202607": {
      "語錄系列": {
-      "posts": 2,
-      "likes": 31,
-      "reach": 161,
-      "shares": 0,
-      "comments": 4,
-      "views": 554,
-      "interactions": 35
+      "posts": 3,
+      "likes": 46,
+      "reach": 274,
+      "shares": 1,
+      "comments": 6,
+      "views": 924,
+      "interactions": 54
      },
      "機動貼文": {
-      "posts": 6,
-      "likes": 151,
-      "reach": 1252,
-      "shares": 2,
-      "comments": 36,
-      "views": 3188,
-      "interactions": 194
+      "posts": 9,
+      "likes": 244,
+      "reach": 2011,
+      "shares": 3,
+      "comments": 52,
+      "views": 4471,
+      "interactions": 307
      },
      "日常情境互動": {
-      "posts": 2,
-      "likes": 35,
-      "reach": 225,
+      "posts": 3,
+      "likes": 46,
+      "reach": 349,
       "shares": 0,
-      "comments": 4,
-      "views": 781,
-      "interactions": 39
+      "comments": 5,
+      "views": 1160,
+      "interactions": 52
      },
      "AI主播": {
-      "posts": 2,
-      "likes": 26,
-      "reach": 281,
+      "posts": 3,
+      "likes": 33,
+      "reach": 348,
       "shares": 0,
       "comments": 4,
-      "views": 580,
-      "interactions": 32
+      "views": 717,
+      "interactions": 39
      },
      "今天吃什麼": {
-      "posts": 2,
-      "likes": 28,
-      "reach": 239,
+      "posts": 3,
+      "likes": 40,
+      "reach": 337,
       "shares": 0,
       "comments": 4,
-      "views": 834,
-      "interactions": 33
+      "views": 1164,
+      "interactions": 45
      },
      "疊字疊起來": {
-      "posts": 2,
-      "likes": 18,
-      "reach": 138,
-      "shares": 0,
-      "comments": 3,
-      "views": 513,
-      "interactions": 21
+      "posts": 3,
+      "likes": 34,
+      "reach": 266,
+      "shares": 2,
+      "comments": 4,
+      "views": 881,
+      "interactions": 42
      },
      "客家音樂": {
-      "posts": 2,
-      "likes": 21,
-      "reach": 172,
+      "posts": 3,
+      "likes": 30,
+      "reach": 239,
       "shares": 0,
       "comments": 3,
-      "views": 532,
-      "interactions": 25
+      "views": 748,
+      "interactions": 34
      },
      "社會議題": {
-      "posts": 1,
-      "likes": 12,
-      "reach": 85,
-      "shares": 0,
-      "comments": 1,
-      "views": 286,
-      "interactions": 13
-     },
-     "客庄生活": {
-      "posts": 1,
-      "likes": 16,
-      "reach": 121,
+      "posts": 2,
+      "likes": 23,
+      "reach": 240,
       "shares": 0,
       "comments": 2,
-      "views": 368,
-      "interactions": 19
+      "views": 730,
+      "interactions": 27
+     },
+     "客庄生活": {
+      "posts": 2,
+      "likes": 27,
+      "reach": 264,
+      "shares": 0,
+      "comments": 3,
+      "views": 806,
+      "interactions": 32
      },
      "未分類": {
-      "posts": 19,
+      "posts": 12,
       "likes": 0,
       "reach": 0,
       "shares": 0,
@@ -1904,7 +1904,7 @@ const DASHBOARD_DATA = {
     11,
     13,
     10,
-    0
+    11
    ],
    "likes": [
     170,
@@ -1918,8 +1918,8 @@ const DASHBOARD_DATA = {
     831,
     450,
     965,
-    501,
-    0
+    625,
+    461
    ],
    "reach": [
     2602,
@@ -1933,8 +1933,8 @@ const DASHBOARD_DATA = {
     24516,
     9519,
     22586,
-    13378,
-    0
+    13399,
+    10948
    ],
    "shares": [
     103,
@@ -1948,8 +1948,8 @@ const DASHBOARD_DATA = {
     266,
     409,
     386,
-    95,
-    0
+    274,
+    302
    ],
    "comments": [
     40,
@@ -1963,8 +1963,8 @@ const DASHBOARD_DATA = {
     161,
     150,
     104,
-    49,
-    0
+    77,
+    167
    ],
    "interactions": [
     313,
@@ -1978,8 +1978,8 @@ const DASHBOARD_DATA = {
     1253,
     1005,
     1464,
-    653,
-    0
+    984,
+    937
    ]
   },
   "weeklyIg": {
@@ -1996,7 +1996,7 @@ const DASHBOARD_DATA = {
     11,
     13,
     10,
-    7
+    11
    ],
    "likes": [
     104,
@@ -2011,7 +2011,7 @@ const DASHBOARD_DATA = {
     166,
     233,
     168,
-    0
+    185
    ],
    "reach": [
     720,
@@ -2026,7 +2026,7 @@ const DASHBOARD_DATA = {
     1459,
     1755,
     1436,
-    0
+    1654
    ],
    "shares": [
     0,
@@ -2041,7 +2041,7 @@ const DASHBOARD_DATA = {
     2,
     1,
     2,
-    0
+    4
    ],
    "comments": [
     10,
@@ -2056,7 +2056,7 @@ const DASHBOARD_DATA = {
     49,
     46,
     34,
-    0
+    22
    ],
    "interactions": [
     114,
@@ -2071,7 +2071,7 @@ const DASHBOARD_DATA = {
     220,
     285,
     209,
-    0
+    221
    ]
   }
  },
