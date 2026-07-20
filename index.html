@@ -143,6 +143,20 @@
     padding: 1px 8px; border-radius: 999px; margin-top: 4px;
     background: var(--accent-wash); color: var(--delta-up);
   }
+  .hl-card {
+    background: var(--accent-wash); border-left: 4px solid var(--series-1);
+    border-radius: 8px; padding: 10px 14px; margin-bottom: 8px;
+    font-size: .92rem; font-weight: 600;
+  }
+  .an-card {
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 10px; padding: 6px 18px 14px; margin-bottom: 6px;
+  }
+  .an-item { padding: 10px 0 2px; border-bottom: 1px solid var(--grid); }
+  .an-item:last-child { border-bottom: none; }
+  .an-item .pt { font-size: .93rem; font-weight: 600; }
+  .an-item .ev { font-size: .82rem; color: var(--text-secondary); margin: 3px 0 8px; }
+  .an-item .ev::before { content: "佐證:"; color: var(--text-muted); }
   details.tbl { margin-top: 12px; }
   details.tbl summary { cursor: pointer; font-size: .84rem; color: var(--series-1); }
   table.data {
@@ -180,6 +194,7 @@
     <button data-view="month" class="active">月報</button>
     <button data-view="week">週比較</button>
     <button data-view="trend">年度趨勢與KPI</button>
+    <button data-view="report">分析報告</button>
   </nav>
 </header>
 
@@ -353,6 +368,19 @@
       <summary>KPI 達成追蹤表</summary>
       <div class="tbl-scroll"><table class="data" id="t-kpi-table"></table></div>
     </details>
+  </section>
+
+  <!-- ================= 分析報告 ================= -->
+  <section class="view" id="view-report">
+    <div class="controls">
+      <span class="hint" id="r-period"></span>
+    </div>
+    <h2 class="sec">重點摘要</h2>
+    <div id="r-highlights"></div>
+    <div id="r-sections"></div>
+    <p class="sec-note" style="margin-top:24px">
+      本頁分析依平臺數據自動彙整,每項判讀均附佐證數字;內容於每次數據更新時同步改寫,僅供內部例會參考。
+    </p>
   </section>
 </main>
 
@@ -787,12 +815,25 @@
         `<td>${pct(k.current / k.target, 1)}</td><td>${k.current >= k.target ? "已達成" : "未達成"}</td></tr>`;
     }).join("");
 
+  /* ---------- 分析報告(靜態,一次渲染) ---------- */
+  if (D.analysis) {
+    const A = D.analysis;
+    document.getElementById("r-period").textContent = A.period;
+    document.getElementById("r-highlights").innerHTML =
+      A.highlights.map(h => `<div class="hl-card">${h}</div>`).join("");
+    document.getElementById("r-sections").innerHTML = A.sections.map(sec =>
+      `<h2 class="sec">${sec.title}</h2>
+       <div class="an-card">${sec.items.map(it =>
+         `<div class="an-item"><div class="pt">${it.point}</div><div class="ev">${it.evidence}</div></div>`
+       ).join("")}</div>`).join("");
+  }
+
   /* ---------- 視圖切換 ---------- */
-  const built = { month: false, week: false, trend: false };
+  const built = { month: false, week: false, trend: false, report: true };
   function buildView(v) {
     if (v === "month") renderMonth();
     else if (v === "week") { renderWeek(); buildWeekCharts(); }
-    else buildTrend();
+    else if (v === "trend") buildTrend();
     built[v] = true;
   }
   function showView(v) {
