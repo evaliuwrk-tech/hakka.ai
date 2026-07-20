@@ -65,8 +65,12 @@ def intify(d):
         if isinstance(v, float) and v == int(v): d[k] = int(v)
     return d
 
+RECENT_DAYS = 45   # 日報:保留最近 N 天的逐篇貼文明細
+recent_cutoff = TODAY - datetime.timedelta(days=RECENT_DAYS)
+
 wb = openpyxl.load_workbook(XLSX, data_only=True)
-out = {"months": MONTHS, "monthly": {}, "topics": {}, "weeks": [], "weekly": {}}
+out = {"months": MONTHS, "monthly": {}, "topics": {}, "weeks": [], "weekly": {},
+       "recentPosts": []}
 week_set = set()
 plat_rows = {}
 
@@ -76,7 +80,7 @@ for sheet, key in (("FB", "fb"), ("IG", "ig")):
     header = [str(c).replace("\n", "").replace("​", "").strip() if c else "" for c in rows[0]]
     like_col = "按讚數和心情數" if sheet == "IG" else "按讚數"
     idx = {n: header.index(n) for n in
-           ["發佈日期", "貼文主題", like_col, "觸及人數", "分享次數", "留言數", "瀏覽次數", "互動次數"]}
+           ["發佈日期", "貼文主題", "標題", like_col, "觸及人數", "分享次數", "留言數", "瀏覽次數", "互動次數"]}
     monthly = {m: blank() for m in MONTHS}
     topics = {m: {} for m in MONTHS}
     weekly = {}
@@ -96,6 +100,21 @@ for sheet, key in (("FB", "fb"), ("IG", "ig")):
             week_set.add(wk)
             w = weekly.setdefault(wk, blank())
             add(w, r, idx, like_col)
+        # 日報:最近 N 天逐篇明細(排除未來日期的預排貼文與尚無數據的空白列)
+        title = " ".join(str(r[idx["標題"]] or "").split())[:300]
+        has_data = any(num(r[idx[c]]) for c in (like_col, "觸及人數", "瀏覽次數", "互動次數"))
+        if recent_cutoff <= d <= TODAY and (title or has_data):
+            out["recentPosts"].append({
+                "date": d.isoformat(), "plat": key,
+                "topic": str(r[idx["貼文主題"]] or "未分類").strip() or "未分類",
+                "title": title,
+                "likes": int(num(r[idx[like_col]])),
+                "reach": int(num(r[idx["觸及人數"]])),
+                "shares": int(num(r[idx["分享次數"]])),
+                "comments": int(num(r[idx["留言數"]])),
+                "views": int(num(r[idx["瀏覽次數"]])),
+                "interactions": int(num(r[idx["互動次數"]])),
+            })
     out["monthly"][key] = {m: intify(v) for m, v in monthly.items()}
     out["topics"][key] = {m: {t: intify(v) for t, v in tv.items()} for m, tv in topics.items()}
     plat_rows[key] = weekly
@@ -104,6 +123,7 @@ weeks = sorted(week_set)[-13:]   # 近 13 個完整週
 out["weeks"] = weeks
 for key in ("fb", "ig"):
     out["weekly"][key] = {w: intify(plat_rows[key].get(w, blank())) for w in weeks}
+out["recentPosts"].sort(key=lambda p: (p["date"], p["plat"]), reverse=True)
 
 with open(OUT, "w", encoding="utf-8") as f:
     json.dump(out, f, ensure_ascii=False, indent=1)

@@ -143,6 +143,30 @@
     padding: 1px 8px; border-radius: 999px; margin-top: 4px;
     background: var(--accent-wash); color: var(--delta-up);
   }
+  .post-card {
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; min-width: 0;
+  }
+  .post-card .head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .plat-chip {
+    font-size: .72rem; font-weight: 700; color: #fff;
+    padding: 1px 8px; border-radius: 999px;
+  }
+  .plat-chip.fb { background: var(--series-1); }
+  .plat-chip.ig { background: var(--series-2); }
+  .topic-chip {
+    font-size: .72rem; font-weight: 600; color: var(--text-secondary);
+    border: 1px solid var(--baseline); padding: 0 8px; border-radius: 999px;
+  }
+  .best-chip {
+    font-size: .72rem; font-weight: 700; color: var(--delta-up);
+    background: var(--accent-wash); padding: 1px 8px; border-radius: 999px;
+  }
+  .post-card .title { font-size: .9rem; font-weight: 600; margin-bottom: 6px; }
+  .post-metrics { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: .8rem; color: var(--text-secondary); }
+  .post-metrics b { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+  .post-metrics .mult { color: var(--delta-up); font-weight: 600; }
+  .post-metrics .mult.low { color: var(--text-muted); }
   .hl-card {
     background: var(--accent-wash); border-left: 4px solid var(--series-1);
     border-radius: 8px; padding: 10px 14px; margin-bottom: 8px;
@@ -193,6 +217,7 @@
   <nav class="tabs" id="tabs">
     <button data-view="month" class="active">月報</button>
     <button data-view="week">週比較</button>
+    <button data-view="day">日報</button>
     <button data-view="trend">年度趨勢與KPI</button>
     <button data-view="report">分析報告</button>
   </nav>
@@ -305,6 +330,23 @@
         <div class="chart-box"><canvas id="w-inter"></canvas></div>
       </div>
     </div>
+  </section>
+
+  <!-- ================= 日報 ================= -->
+  <section class="view" id="view-day">
+    <div class="controls">
+      <label for="d-select">日期</label>
+      <select id="d-select"></select>
+      <span class="hint">倍數為該篇觸及相對同平臺近30日平均的比值</span>
+    </div>
+
+    <h2 class="sec">當日貼文成效</h2>
+    <p class="sec-note" id="d-note"></p>
+    <div id="d-posts"></div>
+
+    <h2 class="sec">近 14 日每日最佳貼文</h2>
+    <p class="sec-note">每日互動最高的貼文(FB+IG 合併排序);點日期選單可回看該日全部貼文</p>
+    <div class="tbl-scroll"><table class="data" id="d-best-table"></table></div>
   </section>
 
   <!-- ================= 年度趨勢與 KPI ================= -->
@@ -729,6 +771,76 @@
   }
 
   /* ============================================================
+     日報視圖(逐篇貼文成效)
+     ============================================================ */
+  const posts = S.recentPosts || [];
+  const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const clip = (s, n) => s.length > n ? s.slice(0, n - 1) + "…" : s;
+  const WD = ["日", "一", "二", "三", "四", "五", "六"];
+  function dayLabel(iso) {
+    const d = new Date(iso + "T00:00:00");
+    return `${d.getMonth() + 1}/${d.getDate()}(${WD[d.getDay()]})`;
+  }
+  const postDates = [...new Set(posts.map(p => p.date))].sort().reverse();
+  const dSelect = document.getElementById("d-select");
+  postDates.forEach(dt => {
+    const opt = document.createElement("option");
+    opt.value = dt; opt.textContent = dayLabel(dt);
+    dSelect.appendChild(opt);
+  });
+  // 各平臺近30日平均觸及(以最新貼文日回推30天)
+  const avgReach = { fb: 0, ig: 0 };
+  if (postDates.length) {
+    const cut = new Date(postDates[0] + "T00:00:00"); cut.setDate(cut.getDate() - 29);
+    const cutIso = cut.toISOString().slice(0, 10);
+    for (const plat of ["fb", "ig"]) {
+      const arr = posts.filter(p => p.plat === plat && p.date >= cutIso);
+      avgReach[plat] = arr.length ? arr.reduce((s2, p) => s2 + p.reach, 0) / arr.length : 0;
+    }
+  }
+  const platName = { fb: "Facebook", ig: "Instagram" };
+  function multHtml(p) {
+    if (!avgReach[p.plat]) return "";
+    const m = p.reach / avgReach[p.plat];
+    return `<span class="mult${m < 1 ? " low" : ""}">×${m.toFixed(1)} 平均</span>`;
+  }
+  function renderDay() {
+    const date = dSelect.value;
+    const dayPosts = posts.filter(p => p.date === date).sort((a, b) => b.interactions - a.interactions);
+    const nFb = dayPosts.filter(p => p.plat === "fb").length;
+    document.getElementById("d-note").textContent =
+      `${dayLabel(date)} 共 ${dayPosts.length} 篇(FB ${nFb} 篇、IG ${dayPosts.length - nFb} 篇),依互動排序。`;
+    document.getElementById("d-posts").innerHTML = dayPosts.map((p, i) =>
+      `<div class="post-card">
+        <div class="head">
+          <span class="plat-chip ${p.plat}">${platName[p.plat]}</span>
+          <span class="topic-chip">${esc(p.topic)}</span>
+          ${i === 0 && dayPosts.length > 1 && p.interactions > 0 ? '<span class="best-chip">★ 本日最佳</span>' : ""}
+        </div>
+        <div class="title" title="${esc(p.title)}">${esc(clip(p.title, 64)) || "(無標題)"}</div>
+        <div class="post-metrics">
+          <span>觸及 <b>${fmt(p.reach)}</b> ${multHtml(p)}</span>
+          <span>互動 <b>${fmt(p.interactions)}</b></span>
+          <span>按讚 <b>${fmt(p.likes)}</b></span>
+          <span>留言 <b>${fmt(p.comments)}</b></span>
+          <span>分享 <b>${fmt(p.shares)}</b></span>
+          <span>瀏覽 <b>${fmt(p.views)}</b></span>
+        </div>
+      </div>`).join("") || '<p class="empty-note">該日無貼文</p>';
+  }
+  dSelect.addEventListener("change", renderDay);
+  function buildDayTable() {
+    document.getElementById("d-best-table").innerHTML =
+      `<tr><th>日期</th><th>平臺</th><th>主題</th><th>標題</th><th>觸及</th><th>互動</th><th>相對平均</th></tr>` +
+      postDates.slice(0, 14).map(dt => {
+        const best = posts.filter(p => p.date === dt).sort((a, b) => b.interactions - a.interactions)[0];
+        return `<tr><td>${dayLabel(dt)}</td><td style="text-align:center">${best.plat.toUpperCase()}</td>` +
+               `<td>${esc(best.topic)}</td><td style="white-space:normal" title="${esc(best.title)}">${esc(clip(best.title, 40))}</td>` +
+               `<td>${fmt(best.reach)}</td><td>${fmt(best.interactions)}</td><td>${multHtml(best) || "—"}</td></tr>`;
+      }).join("");
+  }
+
+  /* ============================================================
      年度趨勢與 KPI 視圖
      ============================================================ */
   // 社群趨勢僅取「完整月份」(與 GA4 最新月對齊,排除進行中月份)
@@ -845,10 +957,11 @@
   }
 
   /* ---------- 視圖切換 ---------- */
-  const built = { month: false, week: false, trend: false, report: true };
+  const built = { month: false, week: false, day: false, trend: false, report: true };
   function buildView(v) {
     if (v === "month") renderMonth();
     else if (v === "week") { renderWeek(); buildWeekCharts(); }
+    else if (v === "day") { renderDay(); buildDayTable(); }
     else if (v === "trend") buildTrend();
     built[v] = true;
   }

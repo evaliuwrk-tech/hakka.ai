@@ -192,6 +192,7 @@ data = {
         "weeks": social["weeks"],
         "weeklyFb": weekly_fix("fb"),
         "weeklyIg": weekly_fix("ig"),
+        "recentPosts": social.get("recentPosts", []),
     },
     "kpi": KPI,
     "analysis": ANALYSIS,
