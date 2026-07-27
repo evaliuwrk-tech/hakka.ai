@@ -205,6 +205,8 @@
   table.data td .down { color: var(--delta-down); font-weight: 600; }
   table.data tr.grp td { background: var(--accent-wash); font-weight: 700; text-align: left; }
   .tbl-scroll { overflow-x: auto; }
+  table.daily-best { table-layout: fixed; }
+  table.daily-best td { overflow-wrap: anywhere; }
 
   footer.src {
     max-width: 1180px; margin: 0 auto; padding: 0 20px 40px;
@@ -353,15 +355,13 @@
 
     <h2 class="sec">近 14 日每日最佳貼文(FB / IG 分別排序)</h2>
     <p class="sec-note">各平臺每日成效最佳的一篇(依平臺原生互動值排序),按讚/留言/分享分列;點日期選單可回看該日全部貼文</p>
-    <div class="grid2">
-      <div class="card">
-        <h3><span class="plat-chip fb">Facebook</span> 每日最佳</h3>
-        <div class="tbl-scroll"><table class="data" id="d-best-fb"></table></div>
-      </div>
-      <div class="card">
-        <h3><span class="plat-chip ig">Instagram</span> 每日最佳</h3>
-        <div class="tbl-scroll"><table class="data" id="d-best-ig"></table></div>
-      </div>
+    <div class="card">
+      <h3><span class="plat-chip fb">Facebook</span> 每日最佳</h3>
+      <div class="tbl-scroll"><table class="data daily-best" id="d-best-fb"></table></div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h3><span class="plat-chip ig">Instagram</span> 每日最佳</h3>
+      <div class="tbl-scroll"><table class="data daily-best" id="d-best-ig"></table></div>
     </div>
   </section>
 
@@ -865,7 +865,11 @@
     for (const [plat, elId] of [["fb", "d-best-fb"], ["ig", "d-best-ig"]]) {
       const platDates = [...new Set(posts.filter(p => p.plat === plat).map(p => p.date))]
         .sort().reverse().slice(0, 14);
-      document.getElementById(elId).innerHTML =
+      const colgroup =
+        `<colgroup><col style="width:8%"><col style="width:13%"><col style="width:29%">` +
+        `<col style="width:8%"><col style="width:7%"><col style="width:7%"><col style="width:7%">` +
+        `<col style="width:21%"></colgroup>`;
+      document.getElementById(elId).innerHTML = colgroup +
         `<tr><th>日期</th><th>主題</th><th>標題</th><th>觸及</th><th>按讚</th><th>留言</th><th>分享</th><th>相對平均</th></tr>` +
         platDates.map(dt => {
           const best = posts.filter(p => p.date === dt && p.plat === plat)
