@@ -605,48 +605,6 @@ const DASHBOARD_DATA = {
    ]
   },
   "topPagesByWeek": {
-   "2026-05-18": [
-    [
-     "詞彙查詢",
-     42176
-    ],
-    [
-     "首頁",
-     21724
-    ],
-    [
-     "基礎級暨初級模擬測驗-測驗練習",
-     17281
-    ],
-    [
-     "基礎級暨初級題庫-口語測驗-1看圖表達",
-     10531
-    ],
-    [
-     "首頁(異版標題)",
-     10434
-    ],
-    [
-     "基礎級暨初級題庫",
-     10110
-    ],
-    [
-     "(未設定子標題)",
-     7768
-    ],
-    [
-     "線上課程",
-     4798
-    ],
-    [
-     "基礎級暨初級模擬測驗",
-     4486
-    ],
-    [
-     "基礎級暨初級題庫-聽力理解-單句測驗",
-     4121
-    ]
-   ],
    "2026-05-25": [
     [
      "詞彙查詢",
@@ -1150,45 +1108,52 @@ const DASHBOARD_DATA = {
      "客語拼音學習-首頁",
      566
     ]
+   ],
+   "2026-08-17": [
+    [
+     "(未設定子標題)",
+     72547
+    ],
+    [
+     "詞彙查詢",
+     62851
+    ],
+    [
+     "首頁(異版標題)",
+     8170
+    ],
+    [
+     "線上課程",
+     3858
+    ],
+    [
+     "教材及試題下載",
+     2818
+    ],
+    [
+     "登入",
+     2262
+    ],
+    [
+     "Hakka GO !",
+     1830
+    ],
+    [
+     "生活客語專區",
+     1041
+    ],
+    [
+     "基礎級數位學習教材-活動評量",
+     870
+    ],
+    [
+     "基礎級數位學習教材",
+     464
+    ]
    ]
   },
-  "dailyStart": "2026-05-18",
+  "dailyStart": "2026-05-25",
   "daily": [
-   [
-    1920,
-    2875,
-    22894
-   ],
-   [
-    2111,
-    3050,
-    28612
-   ],
-   [
-    2015,
-    3183,
-    27471
-   ],
-   [
-    2069,
-    3067,
-    29050
-   ],
-   [
-    2098,
-    3259,
-    35804
-   ],
-   [
-    1406,
-    2169,
-    20330
-   ],
-   [
-    810,
-    1266,
-    8592
-   ],
    [
     1438,
     2169,
@@ -1605,9 +1570,44 @@ const DASHBOARD_DATA = {
     14957
    ],
    [
-    1169,
-    1833,
+    1094,
+    1835,
     16349
+   ],
+   [
+    1719,
+    2808,
+    25136
+   ],
+   [
+    1656,
+    2758,
+    26848
+   ],
+   [
+    1573,
+    2664,
+    23386
+   ],
+   [
+    1673,
+    2748,
+    26032
+   ],
+   [
+    1958,
+    3158,
+    30477
+   ],
+   [
+    1416,
+    2203,
+    20015
+   ],
+   [
+    1141,
+    1802,
+    14031
    ]
   ]
  },
@@ -1641,7 +1641,7 @@ const DASHBOARD_DATA = {
     39,
     43,
     46,
-    25
+    36
    ],
    "likes": [
     603,
@@ -1651,7 +1651,7 @@ const DASHBOARD_DATA = {
     1311,
     1895,
     2752,
-    1094
+    1639
    ],
    "reach": [
     5943,
@@ -1661,7 +1661,7 @@ const DASHBOARD_DATA = {
     21853,
     45266,
     62086,
-    22548
+    33964
    ],
    "shares": [
     80,
@@ -1671,7 +1671,7 @@ const DASHBOARD_DATA = {
     1197,
     1418,
     1693,
-    530
+    712
    ],
    "comments": [
     34,
@@ -1681,7 +1681,7 @@ const DASHBOARD_DATA = {
     287,
     487,
     446,
-    74
+    121
    ],
    "views": [
     13340,
@@ -1691,7 +1691,7 @@ const DASHBOARD_DATA = {
     41746,
     63524,
     84346,
-    29840
+    45571
    ],
    "interactions": [
     718,
@@ -1701,7 +1701,7 @@ const DASHBOARD_DATA = {
     2870,
     3791,
     4922,
-    1731
+    2511
    ]
   },
   "ig": {
@@ -1713,7 +1713,7 @@ const DASHBOARD_DATA = {
     39,
     43,
     46,
-    40
+    43
    ],
    "likes": [
     322,
@@ -1723,7 +1723,7 @@ const DASHBOARD_DATA = {
     958,
     778,
     904,
-    313
+    476
    ],
    "reach": [
     4843,
@@ -1733,7 +1733,7 @@ const DASHBOARD_DATA = {
     6608,
     6376,
     9382,
-    4150
+    6285
    ],
    "shares": [
     27,
@@ -1743,7 +1743,7 @@ const DASHBOARD_DATA = {
     108,
     39,
     18,
-    11
+    22
    ],
    "comments": [
     4,
@@ -1753,7 +1753,7 @@ const DASHBOARD_DATA = {
     205,
     271,
     126,
-    14
+    36
    ],
    "views": [
     14657,
@@ -1763,7 +1763,7 @@ const DASHBOARD_DATA = {
     17013,
     17126,
     25341,
-    10658
+    15924
    ],
    "interactions": [
     358,
@@ -1773,7 +1773,7 @@ const DASHBOARD_DATA = {
     1240,
     1103,
     1078,
-    348
+    548
    ]
   },
   "topics": {
@@ -2172,49 +2172,49 @@ const DASHBOARD_DATA = {
     },
     "202608": {
      "機動貼文": {
-      "posts": 7,
-      "likes": 653,
-      "reach": 15595,
-      "shares": 120,
-      "comments": 29,
-      "views": 18998,
-      "interactions": 831
+      "posts": 9,
+      "likes": 1018,
+      "reach": 23818,
+      "shares": 187,
+      "comments": 56,
+      "views": 28323,
+      "interactions": 1296
      },
      "疊字疊起來": {
-      "posts": 3,
-      "likes": 143,
-      "reach": 2766,
+      "posts": 4,
+      "likes": 157,
+      "reach": 3331,
       "shares": 52,
-      "comments": 7,
-      "views": 3389,
-      "interactions": 205
+      "comments": 10,
+      "views": 4275,
+      "interactions": 222
      },
      "客家音樂": {
-      "posts": 3,
-      "likes": 40,
-      "reach": 647,
+      "posts": 4,
+      "likes": 50,
+      "reach": 925,
       "shares": 68,
-      "comments": 5,
-      "views": 1139,
-      "interactions": 113
+      "comments": 6,
+      "views": 1599,
+      "interactions": 124
      },
      "社會議題": {
-      "posts": 2,
-      "likes": 60,
-      "reach": 504,
-      "shares": 71,
-      "comments": 7,
-      "views": 1002,
-      "interactions": 139
+      "posts": 3,
+      "likes": 85,
+      "reach": 1287,
+      "shares": 105,
+      "comments": 9,
+      "views": 2275,
+      "interactions": 200
      },
      "客庄生活": {
-      "posts": 3,
-      "likes": 76,
-      "reach": 1082,
-      "shares": 97,
-      "comments": 12,
-      "views": 1995,
-      "interactions": 185
+      "posts": 6,
+      "likes": 150,
+      "reach": 1797,
+      "shares": 178,
+      "comments": 18,
+      "views": 4302,
+      "interactions": 346
      },
      "語錄系列": {
       "posts": 1,
@@ -2226,31 +2226,31 @@ const DASHBOARD_DATA = {
       "interactions": 82
      },
      "日常情境互動": {
-      "posts": 2,
-      "likes": 36,
-      "reach": 432,
+      "posts": 3,
+      "likes": 58,
+      "reach": 632,
       "shares": 54,
-      "comments": 6,
-      "views": 898,
-      "interactions": 96
+      "comments": 12,
+      "views": 1334,
+      "interactions": 124
      },
      "AI主播": {
-      "posts": 2,
-      "likes": 27,
-      "reach": 574,
+      "posts": 3,
+      "likes": 39,
+      "reach": 891,
       "shares": 10,
       "comments": 2,
-      "views": 668,
-      "interactions": 39
+      "views": 1047,
+      "interactions": 51
      },
      "今天吃什麼": {
-      "posts": 2,
-      "likes": 36,
-      "reach": 512,
+      "posts": 3,
+      "likes": 59,
+      "reach": 847,
       "shares": 1,
-      "comments": 4,
-      "views": 978,
-      "interactions": 41
+      "comments": 6,
+      "views": 1643,
+      "interactions": 66
      }
     }
    },
@@ -2550,88 +2550,88 @@ const DASHBOARD_DATA = {
     },
     "202608": {
      "機動貼文": {
-      "posts": 7,
-      "likes": 159,
-      "reach": 2008,
-      "shares": 8,
-      "comments": 10,
-      "views": 3896,
-      "interactions": 183
+      "posts": 9,
+      "likes": 225,
+      "reach": 2912,
+      "shares": 19,
+      "comments": 31,
+      "views": 5302,
+      "interactions": 283
      },
      "疊字疊起來": {
-      "posts": 3,
-      "likes": 31,
-      "reach": 376,
+      "posts": 4,
+      "likes": 39,
+      "reach": 476,
       "shares": 2,
       "comments": 1,
-      "views": 1281,
-      "interactions": 36
+      "views": 1638,
+      "interactions": 44
      },
      "客家音樂": {
-      "posts": 3,
-      "likes": 22,
-      "reach": 284,
+      "posts": 4,
+      "likes": 32,
+      "reach": 384,
       "shares": 1,
       "comments": 0,
-      "views": 905,
-      "interactions": 23
+      "views": 1273,
+      "interactions": 33
      },
      "客庄生活": {
-      "posts": 2,
-      "likes": 18,
-      "reach": 369,
+      "posts": 3,
+      "likes": 33,
+      "reach": 629,
       "shares": 0,
       "comments": 1,
-      "views": 1129,
-      "interactions": 19
+      "views": 1978,
+      "interactions": 34
      },
      "社會議題": {
-      "posts": 2,
-      "likes": 17,
-      "reach": 212,
+      "posts": 3,
+      "likes": 26,
+      "reach": 330,
       "shares": 0,
       "comments": 0,
-      "views": 688,
-      "interactions": 17
+      "views": 1088,
+      "interactions": 27
      },
      "語錄系列": {
-      "posts": 2,
-      "likes": 26,
-      "reach": 257,
+      "posts": 3,
+      "likes": 36,
+      "reach": 369,
       "shares": 0,
       "comments": 2,
-      "views": 871,
-      "interactions": 29
+      "views": 1280,
+      "interactions": 39
      },
      "AI主播": {
-      "posts": 2,
-      "likes": 11,
-      "reach": 221,
+      "posts": 3,
+      "likes": 22,
+      "reach": 374,
       "shares": 0,
       "comments": 0,
-      "views": 456,
-      "interactions": 11
+      "views": 762,
+      "interactions": 22
      },
      "今天吃什麼": {
-      "posts": 2,
-      "likes": 11,
-      "reach": 213,
+      "posts": 3,
+      "likes": 31,
+      "reach": 365,
       "shares": 0,
-      "comments": 0,
-      "views": 667,
-      "interactions": 12
+      "comments": 1,
+      "views": 1170,
+      "interactions": 34
      },
      "日常情境互動": {
-      "posts": 2,
-      "likes": 18,
-      "reach": 210,
+      "posts": 3,
+      "likes": 32,
+      "reach": 446,
       "shares": 0,
       "comments": 0,
-      "views": 765,
-      "interactions": 18
+      "views": 1433,
+      "interactions": 32
      },
      "未分類": {
-      "posts": 15,
+      "posts": 8,
       "likes": 0,
       "reach": 0,
       "shares": 0,
@@ -2643,7 +2643,6 @@ const DASHBOARD_DATA = {
    }
   },
   "weeks": [
-   "2026-05-18",
    "2026-05-25",
    "2026-06-01",
    "2026-06-08",
@@ -2655,11 +2654,11 @@ const DASHBOARD_DATA = {
    "2026-07-20",
    "2026-07-27",
    "2026-08-03",
-   "2026-08-10"
+   "2026-08-10",
+   "2026-08-17"
   ],
   "weeklyFb": {
    "posts": [
-    8,
     11,
     8,
     10,
@@ -2671,10 +2670,10 @@ const DASHBOARD_DATA = {
     9,
     9,
     10,
-    12
+    12,
+    10
    ],
    "likes": [
-    307,
     405,
     215,
     298,
@@ -2686,10 +2685,10 @@ const DASHBOARD_DATA = {
     256,
     639,
     314,
-    280
+    280,
+    534
    ],
    "reach": [
-    11731,
     4014,
     2249,
     5876,
@@ -2701,10 +2700,10 @@ const DASHBOARD_DATA = {
     4389,
     14054,
     4869,
-    5214
+    5214,
+    11203
    ],
    "shares": [
-    268,
     386,
     266,
     349,
@@ -2716,10 +2715,10 @@ const DASHBOARD_DATA = {
     401,
     360,
     218,
-    193
+    193,
+    182
    ],
    "comments": [
-    58,
     150,
     73,
     89,
@@ -2731,10 +2730,10 @@ const DASHBOARD_DATA = {
     39,
     25,
     22,
-    38
+    38,
+    46
    ],
    "interactions": [
-    639,
     1009,
     554,
     736,
@@ -2746,12 +2745,12 @@ const DASHBOARD_DATA = {
     695,
     1048,
     560,
-    515
+    515,
+    768
    ]
   },
   "weeklyIg": {
    "posts": [
-    8,
     11,
     8,
     10,
@@ -2763,10 +2762,10 @@ const DASHBOARD_DATA = {
     9,
     9,
     10,
-    12
+    12,
+    10
    ],
    "likes": [
-    206,
     358,
     161,
     175,
@@ -2778,10 +2777,10 @@ const DASHBOARD_DATA = {
     113,
     131,
     100,
-    146
+    146,
+    163
    ],
    "reach": [
-    1331,
     2868,
     1253,
     1575,
@@ -2793,10 +2792,10 @@ const DASHBOARD_DATA = {
     1616,
     1653,
     1352,
-    2010
+    2010,
+    2135
    ],
    "shares": [
-    5,
     94,
     8,
     1,
@@ -2808,10 +2807,10 @@ const DASHBOARD_DATA = {
     2,
     4,
     2,
-    6
+    6,
+    11
    ],
    "comments": [
-    18,
     144,
     60,
     82,
@@ -2823,10 +2822,10 @@ const DASHBOARD_DATA = {
     19,
     8,
     4,
-    6
+    6,
+    22
    ],
    "interactions": [
-    234,
     557,
     232,
     259,
@@ -2838,7 +2837,8 @@ const DASHBOARD_DATA = {
     137,
     148,
     107,
-    164
+    164,
+    200
    ]
   },
   "recentPosts": [
@@ -4471,8 +4471,8 @@ const DASHBOARD_DATA = {
       "evidence": "6月機動貼文9篇合計觸及28,310,占全月54.8%;平均每篇3,146,常態主題平均每篇686。單篇最高為6/20邱寶郎師傅貼文(FB觸及18,637)。常態主題中以客庄生活、客家音樂最佳。"
      },
      {
-      "point": "8月延續成長:上半月FB觸及已達7月同期水準,單週動能自7月底低點回穩。",
-      "evidence": "至8/16,FB當月觸及22,548(25篇)、IG 4,150(40篇);8/10~8/16週FB觸及5,214、IG 2,010,較7月下旬單週低點回升,顯示題材動能回穩。"
+      "point": "8月延續成長且動能回穩:至8/24當月FB觸及33,964,已逾7月(62,086)一半、可望再創高。",
+      "evidence": "至8/24,FB當月觸及33,964(36篇)/互動2,511、IG 6,285(43篇);8/10、8/17兩週FB觸及5,214、11,203,自7月下旬單週低點穩定回升。GA追蹤持續正常,詞彙查詢穩居週榜前列(8/17週62,851)。"
      }
     ]
    },
