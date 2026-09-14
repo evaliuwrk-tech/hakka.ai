@@ -4,7 +4,7 @@
         社群互動=平臺原生值;KPI達成率=當月FB+IG合計÷年度目標值。
    ========================================================= */
 const DASHBOARD_DATA = {
- "updated": "民國115年9月8日",
+ "updated": "民國115年9月14日",
  "latestLabel": "115年8月",
  "ga4": {
   "keys": [
@@ -646,48 +646,6 @@ const DASHBOARD_DATA = {
    ]
   },
   "topPagesByWeek": {
-   "2026-06-08": [
-    [
-     "詞彙查詢",
-     40821
-    ],
-    [
-     "首頁",
-     7356
-    ],
-    [
-     "首頁(異版標題)",
-     6774
-    ],
-    [
-     "(未設定子標題)",
-     6075
-    ],
-    [
-     "基礎級暨初級模擬測驗-測驗練習",
-     5805
-    ],
-    [
-     "基礎級暨初級題庫-口語測驗-1看圖表達",
-     4755
-    ],
-    [
-     "基礎級暨初級題庫",
-     4288
-    ],
-    [
-     "線上課程",
-     2519
-    ],
-    [
-     "教材及試題下載",
-     2474
-    ],
-    [
-     "詞彙學習-基礎級",
-     2027
-    ]
-   ],
    "2026-06-15": [
     [
      "詞彙查詢",
@@ -1191,45 +1149,52 @@ const DASHBOARD_DATA = {
      "基礎級數位學習教材-活動評量",
      612
     ]
+   ],
+   "2026-09-07": [
+    [
+     "(未設定子標題)",
+     96233
+    ],
+    [
+     "詞彙查詢",
+     66275
+    ],
+    [
+     "首頁(異版標題)",
+     12373
+    ],
+    [
+     "線上課程",
+     4843
+    ],
+    [
+     "教材及試題下載",
+     3052
+    ],
+    [
+     "登入",
+     2419
+    ],
+    [
+     "Hakka GO !",
+     1825
+    ],
+    [
+     "生活客語專區",
+     1752
+    ],
+    [
+     "客語拼音學習-拼音學習",
+     1545
+    ],
+    [
+     "客語拼音學習-聲母學習",
+     1133
+    ]
    ]
   },
-  "dailyStart": "2026-06-08",
+  "dailyStart": "2026-06-15",
   "daily": [
-   [
-    1353,
-    2102,
-    17879
-   ],
-   [
-    1446,
-    2210,
-    17159
-   ],
-   [
-    1576,
-    2388,
-    19228
-   ],
-   [
-    1537,
-    2265,
-    17232
-   ],
-   [
-    1261,
-    1990,
-    13571
-   ],
-   [
-    814,
-    1248,
-    10101
-   ],
-   [
-    916,
-    1465,
-    13250
-   ],
    [
     1589,
     2420,
@@ -1646,9 +1611,44 @@ const DASHBOARD_DATA = {
     21258
    ],
    [
-    1475,
-    2281,
+    1383,
+    2282,
     22266
+   ],
+   [
+    2140,
+    3129,
+    27798
+   ],
+   [
+    2214,
+    3393,
+    28865
+   ],
+   [
+    2141,
+    3225,
+    28327
+   ],
+   [
+    2523,
+    3760,
+    31087
+   ],
+   [
+    2513,
+    4017,
+    41659
+   ],
+   [
+    1831,
+    3002,
+    28063
+   ],
+   [
+    1234,
+    1809,
+    17321
    ]
   ]
  },
@@ -1685,7 +1685,7 @@ const DASHBOARD_DATA = {
     43,
     46,
     45,
-    9
+    21
    ],
    "likes": [
     603,
@@ -1696,7 +1696,7 @@ const DASHBOARD_DATA = {
     1895,
     2752,
     2660,
-    252
+    814
    ],
    "reach": [
     5943,
@@ -1707,7 +1707,7 @@ const DASHBOARD_DATA = {
     45266,
     62086,
     54068,
-    4227
+    16989
    ],
    "shares": [
     80,
@@ -1718,7 +1718,7 @@ const DASHBOARD_DATA = {
     1418,
     1693,
     1208,
-    158
+    509
    ],
    "comments": [
     34,
@@ -1729,7 +1729,7 @@ const DASHBOARD_DATA = {
     487,
     446,
     265,
-    28
+    195
    ],
    "views": [
     13340,
@@ -1740,7 +1740,7 @@ const DASHBOARD_DATA = {
     63524,
     84346,
     75601,
-    6954
+    27731
    ],
    "interactions": [
     718,
@@ -1751,7 +1751,7 @@ const DASHBOARD_DATA = {
     3791,
     4922,
     4201,
-    441
+    1528
    ]
   },
   "ig": {
@@ -1764,7 +1764,7 @@ const DASHBOARD_DATA = {
     43,
     46,
     45,
-    33
+    38
    ],
    "likes": [
     322,
@@ -1775,7 +1775,7 @@ const DASHBOARD_DATA = {
     778,
     904,
     920,
-    145
+    315
    ],
    "reach": [
     4843,
@@ -1786,7 +1786,7 @@ const DASHBOARD_DATA = {
     6376,
     9382,
     10866,
-    1203
+    3501
    ],
    "shares": [
     27,
@@ -1797,7 +1797,7 @@ const DASHBOARD_DATA = {
     39,
     18,
     29,
-    48
+    53
    ],
    "comments": [
     4,
@@ -1808,7 +1808,7 @@ const DASHBOARD_DATA = {
     271,
     126,
     61,
-    18
+    30
    ],
    "views": [
     14657,
@@ -1819,7 +1819,7 @@ const DASHBOARD_DATA = {
     17126,
     25341,
     28376,
-    4878
+    10994
    ],
    "interactions": [
     358,
@@ -1830,7 +1830,7 @@ const DASHBOARD_DATA = {
     1103,
     1078,
     1042,
-    217
+    413
    ]
   },
   "topics": {
@@ -2312,76 +2312,85 @@ const DASHBOARD_DATA = {
     },
     "202609": {
      "社會議題": {
-      "posts": 1,
-      "likes": 27,
-      "reach": 177,
-      "shares": 14,
-      "comments": 4,
-      "views": 420,
-      "interactions": 45
+      "posts": 2,
+      "likes": 56,
+      "reach": 690,
+      "shares": 58,
+      "comments": 8,
+      "views": 1426,
+      "interactions": 122
      },
      "機動貼文": {
-      "posts": 2,
-      "likes": 127,
-      "reach": 2165,
-      "shares": 63,
-      "comments": 14,
-      "views": 3318,
-      "interactions": 206
+      "posts": 6,
+      "likes": 541,
+      "reach": 11442,
+      "shares": 289,
+      "comments": 164,
+      "views": 17949,
+      "interactions": 1003
      },
      "語錄系列": {
-      "posts": 1,
-      "likes": 31,
-      "reach": 342,
-      "shares": 32,
-      "comments": 2,
-      "views": 597,
-      "interactions": 65
+      "posts": 2,
+      "likes": 51,
+      "reach": 832,
+      "shares": 55,
+      "comments": 3,
+      "views": 1492,
+      "interactions": 109
      },
      "疊字疊起來": {
-      "posts": 1,
-      "likes": 16,
-      "reach": 326,
-      "shares": 22,
-      "comments": 2,
-      "views": 585,
-      "interactions": 40
+      "posts": 2,
+      "likes": 30,
+      "reach": 476,
+      "shares": 23,
+      "comments": 5,
+      "views": 857,
+      "interactions": 58
      },
      "AI主播": {
-      "posts": 1,
-      "likes": 11,
-      "reach": 303,
-      "shares": 2,
+      "posts": 2,
+      "likes": 19,
+      "reach": 649,
+      "shares": 3,
       "comments": 1,
-      "views": 334,
-      "interactions": 15
+      "views": 712,
+      "interactions": 24
      },
      "今天吃什麼": {
-      "posts": 1,
-      "likes": 8,
-      "reach": 209,
+      "posts": 2,
+      "likes": 21,
+      "reach": 490,
       "shares": 2,
-      "comments": 2,
-      "views": 435,
-      "interactions": 12
+      "comments": 3,
+      "views": 986,
+      "interactions": 26
      },
      "客家音樂": {
-      "posts": 1,
-      "likes": 17,
-      "reach": 484,
-      "shares": 12,
-      "comments": 1,
-      "views": 872,
-      "interactions": 30
+      "posts": 2,
+      "likes": 35,
+      "reach": 1307,
+      "shares": 14,
+      "comments": 2,
+      "views": 2161,
+      "interactions": 51
      },
      "日常情境互動": {
+      "posts": 2,
+      "likes": 37,
+      "reach": 706,
+      "shares": 31,
+      "comments": 7,
+      "views": 1281,
+      "interactions": 75
+     },
+     "客庄生活": {
       "posts": 1,
-      "likes": 15,
-      "reach": 221,
-      "shares": 11,
+      "likes": 24,
+      "reach": 397,
+      "shares": 34,
       "comments": 2,
-      "views": 393,
-      "interactions": 28
+      "views": 867,
+      "interactions": 60
      }
     }
    },
@@ -2764,79 +2773,88 @@ const DASHBOARD_DATA = {
     },
     "202609": {
      "社會議題": {
-      "posts": 1,
-      "likes": 16,
-      "reach": 148,
+      "posts": 2,
+      "likes": 26,
+      "reach": 283,
       "shares": 0,
-      "comments": 1,
-      "views": 545,
-      "interactions": 17
+      "comments": 2,
+      "views": 1033,
+      "interactions": 28
      },
      "機動貼文": {
-      "posts": 2,
-      "likes": 67,
-      "reach": 354,
-      "shares": 48,
-      "comments": 12,
-      "views": 1990,
-      "interactions": 131
+      "posts": 6,
+      "likes": 163,
+      "reach": 1534,
+      "shares": 53,
+      "comments": 20,
+      "views": 4391,
+      "interactions": 245
      },
      "語錄系列": {
-      "posts": 1,
-      "likes": 13,
-      "reach": 133,
+      "posts": 2,
+      "likes": 22,
+      "reach": 266,
       "shares": 0,
-      "comments": 1,
-      "views": 484,
-      "interactions": 15
+      "comments": 2,
+      "views": 908,
+      "interactions": 27
      },
      "疊字疊起來": {
-      "posts": 1,
-      "likes": 10,
-      "reach": 81,
+      "posts": 2,
+      "likes": 22,
+      "reach": 243,
       "shares": 0,
       "comments": 1,
-      "views": 330,
-      "interactions": 11
+      "views": 873,
+      "interactions": 25
      },
      "AI主播": {
-      "posts": 1,
-      "likes": 12,
-      "reach": 130,
+      "posts": 2,
+      "likes": 17,
+      "reach": 248,
       "shares": 0,
       "comments": 1,
-      "views": 265,
-      "interactions": 13
+      "views": 516,
+      "interactions": 18
      },
      "今天吃什麼": {
-      "posts": 1,
-      "likes": 12,
-      "reach": 116,
+      "posts": 2,
+      "likes": 24,
+      "reach": 275,
       "shares": 0,
       "comments": 1,
-      "views": 421,
-      "interactions": 13
+      "views": 964,
+      "interactions": 25
      },
      "客家音樂": {
-      "posts": 1,
-      "likes": 7,
-      "reach": 144,
+      "posts": 2,
+      "likes": 13,
+      "reach": 231,
       "shares": 0,
       "comments": 0,
-      "views": 510,
-      "interactions": 7
+      "views": 817,
+      "interactions": 13
      },
      "日常情境互動": {
+      "posts": 2,
+      "likes": 20,
+      "reach": 249,
+      "shares": 0,
+      "comments": 2,
+      "views": 848,
+      "interactions": 23
+     },
+     "客庄生活": {
       "posts": 1,
       "likes": 8,
-      "reach": 97,
+      "reach": 172,
       "shares": 0,
       "comments": 1,
-      "views": 333,
-      "interactions": 10
+      "views": 644,
+      "interactions": 9
      },
      "未分類": {
-      "posts": 24,
+      "posts": 17,
       "likes": 0,
       "reach": 0,
       "shares": 0,
@@ -2848,7 +2866,6 @@ const DASHBOARD_DATA = {
    }
   },
   "weeks": [
-   "2026-06-08",
    "2026-06-15",
    "2026-06-22",
    "2026-06-29",
@@ -2860,11 +2877,11 @@ const DASHBOARD_DATA = {
    "2026-08-10",
    "2026-08-17",
    "2026-08-24",
-   "2026-08-31"
+   "2026-08-31",
+   "2026-09-07"
   ],
   "weeklyFb": {
    "posts": [
-    10,
     11,
     11,
     13,
@@ -2876,10 +2893,10 @@ const DASHBOARD_DATA = {
     12,
     10,
     9,
-    10
+    10,
+    12
    ],
    "likes": [
-    298,
     831,
     450,
     1055,
@@ -2891,10 +2908,10 @@ const DASHBOARD_DATA = {
     434,
     744,
     289,
-    278
+    293,
+    547
    ],
    "reach": [
-    5876,
     24516,
     9519,
     24035,
@@ -2906,10 +2923,10 @@ const DASHBOARD_DATA = {
     7501,
     15279,
     5502,
-    4498
+    4710,
+    12550
    ],
    "shares": [
-    349,
     266,
     409,
     397,
@@ -2921,10 +2938,10 @@ const DASHBOARD_DATA = {
     288,
     259,
     286,
-    179
+    199,
+    331
    ],
    "comments": [
-    89,
     161,
     150,
     120,
@@ -2936,10 +2953,10 @@ const DASHBOARD_DATA = {
     54,
     78,
     23,
-    30
+    32,
+    165
    ],
    "interactions": [
-    736,
     1253,
     1005,
     1583,
@@ -2951,12 +2968,12 @@ const DASHBOARD_DATA = {
     783,
     1094,
     602,
-    490
+    527,
+    1050
    ]
   },
   "weeklyIg": {
    "posts": [
-    10,
     11,
     11,
     13,
@@ -2968,10 +2985,10 @@ const DASHBOARD_DATA = {
     12,
     10,
     8,
-    11
+    11,
+    12
    ],
    "likes": [
-    175,
     213,
     166,
     313,
@@ -2983,10 +3000,10 @@ const DASHBOARD_DATA = {
     254,
     205,
     139,
-    199
+    199,
+    170
    ],
    "reach": [
-    1575,
     1572,
     1459,
     2625,
@@ -2998,10 +3015,10 @@ const DASHBOARD_DATA = {
     2915,
     2751,
     1564,
-    1709
+    1709,
+    2298
    ],
    "shares": [
-    1,
     27,
     2,
     6,
@@ -3013,10 +3030,10 @@ const DASHBOARD_DATA = {
     9,
     12,
     1,
-    48
+    48,
+    5
    ],
    "comments": [
-    82,
     61,
     49,
     53,
@@ -3028,10 +3045,10 @@ const DASHBOARD_DATA = {
     11,
     22,
     3,
-    24
+    24,
+    12
    ],
    "interactions": [
-    259,
     309,
     220,
     379,
@@ -3043,10 +3060,299 @@ const DASHBOARD_DATA = {
     280,
     247,
     151,
-    280
+    280,
+    196
    ]
   },
   "recentPosts": [
+   {
+    "date": "2026-09-13",
+    "plat": "ig",
+    "topic": "客家音樂",
+    "title": "🎶打破刻板！阿婆口頭禪變身潮流電音🎶 阿婆的口頭禪也能變得很潮！ 唱跳歌手羅昊元將童年記憶裡的溫暖客語 揉合強烈電音與重節奏舞蹈 打造爆發力十足的《KIA》 從苦學客語到選秀冠軍 他用音樂證明：客家文化也可以非常時尚、很有型！ 👇共下來聽《KIA》👇 https://youtu.be/Y-_grIH17ic?si=j6uLMGx0iY-I75Hy 📍時髦：時髦📍 四縣腔：siiˇ moˊ 海陸腔：shi moˋ 大埔腔：shiˇ mo+ 饒平腔：shi moˇ #時髦 #KIA #羅昊元 #哈客網路學院 #客家 #hakka 輪播廣告 hakka_e.learning_center",
+    "likes": 6,
+    "reach": 87,
+    "shares": 0,
+    "comments": 0,
+    "views": 307,
+    "interactions": 6
+   },
+   {
+    "date": "2026-09-13",
+    "plat": "fb",
+    "topic": "日常情境互動",
+    "title": "🎶打破刻板！阿婆口頭禪變身潮流電音🎶 阿婆的口頭禪也能變得很潮！ 唱跳歌手羅昊元將童年記憶裡的溫暖客語 揉合強烈電音與重節奏舞蹈 打造爆發力十足的《KIA》 從苦學客語到選秀冠軍 他用音樂證明：客家文化也可以非常時尚、很有型！ 👇共下來聽《KIA》👇 https://youtu.be/Y-_grIH17ic?si=j6uLMGx0iY-I75Hy 📍時髦：時髦📍 四縣腔：siiˇ moˊ 海陸腔：shi moˋ 大埔腔：shiˇ mo+ 饒平腔：shi moˇ 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #時髦 #KIA #羅昊元 #哈客網路學院 #客家 #hakka 多媒體 哈客網路學院 ",
+    "likes": 7,
+    "reach": 273,
+    "shares": 0,
+    "comments": 3,
+    "views": 409,
+    "interactions": 10
+   },
+   {
+    "date": "2026-09-12",
+    "plat": "ig",
+    "topic": "機動貼文",
+    "title": "阿強哥打嘴鼓EP10-芥菜 其餘腔調可以參考我們的貼文喔🤗 Reel hakka_e.learning_center",
+    "likes": 25,
+    "reach": 271,
+    "shares": 2,
+    "comments": 3,
+    "views": 526,
+    "interactions": 31
+   },
+   {
+    "date": "2026-09-12",
+    "plat": "ig",
+    "topic": "疊字疊起來",
+    "title": "👣【雨後的路，漬漬灂灂】 「漬漬灂灂」是走在積水路面時 腳步踩過水窪發出的聲響👣 剛下過一場大雨 路上處處都是積水 每走一步，鞋襪都快溼透了！ 🗒️漬漬灂灂：指在積水路面行走時發出的聲響，也可說「漬漬浙浙」🗒️ 四縣腔：jid jid jiog jiog 海陸腔：zidˋ zidˋ ziogˋ ziogˋ 大埔腔：zidˋ zidˋ ziogˋ ziogˋ 饒平腔：zid zid ziog ziog 詔安腔：zidˋ zidˋ ziogˋ ziogˋ #高級 #客語疊字 #客語狀聲詞 #每日一客語 #漬漬灂灂 #哈客網路學院 #逐日一客語 #hakka 輪播廣告 hakka_e.learnin",
+    "likes": 12,
+    "reach": 162,
+    "shares": 0,
+    "comments": 0,
+    "views": 543,
+    "interactions": 14
+   },
+   {
+    "date": "2026-09-12",
+    "plat": "fb",
+    "topic": "機動貼文",
+    "title": "阿強哥打嘴鼓EP10-芥菜 其餘腔調可以參考我們的貼文喔🤗 Reel 哈客網路學院 Hakka e-Learning Center",
+    "likes": 123,
+    "reach": 2776,
+    "shares": 4,
+    "comments": 10,
+    "views": 2789,
+    "interactions": 142
+   },
+   {
+    "date": "2026-09-12",
+    "plat": "fb",
+    "topic": "客家音樂",
+    "title": "👣【雨後的路，漬漬灂灂】 「漬漬灂灂」是走在積水路面時 腳步踩過水窪發出的聲響👣 剛下過一場大雨 路上處處都是積水 每走一步，鞋襪都快溼透了！ 🗒️漬漬灂灂：指在積水路面行走時發出的聲響，也可說「漬漬浙浙」🗒️ 四縣腔：jid jid jiog jiog 海陸腔：zidˋ zidˋ ziogˋ ziogˋ 大埔腔：zidˋ zidˋ ziogˋ ziogˋ 饒平腔：zid zid ziog ziog 詔安腔：zidˋ zidˋ ziogˋ ziogˋ 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #高級 #客語疊字 #客語狀聲詞 #每日一客語 #漬漬灂灂 #哈客網路學院 #逐日一客語 #hak",
+    "likes": 18,
+    "reach": 823,
+    "shares": 2,
+    "comments": 1,
+    "views": 1289,
+    "interactions": 21
+   },
+   {
+    "date": "2026-09-11",
+    "plat": "ig",
+    "topic": "AI主播",
+    "title": "【每日一客語AI主播】✨「水與客庄」系列活動正式啟動 40個民間團體帶路探索客庄水文化✨ 古秀妃主委9月2號宣布 「水摎客庄」系列活動正式啟動👏 邀請大家共下行入客庄 了解水摎客家文化還過環境永續个故事🙌 #哈客網路學院 #每日一客語AI主播 #逐日一客語 #客家委員會 #客家話好簡單 #hakka #hakkalanguage Reel hakka_e.learning_center",
+    "likes": 5,
+    "reach": 118,
+    "shares": 0,
+    "comments": 0,
+    "views": 251,
+    "interactions": 5
+   },
+   {
+    "date": "2026-09-11",
+    "plat": "ig",
+    "topic": "今天吃什麼",
+    "title": "🧧【今天吃什麼｜用「粄印」做紅粄】 你有看過紅粄上的龜甲花紋嗎？ 這些圖案就是用「粄印」壓出來的 「粄印」是指製作粄食時，用來塑形、印花的模具 今天就用它，一起做出軟Q香甜的紅粄！ 👉準備材料 糯米粉、紅豆沙、砂糖、紅麴粉、水、植物油、香蕉葉或烘焙紙 👉簡單做法 1️⃣ 取少量糯米粉加水揉成粉糰，放入滾水煮熟做成「粄粹」 2️⃣ 加入其餘糯米粉、砂糖及紅麴粉，水分次加入，揉成光滑粉糰 3️⃣ 分成小糰包入紅豆沙，粄印抹薄油後壓出龜甲花紋 4️⃣ 放在抹油的香蕉葉或烘焙紙上，以中火蒸約15至20分鐘即可 🗒️粄印：印紅粄的模子，用來將粄塑形並印上圖案🗒️ 四縣腔：banˋ in 海陸腔：banˊ",
+    "likes": 12,
+    "reach": 159,
+    "shares": 0,
+    "comments": 0,
+    "views": 543,
+    "interactions": 12
+   },
+   {
+    "date": "2026-09-11",
+    "plat": "fb",
+    "topic": "AI主播",
+    "title": "【每日一客語AI主播】✨「水與客庄」系列活動正式啟動 40個民間團體帶路探索客庄水文化✨ 古秀妃主委9月2號宣布 「水摎客庄」系列活動正式啟動👏 邀請大家共下行入客庄 了解水摎客家文化還過環境永續个故事🙌 #哈客網路學院 #每日一客語AI主播 #逐日一客語 #客家委員會 #客家話好簡單 #hakka #hakkalanguage Reel 哈客網路學院 Hakka e-Learning Center",
+    "likes": 8,
+    "reach": 346,
+    "shares": 1,
+    "comments": 0,
+    "views": 378,
+    "interactions": 9
+   },
+   {
+    "date": "2026-09-11",
+    "plat": "fb",
+    "topic": "今天吃什麼",
+    "title": "🧧【今天吃什麼｜用「粄印」做紅粄】 你有看過紅粄上的龜甲花紋嗎？ 這些圖案就是用「粄印」壓出來的 「粄印」是指製作粄食時，用來塑形、印花的模具 今天就用它，一起做出軟Q香甜的紅粄！ 👉準備材料 糯米粉、紅豆沙、砂糖、紅麴粉、水、植物油、香蕉葉或烘焙紙 👉簡單做法 1️⃣ 取少量糯米粉加水揉成粉糰，放入滾水煮熟做成「粄粹」 2️⃣ 加入其餘糯米粉、砂糖及紅麴粉，水分次加入，揉成光滑粉糰 3️⃣ 分成小糰包入紅豆沙，粄印抹薄油後壓出龜甲花紋 4️⃣ 放在抹油的香蕉葉或烘焙紙上，以中火蒸約15至20分鐘即可 🗒️粄印：印紅粄的模子，用來將粄塑形並印上圖案🗒️ 四縣腔：banˋ in 海陸腔：banˊ",
+    "likes": 13,
+    "reach": 281,
+    "shares": 0,
+    "comments": 1,
+    "views": 551,
+    "interactions": 14
+   },
+   {
+    "date": "2026-09-10",
+    "plat": "ig",
+    "topic": "機動貼文",
+    "title": "🎉【FB粉專8,000位哈粉達成｜IG也來同樂】🎉 哈客網路學院FB粉專達成8,000位哈粉啦！🙌 謝謝大家一路以來的支持與陪伴💛 送上一首可愛的「客語手指謠」🎶 伸出手、跟著節奏唱， 一起為8,000位哈粉拍拍手吧！👏 💬你最喜歡哪一隻手指角色？留言告訴我們！ #哈客網路學院 #8000位哈粉 #客語手指謠 #客語學習 #客家文化 #hakka Reel hakka_e.learning_center",
+    "likes": 41,
+    "reach": 446,
+    "shares": 3,
+    "comments": 3,
+    "views": 768,
+    "interactions": 51
+   },
+   {
+    "date": "2026-09-10",
+    "plat": "ig",
+    "topic": "社會議題",
+    "title": "🙏2026年中尼邊境土石流災害🙏 日前中尼邊境吉隆口岸區域 突發嚴重冰川崩塌與土石流災害 造成許多寶貴生命的逝去與嚴重災情 哈客網路學院向所有搜救人員致以敬意 也祈願逝者安息、傷者早日康復、失聯者平安歸來 📍山洪：山洪📍 四縣腔：sanˊ fungˇ 海陸腔：sanˋ fung 大埔腔：san+ fungˇ 饒平腔：sanˇ fung 詔安腔：sanˇ fungˋ #山洪 #土石流 #哈客網路學院 #客家 #hakka 輪播廣告 hakka_e.learning_center",
+    "likes": 10,
+    "reach": 135,
+    "shares": 0,
+    "comments": 1,
+    "views": 488,
+    "interactions": 11
+   },
+   {
+    "date": "2026-09-10",
+    "plat": "fb",
+    "topic": "機動貼文",
+    "title": "🎉【8,000位哈粉達成｜共下牽手學客語】🎉 8,000不只是一個數字， 更是8,000份對客語學習的支持與陪伴💛 謝謝每一位一路陪著哈客網路學院成長的哈粉！ 今天特別送大家一支可愛的「客語手指謠」 讓我們來為自己拍拍手吧！🎶 伸出你的手，共下來唱唱看！ @追蹤者 #哈客網路學院 #8000位哈粉 #客語手指謠 #客語學習 #客家文化 #hakka Reel 哈客網路學院 Hakka e-Learning Center",
+    "likes": 63,
+    "reach": 828,
+    "shares": 37,
+    "comments": 10,
+    "views": 1183,
+    "interactions": 111
+   },
+   {
+    "date": "2026-09-10",
+    "plat": "fb",
+    "topic": "疊字疊起來",
+    "title": "🙏2026年中尼邊境土石流災害🙏 日前中尼邊境吉隆口岸區域 突發嚴重冰川崩塌與土石流災害 造成許多寶貴生命的逝去與嚴重災情 哈客網路學院向所有搜救人員致以敬意 也祈願逝者安息、傷者早日康復、失聯者平安歸來 📍山洪：山洪📍 四縣腔：sanˊ fungˇ 海陸腔：sanˋ fung 大埔腔：san+ fungˇ 饒平腔：sanˇ fung 詔安腔：sanˇ fungˋ 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #山洪 #土石流 #哈客網路學院 #客家 #hakka 多媒體 哈客網路學院 Hakka e-Learning Center",
+    "likes": 14,
+    "reach": 150,
+    "shares": 1,
+    "comments": 3,
+    "views": 272,
+    "interactions": 18
+   },
+   {
+    "date": "2026-09-09",
+    "plat": "ig",
+    "topic": "語錄系列",
+    "title": "【難過時，陪著就好】 「十二月个芥菜－－傷心」－客家歇後語 有些難過 不是一句「想開一點」就能放下 真正的安慰 不是催著對方趕快振作 而是陪他慢慢走過傷心的時候。 🗒️十二月个芥菜－－傷心：十二月的芥菜菜心已經要開花、變老，以「上心」與「傷心」諧音雙關，比喻心裡悲傷、難過🗒️ 四縣腔：siib ngi ngied ge gie coi－－songˊ ximˊ【siib ngi ngiad ge gie coi －－songˊ ximˊ】 海陸腔：shibˋ ngi+ ngiedˋ gaiˇ gaiˇ coiˇ－－shongˋ simˋ 饒平腔：shib ngiˊ ngied gaiˋ gaiˋ",
+    "likes": 9,
+    "reach": 133,
+    "shares": 0,
+    "comments": 1,
+    "views": 424,
+    "interactions": 12
+   },
+   {
+    "date": "2026-09-09",
+    "plat": "fb",
+    "topic": "語錄系列",
+    "title": "【難過時，陪著就好】 「十二月个芥菜－－傷心」－客家歇後語 有些難過 不是一句「想開一點」就能放下 真正的安慰 不是催著對方趕快振作 而是陪他慢慢走過傷心的時候。 🗒️十二月个芥菜－－傷心：十二月的芥菜菜心已經要開花、變老，以「上心」與「傷心」諧音雙關，比喻心裡悲傷、難過🗒️ 四縣腔：siib ngi ngied ge gie coi－－songˊ ximˊ【siib ngi ngiad ge gie coi －－songˊ ximˊ】 海陸腔：shibˋ ngi+ ngiedˋ gaiˇ gaiˇ coiˇ－－shongˋ simˋ 饒平腔：shib ngiˊ ngied gaiˋ gaiˋ",
+    "likes": 20,
+    "reach": 490,
+    "shares": 23,
+    "comments": 1,
+    "views": 895,
+    "interactions": 44
+   },
+   {
+    "date": "2026-09-08",
+    "plat": "ig",
+    "topic": "客庄生活",
+    "title": "📣【基礎級暨初級全國認證】列車即將進站📣 請買好票的旅客於9/12及9/20準時上車 別忘了把握考前時間抓緊刷題 來哈客網路學院 五大腔調聽力閱讀隨手練 提前適應考場車速 順利一路開往通過認證終點站！ 👇快來【哈客網路學院】考前衝刺👇 https://elearning.hakka.gov.tw/mooc/index.php 📍合格：合格、及格📍 四縣腔：hab giedˋ 海陸腔：habˋ gied 大埔腔：habˋ gied^ 饒平腔：hab giedˋ 詔安腔：habˋ gaˊ #合格 #客語認證 #哈客網路學院 #客家 #hakka 輪播廣告 hakka_e.learning_cent",
+    "likes": 8,
+    "reach": 172,
+    "shares": 0,
+    "comments": 1,
+    "views": 644,
+    "interactions": 9
+   },
+   {
+    "date": "2026-09-08",
+    "plat": "fb",
+    "topic": "社會議題",
+    "title": "📣【基礎級暨初級全國認證】列車即將進站📣 請買好票的旅客於9/12及9/20準時上車 別忘了把握考前時間抓緊刷題 來哈客網路學院 五大腔調聽力閱讀隨手練 提前適應考場車速 順利一路開往通過認證終點站！ 👇快來【哈客網路學院】考前衝刺👇 https://elearning.hakka.gov.tw/mooc/index.php 📍合格：合格、及格📍 四縣腔：hab giedˋ 海陸腔：habˋ gied 大埔腔：habˋ gied^ 饒平腔：hab giedˋ 詔安腔：habˋ gaˊ 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #合格 #客語認證 #哈客網路學院 #客家 #hakka 多媒體",
+    "likes": 29,
+    "reach": 513,
+    "shares": 44,
+    "comments": 4,
+    "views": 1006,
+    "interactions": 77
+   },
+   {
+    "date": "2026-09-07",
+    "plat": "ig",
+    "topic": "機動貼文",
+    "title": "🎉【HakkaGO 遊戲挑戰賽｜8月中獎名單公布】🎉 🏆 8月份「個人每月積分排行榜」前10名出爐啦！ 恭喜本次中獎的10位玩家👏 📩 中獎通知將以 Email 寄出，請留意收件匣及垃圾郵件匣，並於 9/11（五）23：59 前依信件說明完成回復，逾期視同放棄領獎資格。 每月排行榜皆獨立計算，9月份挑戰持續進行中！ 現在就登入 HakkaGO 繼續闖關、累積積分，下次榜上有名的可能就是你✨ 👇活動入口與詳細資訊請見置頂留言👇 #哈客網路學院 #HakkaGO #HakkaGO遊戲挑戰賽 #中獎公告 #客語學習 #hakka 相片 hakka_e.learning_center",
+    "likes": 15,
+    "reach": 264,
+    "shares": 0,
+    "comments": 1,
+    "views": 616,
+    "interactions": 16
+   },
+   {
+    "date": "2026-09-07",
+    "plat": "ig",
+    "topic": "機動貼文",
+    "title": "🎯【自學大擂臺-客語拼音學習】🎯 看到客語漢字，卻不知道該怎麼唸？ 想學客語，就從拼音基本功開始！ 哈客網路學院「自學大擂臺」正式開跑🎉 認識「客語拼音學習」共下來闖關、學客語，還有機會獲得好禮🎁 📅活動期間 115年9月7日（00:00）至115年9月27日（23:59），共3週。 (預計於10月8日公告得獎名單) 🎉活動詳情請見【哈客網路學院】臉書粉絲團🎉 相片 hakka_e.learning_center",
+    "likes": 15,
+    "reach": 199,
+    "shares": 0,
+    "comments": 1,
+    "views": 491,
+    "interactions": 16
+   },
+   {
+    "date": "2026-09-07",
+    "plat": "ig",
+    "topic": "日常情境互動",
+    "title": "📝0908國際新聞工作者日📸 不論風雨或現場 感謝有你們為大眾穿梭第一線 傳遞最真實的聲音與故事！ 在9月8日國際新聞工作者日 向所有堅守崗位、勇敢追尋真相的新聞工作者 致以最高敬意👏 📍新聞：新聞📍 四縣腔：xinˊ vunˇ 海陸腔：sinˋ vun 大埔腔：sin+ vunˇ 饒平腔：sinˇ vun【sinˇ vunˋ】 詔安腔：sinˇ bbunˋ #新聞 #國際新聞工作者日 #哈客網路學院 #客家 #hakka 輪播廣告 hakka_e.learning_center",
+    "likes": 12,
+    "reach": 152,
+    "shares": 0,
+    "comments": 1,
+    "views": 515,
+    "interactions": 13
+   },
+   {
+    "date": "2026-09-07",
+    "plat": "fb",
+    "topic": "機動貼文",
+    "title": "🎉【HakkaGO 遊戲挑戰賽｜8月中獎名單公布】🎉 🏆 8月份「個人每月積分排行榜」前10名出爐啦！ 恭喜本次中獎的10位玩家👏 📩 中獎通知將以 Email 寄出，請留意收件匣及垃圾郵件匣，並於 9/11（五）23：59 前依信件說明完成回復，逾期視同放棄領獎資格。 每月排行榜皆獨立計算，9月份挑戰持續進行中！ 現在就登入 HakkaGO 繼續闖關、累積積分，下次榜上有名的可能就是你✨ 👇活動入口與詳細資訊請見置頂留言👇 #哈客網路學院 #HakkaGO #HakkaGO遊戲挑戰賽 #中獎公告 #客語學習 #hakka 相片 哈客網路學院 Hakka e-Learning Center",
+    "likes": 29,
+    "reach": 846,
+    "shares": 13,
+    "comments": 2,
+    "views": 1636,
+    "interactions": 44
+   },
+   {
+    "date": "2026-09-07",
+    "plat": "fb",
+    "topic": "機動貼文",
+    "title": "🎯【自學大擂臺-客語拼音學習】🎯 看到客語漢字，卻不知道該怎麼唸？ 想學客語，就從拼音基本功開始！ 哈客網路學院「自學大擂臺」正式開跑🎉 認識「客語拼音學習」共下來闖關、學客語，還有機會獲得好禮🎁 📅活動期間 115年9月7日（00:00）至115年9月27日（23:59），共3週。 (預計於10月8日公告得獎名單) 📌參加方式 1️⃣追蹤哈客網路學院 Facebook 粉絲專頁。 2️⃣按讚並公開分享本篇活動貼文。 3️⃣點擊本篇置頂留言連結，進入哈客網路學院「客語拼音學習」。 4️⃣ 在本篇留言處附上「客語拼音學習」任一畫面截圖，並留言「選項＋@朋友」 💬留言題目 學客語時，你最常卡在哪一",
+    "likes": 199,
+    "reach": 4827,
+    "shares": 172,
+    "comments": 128,
+    "views": 9023,
+    "interactions": 500
+   },
+   {
+    "date": "2026-09-07",
+    "plat": "fb",
+    "topic": "客庄生活",
+    "title": "📝0908國際新聞工作者日📸 不論風雨或現場 感謝有你們為大眾穿梭第一線 傳遞最真實的聲音與故事！ 在9月8日國際新聞工作者日 向所有堅守崗位、勇敢追尋真相的新聞工作者 致以最高敬意👏 📍新聞：新聞📍 四縣腔：xinˊ vunˇ 海陸腔：sinˋ vun 大埔腔：sin+ vunˇ 饒平腔：sinˇ vun【sinˇ vunˋ】 詔安腔：sinˇ bbunˋ 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #新聞 #國際新聞工作者日 #哈客網路學院 #客家 #hakka 多媒體 哈客網路學院 Hakka e-Learning Center",
+    "likes": 24,
+    "reach": 397,
+    "shares": 34,
+    "comments": 2,
+    "views": 867,
+    "interactions": 60
+   },
    {
     "date": "2026-09-06",
     "plat": "ig",
@@ -3064,12 +3370,12 @@ const DASHBOARD_DATA = {
     "plat": "fb",
     "topic": "日常情境互動",
     "title": "📣白露到秋意濃，早晚加衣別著涼📣 「白露秋分夜，一夜冷一夜」🥶 不知道哈粉們有沒有聽過這句俗諺呢？ 而明天就是二十四節氣中的「白露」😮 白露象徵秋意漸濃，清晨花草凝結晶瑩露珠💧 晝夜溫差也跟著變大🍂 記得早晚加件外套保暖🧣 順便來杯潤燥的「白露茶」，一起舒適迎接金秋😄 📍白露：白露📍 四縣腔：ped lu / pag lu 海陸腔：pedˋ luˇ/ pagˋ luˇ 大埔腔：pedˋ luˋ 饒平腔：ped luˋ / pag luˋ【pag lu^】【pag lu】 詔安腔：pa lu 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #白露 #二十四節氣 #哈客網路學院 #客家 #hakka",
-    "likes": 15,
-    "reach": 221,
-    "shares": 11,
-    "comments": 2,
-    "views": 393,
-    "interactions": 28
+    "likes": 30,
+    "reach": 433,
+    "shares": 31,
+    "comments": 4,
+    "views": 872,
+    "interactions": 65
    },
    {
     "date": "2026-09-05",
@@ -4390,150 +4696,6 @@ const DASHBOARD_DATA = {
     "comments": 2,
     "views": 506,
     "interactions": 45
-   },
-   {
-    "date": "2026-07-30",
-    "plat": "ig",
-    "topic": "日常情境互動",
-    "title": "🔥三伏天來啦🔥 但是什麼是三伏天🤔 就是一年中最熱的時期，分為初、中、末伏😮 通常落在七月中旬至八月中旬，共30至40天 此時人體陽氣最旺，調理身體的好時節🤩 此時中醫會利用「三伏貼」 來冬病夏治以改善過敏等身體狀況😆 有興趣的朋友可以去試試看喔🙌 📍三伏天：三伏天📍 四縣腔：samˊ fug tienˊ 海陸腔：samˋ fugˋ tienˋ 大埔腔：sam+ fugˋ tien+ 饒平腔：samˇ fug tienˇ 詔安腔：samˇ fu teenˇ #三伏天 #夏天 #哈客網路學院 #客家 #hakka 輪播廣告 hakka_e.learning_center",
-    "likes": 9,
-    "reach": 125,
-    "shares": 0,
-    "comments": 1,
-    "views": 397,
-    "interactions": 10
-   },
-   {
-    "date": "2026-07-30",
-    "plat": "fb",
-    "topic": "日常情境互動",
-    "title": "🔥三伏天來啦🔥 但是什麼是三伏天🤔 就是一年中最熱的時期，分為初、中、末伏😮 通常落在七月中旬至八月中旬，共30至40天 此時人體陽氣最旺，調理身體的好時節🤩 此時中醫會利用「三伏貼」 來冬病夏治以改善過敏等身體狀況😆 有興趣的朋友可以去試試看喔🙌 📍三伏天：三伏天📍 四縣腔：samˊ fug tienˊ 海陸腔：samˋ fugˋ tienˋ 大埔腔：sam+ fugˋ tien+ 饒平腔：samˇ fug tienˇ 詔安腔：samˇ fu teenˇ 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #三伏天 #夏天 #哈客網路學院 #客家 #hakka 多媒體 哈客網路學院 Hakka e",
-    "likes": 18,
-    "reach": 313,
-    "shares": 43,
-    "comments": 2,
-    "views": 502,
-    "interactions": 63
-   },
-   {
-    "date": "2026-07-29",
-    "plat": "ig",
-    "topic": "語錄系列",
-    "title": "【一定要問到底】 「問支柄來擎」－客家俗話諺語 有些人問問題 不是問一下就好😆 從「為什麼」 問到「原因是什麼」 不問出答案不罷休。 問得仔細是好事 但問太久，也會讓人有點招架不住🤣 🗒️問支柄來擎：打破砂鍋問到底，一定要問出所以然來，讓人覺得很煩🗒️ 四縣腔：mun giˊ biang loiˇ kiaˇ 海陸腔：munˇ giˋ biangˇ loi kia 大埔腔：munˋ gi+ biangˋ loiˇ kiaˇ 饒平腔：munˋ giˇ biangˋ loi kia 詔安腔：mun^ giˇ biang^ loiˋ kiaˋ #高級 #客家俗話諺語 #每日一客語 #問支柄來擎 #哈客",
-    "likes": 14,
-    "reach": 184,
-    "shares": 1,
-    "comments": 1,
-    "views": 613,
-    "interactions": 18
-   },
-   {
-    "date": "2026-07-29",
-    "plat": "fb",
-    "topic": "語錄系列",
-    "title": "【一定要問到底】 「問支柄來擎」－客家俗話諺語 有些人問問題 不是問一下就好😆 從「為什麼」 問到「原因是什麼」 不問出答案不罷休。 問得仔細是好事 但問太久，也會讓人有點招架不住🤣 @追蹤者 🗒️問支柄來擎：打破砂鍋問到底，一定要問出所以然來，讓人覺得很煩🗒️ 四縣腔：mun giˊ biang loiˇ kiaˇ 海陸腔：munˇ giˋ biangˇ loi kia 大埔腔：munˋ gi+ biangˋ loiˇ kiaˇ 饒平腔：munˋ giˇ biangˋ loi kia 詔安腔：mun^ giˇ biang^ loiˋ kiaˋ 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #",
-    "likes": 44,
-    "reach": 544,
-    "shares": 49,
-    "comments": 3,
-    "views": 906,
-    "interactions": 97
-   },
-   {
-    "date": "2026-07-28",
-    "plat": "ig",
-    "topic": "社會議題",
-    "title": "❗新型詐騙手法又來了❗ 新型「信用卡」詐騙是由駭客入侵飯店後台😱 直接利用訂房平台App聊天室或內部郵件發送訊息 告知受害者付款認證出問題、系統升級或安全檢查😣 或是重複下單需退款等等😫 防範時務必牢記幾點： 1️⃣不點擊外部分享連結 2️⃣主動向飯店官方查證 3️⃣認明官方防詐政策 4️⃣開啟雙重驗證 多一份求證，少一分詐騙💪 📍信用卡：信用卡📍 四縣腔：xin iung kaˇ【xin iung kaˋ】 海陸腔：sinˇ rhung+ kaˊ / sinˇ rhung+ ka 大埔腔：sinˋ rhungˋ ka^ 饒平腔：sinˋ rhiungˊ kaˋ【 sin^ rhiung ka",
-    "likes": 6,
-    "reach": 90,
-    "shares": 0,
-    "comments": 1,
-    "views": 309,
-    "interactions": 7
-   },
-   {
-    "date": "2026-07-28",
-    "plat": "fb",
-    "topic": "客庄生活",
-    "title": "❗新型詐騙手法又來了❗ 新型「信用卡」詐騙是由駭客入侵飯店後台😱 直接利用訂房平台App聊天室或內部郵件發送訊息 告知受害者付款認證出問題、系統升級或安全檢查😣 或是重複下單需退款等等😫 防範時務必牢記幾點： 1️⃣不點擊外部分享連結 2️⃣主動向飯店官方查證 3️⃣認明官方防詐政策 4️⃣開啟雙重驗證 多一份求證，少一分詐騙💪 📍信用卡：信用卡📍 四縣腔：xin iung kaˇ【xin iung kaˋ】 海陸腔：sinˇ rhung+ kaˊ / sinˇ rhung+ ka 大埔腔：sinˋ rhungˋ ka^ 饒平腔：sinˋ rhiungˊ kaˋ【 sin^ rhiung ka",
-    "likes": 16,
-    "reach": 92,
-    "shares": 42,
-    "comments": 1,
-    "views": 243,
-    "interactions": 59
-   },
-   {
-    "date": "2026-07-27",
-    "plat": "ig",
-    "topic": "客庄生活",
-    "title": "📣「客庄老屋再生示範輔導計畫」開始受理申請啦📣 由傳統匠師帶領學員修繕客庄老瓦屋🤩 傳承傳統工法、活化老屋並促進地方創生😄 有興趣的朋友歡迎來申請喔🙌 👇活動詳情，請至【客家委員會】官網查詢👇 https://www.hakka.gov.tw/chhakka/app/data/view?module=CountryHakkaEvents&id=332&serno=fd21c685-2657-4fad-adbb-abfbb25b7d35 📍老屋：老屋、老房子、老家、家鄉、祖居地、祖屋📍 四縣腔：loˋ vugˋ 海陸腔：loˊ vug 大埔腔：lo^ vug^ 饒平腔：loˋ vugˋ【 lo^",
-    "likes": 16,
-    "reach": 177,
-    "shares": 0,
-    "comments": 1,
-    "views": 548,
-    "interactions": 17
-   },
-   {
-    "date": "2026-07-27",
-    "plat": "fb",
-    "topic": "社會議題",
-    "title": "📣「客庄老屋再生示範輔導計畫」開始受理申請啦📣 由傳統匠師帶領學員修繕客庄老瓦屋🤩 傳承傳統工法、活化老屋並促進地方創生😄 有興趣的朋友歡迎來申請喔🙌 👇活動詳情，請至【客家委員會】官網查詢👇 https://www.hakka.gov.tw/chhakka/app/data/view?module=CountryHakkaEvents&id=332&serno=fd21c685-2657-4fad-adbb-abfbb25b7d35 📍老屋：老屋、老房子、老家、家鄉、祖居地、祖屋📍 四縣腔：loˋ vugˋ 海陸腔：loˊ vug 大埔腔：lo^ vug^ 饒平腔：loˋ vugˋ【 lo^",
-    "likes": 24,
-    "reach": 228,
-    "shares": 43,
-    "comments": 2,
-    "views": 467,
-    "interactions": 69
-   },
-   {
-    "date": "2026-07-26",
-    "plat": "ig",
-    "topic": "客家音樂",
-    "title": "🎶彭柏邑 Boiii P 【仰般形】🎶 在優美又帶點悲傷的旋律中 將不捨與無奈娓娓道來😊 一點一點唱進聽眾的心理 接下來就讓我們一起欣賞這首歌【仰般形】🤗 👇共下來聽這首歌《仰般形》👇 https://youtu.be/HDT4g8FA51A?si=bznBLqS5AOej3uYz 📍仰般形：怎麼樣、怎樣、如何、怎麼、什麼樣的個性和模樣📍 四縣腔：ngiongˋ banˊ hinˇ 海陸腔：ngiongˊ banˋ hin 饒平腔：ngiongˋ banˋ hin / ngiongˋ banˇ hin 【仰脣 ngiong^ sunˋ】 【 ngiong^ banˇ hinˋ】 👇查這句怎麼講",
-    "likes": 12,
-    "reach": 168,
-    "shares": 0,
-    "comments": 2,
-    "views": 526,
-    "interactions": 14
-   },
-   {
-    "date": "2026-07-26",
-    "plat": "fb",
-    "topic": "客家音樂",
-    "title": "🎶彭柏邑 Boiii P 【仰般形】🎶 在優美又帶點悲傷的旋律中 將不捨與無奈娓娓道來😊 一點一點唱進聽眾的心理 接下來就讓我們一起欣賞這首歌【仰般形】🤗 👇共下來聽這首歌《仰般形》👇 完整歌曲連結放在留言處～ 📍仰般形：怎麼樣、怎樣、如何、怎麼、什麼樣的個性和模樣📍 四縣腔：ngiongˋ banˊ hinˇ 海陸腔：ngiongˊ banˋ hin 饒平腔：ngiongˋ banˋ hin / ngiongˋ banˇ hin 【仰脣 ngiong^ sunˋ】 【 ngiong^ banˇ hinˋ】 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #仰般形 #彭柏邑 #哈客網路學院 #客",
-    "likes": 25,
-    "reach": 433,
-    "shares": 31,
-    "comments": 2,
-    "views": 706,
-    "interactions": 57
-   },
-   {
-    "date": "2026-07-25",
-    "plat": "ig",
-    "topic": "疊字疊起來",
-    "title": "【一句話也說得卡卡的】 明明只是一句簡單的話 一緊張就突然說不順😵‍💫 想好的內容 到了嘴邊卻變得斷斷續續 越急越講不清楚 這種說話不順暢的樣子 就可以說是「哽哽汩汩」😆 🗒️哽哽汩汩：不順暢，指說話或事情不順暢的樣子🗒️ 四縣腔：gangˇ gangˇ gud gud 海陸腔：gang gang gudˋ gudˋ 饒平腔：gang gang gud gud【gangˋ gangˋ gud gud】 詔安腔：gang^ gang^ gudˊ gudˊ #高級 #每日一客語 #哽哽汩汩 #哈客網路學院 #逐日一客語 #客家 #hakka 輪播廣告 hakka_e.learning_center",
-    "likes": 12,
-    "reach": 217,
-    "shares": 0,
-    "comments": 0,
-    "views": 668,
-    "interactions": 14
-   },
-   {
-    "date": "2026-07-25",
-    "plat": "fb",
-    "topic": "疊字疊起來",
-    "title": "【一句話也說得卡卡的】 明明只是一句簡單的話 一緊張就突然說不順😵‍💫 想好的內容 到了嘴邊卻變得斷斷續續 越急越講不清楚 這種說話不順暢的樣子 就可以說是「哽哽汩汩」😆 🗒️哽哽汩汩：不順暢，指說話或事情不順暢的樣子🗒️ 四縣腔：gangˇ gangˇ gud gud 海陸腔：gang gang gudˋ gudˋ 饒平腔：gang gang gud gud【gangˋ gangˋ gud gud】 詔安腔：gang^ gang^ gudˊ gudˊ 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #高級 #每日一客語 #哽哽汩汩 #哈客網路學院 #逐日一客語 #客家 #hakka 多媒體 哈",
-    "likes": 26,
-    "reach": 595,
-    "shares": 33,
-    "comments": 2,
-    "views": 1000,
-    "interactions": 60
    }
   ]
  },
