@@ -294,7 +294,7 @@
     </div>
     <div id="m-social-empty" style="display:none">
       <h2 class="sec">社群媒體成效</h2>
-      <p class="sec-note">社群自 115年1月 起開始經營,此月份尚無社群數據。</p>
+      <p class="sec-note" id="m-social-empty-note">社群自 115年1月 起開始經營,此月份尚無社群數據。</p>
     </div>
   </section>
 
@@ -633,11 +633,16 @@
       box.innerHTML = '<div class="empty-note">該月份頁面標題尚未細分,無明細數據<br>(細分標題自 114年12月 起)</div>';
     }
 
-    // 社群(FB/IG 分列)
+    // 社群(FB/IG 分列)。社群最新完整月可能落後 GA4 一個月;未定案的當月不顯示社群,改提示。
+    const socialLatestKey = D.socialLatestKey || G.keys[G.keys.length - 1];
     const si = socialIdx(key);
-    const hasSocial = si >= 0 && (S.fb.posts[si] + S.ig.posts[si]) > 0;
+    const pendingSocial = key > socialLatestKey;   // 該月 GA4 已有、但社群尚未定案
+    const hasSocial = si >= 0 && !pendingSocial && (S.fb.posts[si] + S.ig.posts[si]) > 0;
     document.getElementById("m-social-block").style.display = hasSocial ? "" : "none";
     document.getElementById("m-social-empty").style.display = hasSocial ? "none" : "";
+    document.getElementById("m-social-empty-note").textContent = pendingSocial
+      ? `${label}社群數據尚未完整彙整,暫以社群最新完整月(${D.latestLabel})為準,待月底資料補齊後更新。`
+      : "社群自 115年1月 起開始經營,此月份尚無社群數據。";
     if (!hasSocial) return;
 
     const sp = si > 0 ? si - 1 : null;
@@ -886,7 +891,7 @@
      年度趨勢與 KPI 視圖
      ============================================================ */
   // 社群趨勢僅取「完整月份」(與 GA4 最新月對齊,排除進行中月份)
-  const latestKey = G.keys[G.keys.length - 1];
+  const latestKey = D.socialLatestKey || G.keys[G.keys.length - 1];   // 社群趨勢以最新完整社群月為界
   const sTrendN = S.monthKeys.filter(k => k <= latestKey).length;
   const sLabels = S.monthLabels.slice(0, sTrendN);
   const sArr = (plat, m) => S[plat][m].slice(0, sTrendN);
