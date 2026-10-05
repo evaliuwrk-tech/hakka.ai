@@ -89,6 +89,13 @@ KPI = [
 ]
 LATEST_LABEL = "115年9月"   # 最新完整月份(KPI 當月成果之月份)
 
+# ---------- 粉絲追蹤總數(每週快照,由同事提供實際總數後逐筆新增) ----------
+# Excel 未記錄粉絲總數,故採每週人工快照。日期建議取每週固定一天(如週一)。
+# 起點:FB 於 2026-09-10 慶祝「8,000 位哈粉達成」,以此為 FB 錨點;IG 待首次提供。
+FOLLOWERS = [
+    {"date": "2026-09-10", "fb": 8000, "ig": None, "note": "FB 8,000 哈粉里程碑"},
+]
+
 # ---------- 分析報告(每次更新數據時由 Claude 依最新數據改寫) ----------
 ANALYSIS = {
     "period": "數據期間:114年10月~115年9月(月);115年7月6日~10月4日(週)",
@@ -200,6 +207,12 @@ data = {
     },
     "kpi": KPI,
     "analysis": ANALYSIS,
+    "followers": {
+        "snapshots": FOLLOWERS,
+        "weeks": social["weeks"],
+        "addsFb": [social.get("followerAdds", {}).get("fb", {}).get(w, 0) for w in social["weeks"]],
+        "addsIg": [social.get("followerAdds", {}).get("ig", {}).get(w, 0) for w in social["weeks"]],
+    },
 }
 
 header = (

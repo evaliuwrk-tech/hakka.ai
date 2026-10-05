@@ -70,9 +70,10 @@ recent_cutoff = TODAY - datetime.timedelta(days=RECENT_DAYS)
 
 wb = openpyxl.load_workbook(XLSX, data_only=True)
 out = {"months": MONTHS, "monthly": {}, "topics": {}, "weeks": [], "weekly": {},
-       "recentPosts": []}
+       "recentPosts": [], "followerAdds": {}}
 week_set = set()
 plat_rows = {}
+plat_adds = {}   # 每平臺 × 週 的「新增追蹤」加總(粉絲淨增估計)
 
 for sheet, key in (("FB", "fb"), ("IG", "ig")):
     ws = wb[sheet]
@@ -81,9 +82,11 @@ for sheet, key in (("FB", "fb"), ("IG", "ig")):
     like_col = "按讚數和心情數" if sheet == "IG" else "按讚數"
     idx = {n: header.index(n) for n in
            ["發佈日期", "貼文主題", "標題", like_col, "觸及人數", "分享次數", "留言數", "瀏覽次數", "互動次數"]}
+    add_col = next((i for i, h in enumerate(header) if h.endswith("新增追蹤")), None)
     monthly = {m: blank() for m in MONTHS}
     topics = {m: {} for m in MONTHS}
     weekly = {}
+    fadd = {}   # 週 -> 新增追蹤加總
     for r in rows[1:]:
         d = parse_date(r[idx["發佈日期"]])
         if d is None: continue
@@ -100,6 +103,8 @@ for sheet, key in (("FB", "fb"), ("IG", "ig")):
             week_set.add(wk)
             w = weekly.setdefault(wk, blank())
             add(w, r, idx, like_col)
+            if add_col is not None:
+                fadd[wk] = fadd.get(wk, 0) + num(r[add_col])
         # 日報:最近 N 天逐篇明細(排除未來日期的預排貼文與尚無數據的空白列)
         title = " ".join(str(r[idx["標題"]] or "").split())[:300]
         has_data = any(num(r[idx[c]]) for c in (like_col, "觸及人數", "瀏覽次數", "互動次數"))
@@ -118,11 +123,13 @@ for sheet, key in (("FB", "fb"), ("IG", "ig")):
     out["monthly"][key] = {m: intify(v) for m, v in monthly.items()}
     out["topics"][key] = {m: {t: intify(v) for t, v in tv.items()} for m, tv in topics.items()}
     plat_rows[key] = weekly
+    plat_adds[key] = fadd
 
 weeks = sorted(week_set)[-13:]   # 近 13 個完整週
 out["weeks"] = weeks
 for key in ("fb", "ig"):
     out["weekly"][key] = {w: intify(plat_rows[key].get(w, blank())) for w in weeks}
+    out["followerAdds"][key] = {w: int(plat_adds[key].get(w, 0)) for w in weeks}
 out["recentPosts"].sort(key=lambda p: (p["date"], p["plat"]), reverse=True)
 
 with open(OUT, "w", encoding="utf-8") as f:

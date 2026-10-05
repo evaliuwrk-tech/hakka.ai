@@ -227,6 +227,7 @@
     <button data-view="month" class="active">月報</button>
     <button data-view="week">週比較</button>
     <button data-view="day">日報</button>
+    <button data-view="followers">追蹤人數</button>
     <button data-view="trend">年度趨勢與KPI</button>
     <button data-view="report">分析報告</button>
   </nav>
@@ -362,6 +363,28 @@
     <div class="card" style="margin-top:14px">
       <h3><span class="plat-chip ig">Instagram</span> 每日最佳</h3>
       <div class="tbl-scroll"><table class="data daily-best" id="d-best-ig"></table></div>
+    </div>
+  </section>
+
+  <!-- ================= 追蹤人數 ================= -->
+  <section class="view" id="view-followers">
+    <h2 class="sec">社群追蹤人數趨勢(每週)</h2>
+    <p class="sec-note">每週由同事提供 FB/IG 粉絲總數,累積成長趨勢;Excel 未記錄總數,故採人工週快照。</p>
+    <div class="tiles" id="f-tiles"></div>
+    <div class="card wide">
+      <h3>粉絲總數趨勢</h3>
+      <p class="cap">FB / IG 每週粉絲總數(人工快照)</p>
+      <div class="chart-box tall"><canvas id="f-total"></canvas></div>
+    </div>
+    <details class="tbl" open>
+      <summary>粉絲總數紀錄表</summary>
+      <div class="tbl-scroll"><table class="data" id="f-table"></table></div>
+    </details>
+
+    <h2 class="sec">每週新增追蹤(參考)</h2>
+    <p class="sec-note">依 Excel「新增追蹤」欄每週加總;該欄填寫零星,實際成長可能更高,僅供參考。</p>
+    <div class="card wide">
+      <div class="chart-box"><canvas id="f-adds"></canvas></div>
     </div>
   </section>
 
@@ -1004,11 +1027,82 @@
   }
 
   /* ---------- 視圖切換 ---------- */
-  const built = { month: false, week: false, day: false, trend: false, report: true };
+  /* ============================================================
+     追蹤人數視圖(粉絲總數週快照 + 每週新增追蹤)
+     ============================================================ */
+  function buildFollowers() {
+    const F = D.followers || { snapshots: [], weeks: [], addsFb: [], addsIg: [] };
+    const snaps = (F.snapshots || []).slice().sort((a, b) => a.date < b.date ? -1 : 1);
+    const c = C();
+    const mdy = iso => { const d = new Date(iso + "T00:00:00"); return `${d.getMonth() + 1}/${d.getDate()}`; };
+
+    // 指標卡:最新總數 + 較前次快照變化
+    function ft(label, key) {
+      const pts = snaps.filter(s => s[key] != null);
+      if (!pts.length) return tile(label, "—", "尚無資料,待同事提供");
+      const last = pts[pts.length - 1], prev = pts[pts.length - 2];
+      const ds = !prev ? "起始值,待下週比較"
+        : `<span class="${last[key] - prev[key] >= 0 ? "up" : "down"}">${last[key] - prev[key] >= 0 ? "+" : ""}${fmt(last[key] - prev[key])}</span> 較前次(${mdy(prev.date)})`;
+      return tile(`${label}(至 ${mdy(last.date)})`, fmt(last[key]), ds);
+    }
+    document.getElementById("f-tiles").innerHTML = ft("FB 粉絲總數", "fb") + ft("IG 粉絲總數", "ig");
+
+    // 粉絲總數折線(總量不從 0 起,spanGaps 跳過未填值)
+    makeChart("f-total", {
+      type: "line",
+      data: {
+        labels: snaps.map(s => mdy(s.date)),
+        datasets: [
+          { label: "Facebook", data: snaps.map(s => s.fb), borderColor: c.s1, backgroundColor: c.s1, borderWidth: 2, pointRadius: 4, pointHoverRadius: 6, tension: 0.2, spanGaps: true },
+          { label: "Instagram", data: snaps.map(s => s.ig), borderColor: c.s2, backgroundColor: c.s2, borderWidth: 2, pointRadius: 4, pointHoverRadius: 6, tension: 0.2, spanGaps: true },
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: { labels: { color: c.ink2, boxWidth: 12, boxHeight: 12, usePointStyle: true } },
+          tooltip: { callbacks: { label: ctx => ctx.parsed.y == null ? null : ` ${ctx.dataset.label}:${fmt(ctx.parsed.y)}` } }
+        },
+        scales: { x: { grid: { display: false } }, y: { beginAtZero: false, ticks: numTicks, grid: { color: c.grid } } }
+      }
+    });
+
+    // 紀錄表(含週變化)
+    function rows(key) {
+      let prev = null;
+      return snaps.map(s => {
+        let d = "—";
+        if (s[key] != null) { d = prev != null ? (s[key] - prev >= 0 ? "+" : "") + fmt(s[key] - prev) : "—"; prev = s[key]; }
+        return s[key] == null ? "—" : `${fmt(s[key])}（${d}）`;
+      });
+    }
+    const fbCol = rows("fb"), igCol = rows("ig");
+    document.getElementById("f-table").innerHTML =
+      `<tr><th>日期</th><th>FB 粉絲(週變化)</th><th>IG 粉絲(週變化)</th><th>備註</th></tr>` +
+      snaps.map((s, i) => `<tr><td>${mdy(s.date)}</td><td>${fbCol[i]}</td><td>${igCol[i]}</td><td style="text-align:left">${s.note || ""}</td></tr>`).join("");
+
+    // 每週新增追蹤(參考,來自 Excel)
+    const wlabels = (F.weeks || []).map(w => { const d = new Date(w + "T00:00:00"), e = new Date(d); e.setDate(d.getDate() + 6); return `${d.getMonth() + 1}/${d.getDate()}`; });
+    makeChart("f-adds", {
+      type: "bar",
+      data: {
+        labels: wlabels,
+        datasets: [
+          { label: "FB 新增", data: F.addsFb || [], backgroundColor: c.s1, borderRadius: 4, maxBarThickness: 22 },
+          { label: "IG 新增", data: F.addsIg || [], backgroundColor: c.s2, borderRadius: 4, maxBarThickness: 22 },
+        ]
+      },
+      options: baseOpts()
+    });
+  }
+
+  const built = { month: false, week: false, day: false, followers: false, trend: false, report: true };
   function buildView(v) {
     if (v === "month") renderMonth();
     else if (v === "week") { renderWeek(); buildWeekCharts(); }
     else if (v === "day") { renderDay(); buildDayTable(); }
+    else if (v === "followers") buildFollowers();
     else if (v === "trend") buildTrend();
     built[v] = true;
   }
