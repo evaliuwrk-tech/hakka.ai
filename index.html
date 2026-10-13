@@ -224,12 +224,12 @@
     <span class="sub" id="updated-note"></span>
   </div>
   <nav class="tabs" id="tabs">
-    <button data-view="month" class="active">月報</button>
-    <button data-view="week">週比較</button>
-    <button data-view="day">日報</button>
+    <button data-view="day" class="active">日報</button>
+    <button data-view="week">週報</button>
+    <button data-view="month">月報</button>
     <button data-view="followers">追蹤人數</button>
-    <button data-view="trend">年度趨勢與KPI</button>
     <button data-view="report">分析報告</button>
+    <button data-view="trend">年度趨勢與KPI</button>
   </nav>
 </header>
 
@@ -237,7 +237,7 @@
   <div id="no-chartjs">圖表元件載入失敗:請確認網路連線後重新整理(數據表格仍可正常檢視)。</div>
 
   <!-- ================= 月報 ================= -->
-  <section class="view active" id="view-month">
+  <section class="view" id="view-month">
     <div class="controls">
       <label for="m-select">月份</label>
       <select id="m-select"></select>
@@ -343,7 +343,7 @@
   </section>
 
   <!-- ================= 日報 ================= -->
-  <section class="view" id="view-day">
+  <section class="view active" id="view-day">
     <div class="controls">
       <label for="d-select">日期</label>
       <select id="d-select"></select>
@@ -1119,7 +1119,7 @@
     if (btn) showView(btn.dataset.view);
   });
 
-  buildView("month");
+  buildView("day");
   if (window.matchMedia) {
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
       // 只重建當前視圖;其餘標記為未建,待切換時以新配色重建
