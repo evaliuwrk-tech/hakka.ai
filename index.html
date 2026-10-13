@@ -227,6 +227,7 @@
     <button data-view="day" class="active">日報</button>
     <button data-view="week">週報</button>
     <button data-view="month">月報</button>
+    <button data-view="home">首頁成效</button>
     <button data-view="followers">追蹤人數</button>
     <button data-view="report">分析報告</button>
     <button data-view="trend">年度趨勢與KPI</button>
@@ -364,6 +365,33 @@
       <h3><span class="plat-chip ig">Instagram</span> 每日最佳</h3>
       <div class="tbl-scroll"><table class="data daily-best" id="d-best-ig"></table></div>
     </div>
+  </section>
+
+  <!-- ================= 首頁成效 ================= -->
+  <section class="view" id="view-home">
+    <h2 class="sec">首頁各區塊/細項 曝光與點擊成效</h2>
+    <p class="sec-note" id="h-note"></p>
+    <div class="hl-card" id="h-formula" style="font-weight:400"></div>
+
+    <div class="tiles" id="h-tiles"></div>
+
+    <h2 class="sec">各區塊曝光與點擊</h2>
+    <p class="sec-note">曝光=區塊進入可視範圍(home_block_view);點擊=區塊內連結被點(home_click);點擊率=點擊÷曝光。</p>
+    <div class="card wide">
+      <div class="chart-box tall"><canvas id="h-blocks"></canvas></div>
+    </div>
+    <details class="tbl" open>
+      <summary>各區塊成效表(曝光 / 點擊 / 點擊率)</summary>
+      <div class="tbl-scroll"><table class="data" id="h-block-table"></table></div>
+    </details>
+
+    <h2 class="sec">曝光最高的細項</h2>
+    <p class="sec-note">依細項曝光(home_item_view)排序;細項名稱為「區塊｜素材/連結」。</p>
+    <div class="tbl-scroll"><table class="data" id="h-item-view-table"></table></div>
+
+    <h2 class="sec">點擊最高的細項</h2>
+    <p class="sec-note">依細項點擊(home_click)排序;「客語認證」等區塊尚未埋設細項曝光,其曝光與點擊率以「—」顯示。</p>
+    <div class="tbl-scroll"><table class="data" id="h-item-click-table"></table></div>
   </section>
 
   <!-- ================= 追蹤人數 ================= -->
@@ -1097,11 +1125,63 @@
     });
   }
 
-  const built = { month: false, week: false, day: false, followers: false, trend: false, report: true };
+  /* ============================================================
+     首頁各區塊/細項 曝光與點擊成效
+     ============================================================ */
+  function buildHomeEvents() {
+    const H = D.homeEvents || {};
+    const E = (H.byMonth || {})[H.latest];
+    if (!E) { document.getElementById("h-note").textContent = "尚無首頁成效資料。"; return; }
+    const c = C();
+    const ctr = (clk, vw) => (vw == null || vw === 0) ? "—" : pct(clk / vw);
+
+    document.getElementById("h-note").textContent = `統計期間:${E.label}(${E.range})。${E.note}`;
+    document.getElementById("h-formula").innerHTML =
+      `<strong>點擊率 = 點擊 ÷ 曝光</strong>。曝光=該區塊/細項進入使用者可視範圍的次數;點擊=其中連結被點擊的次數。比率越高,代表該版位越能吸引使用者進一步點擊。`;
+
+    const blocks = E.blocks || [];
+    const totV = blocks.reduce((a, b) => a + b[1], 0);
+    const totC = blocks.reduce((a, b) => a + b[2], 0);
+    const topCtr = blocks.filter(b => b[1] > 0).slice().sort((a, b) => (b[2] / b[1]) - (a[2] / a[1]))[0];
+    document.getElementById("h-tiles").innerHTML =
+      tile("區塊總曝光", fmt(totV), "home_block_view") +
+      tile("區塊總點擊", fmt(totC), "home_click") +
+      tile("整體點擊率", pct(totC / totV), "點擊 ÷ 曝光") +
+      (topCtr ? tile("點擊率最高區塊", topCtr[0], `${pct(topCtr[2] / topCtr[1])}（${fmt(topCtr[2])}／${fmt(topCtr[1])}）`) : "");
+
+    const bsorted = blocks.slice().sort((a, b) => b[1] - a[1]);
+    makeChart("h-blocks", {
+      type: "bar",
+      data: {
+        labels: bsorted.map(b => b[0]),
+        datasets: [
+          { label: "曝光", data: bsorted.map(b => b[1]), backgroundColor: c.s1, borderRadius: 4, maxBarThickness: 26 },
+          { label: "點擊", data: bsorted.map(b => b[2]), backgroundColor: c.s2, borderRadius: 4, maxBarThickness: 26 },
+        ]
+      },
+      options: baseOpts()
+    });
+
+    document.getElementById("h-block-table").innerHTML =
+      `<tr><th>區塊</th><th>曝光</th><th>點擊</th><th>點擊率</th></tr>` +
+      bsorted.map(b => `<tr><td style="text-align:left">${b[0]}</td><td>${fmt(b[1])}</td><td>${fmt(b[2])}</td><td>${ctr(b[2], b[1])}</td></tr>`).join("") +
+      `<tr style="border-top:2px solid var(--grid)"><td style="text-align:left"><strong>合計</strong></td><td><strong>${fmt(totV)}</strong></td><td><strong>${fmt(totC)}</strong></td><td><strong>${pct(totC / totV)}</strong></td></tr>`;
+
+    document.getElementById("h-item-view-table").innerHTML =
+      `<tr><th>#</th><th>細項</th><th>曝光</th><th>點擊</th><th>點擊率</th></tr>` +
+      (E.itemsByView || []).map((it, i) => `<tr><td>${i + 1}</td><td style="text-align:left">${it[0]}</td><td>${fmt(it[1])}</td><td>${fmt(it[2])}</td><td>${ctr(it[2], it[1])}</td></tr>`).join("");
+
+    document.getElementById("h-item-click-table").innerHTML =
+      `<tr><th>#</th><th>細項</th><th>點擊</th><th>曝光</th><th>點擊率</th></tr>` +
+      (E.itemsByClick || []).map((it, i) => `<tr><td>${i + 1}</td><td style="text-align:left">${it[0]}</td><td>${fmt(it[1])}</td><td>${it[2] == null ? "—" : fmt(it[2])}</td><td>${ctr(it[1], it[2])}</td></tr>`).join("");
+  }
+
+  const built = { month: false, week: false, day: false, home: false, followers: false, trend: false, report: true };
   function buildView(v) {
     if (v === "month") renderMonth();
     else if (v === "week") { renderWeek(); buildWeekCharts(); }
     else if (v === "day") { renderDay(); buildDayTable(); }
+    else if (v === "home") buildHomeEvents();
     else if (v === "followers") buildFollowers();
     else if (v === "trend") buildTrend();
     built[v] = true;
