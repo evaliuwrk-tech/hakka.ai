@@ -355,14 +355,14 @@
     <p class="sec-note" id="d-note"></p>
     <div id="d-posts"></div>
 
-    <h2 class="sec">近 14 日每日最佳貼文(FB / IG 分別排序)</h2>
-    <p class="sec-note">各平臺每日成效最佳的一篇(依平臺原生互動值排序),按讚/留言/分享分列;點日期選單可回看該日全部貼文</p>
+    <h2 class="sec">近 14 日每日發布貼文總覽(FB / IG 分別)</h2>
+    <p class="sec-note">列出各平臺近 14 日每天發布的「全部」貼文,依發布日期排序、同日再依互動排序;標題前「★」為該日互動最高者</p>
     <div class="card">
-      <h3><span class="plat-chip fb">Facebook</span> 每日最佳</h3>
+      <h3><span class="plat-chip fb">Facebook</span> 發布總覽</h3>
       <div class="tbl-scroll"><table class="data daily-best" id="d-best-fb"></table></div>
     </div>
     <div class="card" style="margin-top:14px">
-      <h3><span class="plat-chip ig">Instagram</span> 每日最佳</h3>
+      <h3><span class="plat-chip ig">Instagram</span> 發布總覽</h3>
       <div class="tbl-scroll"><table class="data daily-best" id="d-best-ig"></table></div>
     </div>
   </section>
@@ -925,16 +925,22 @@
         `<colgroup><col style="width:8%"><col style="width:13%"><col style="width:29%">` +
         `<col style="width:8%"><col style="width:7%"><col style="width:7%"><col style="width:7%">` +
         `<col style="width:21%"></colgroup>`;
+      let body = "";
+      platDates.forEach((dt, di) => {
+        const dayList = posts.filter(p => p.date === dt && p.plat === plat)
+          .sort((a, b) => b.interactions - a.interactions);
+        dayList.forEach((p, i) => {
+          const sep = (i === 0 && di > 0) ? ' style="border-top:2px solid var(--grid)"' : '';
+          const star = (i === 0 && dayList.length > 1 && p.interactions > 0) ? "★ " : "";
+          body += `<tr${sep}><td>${i === 0 ? dayLabel(dt) : ""}</td><td>${esc(p.topic)}</td>` +
+                  `<td style="white-space:normal" title="${esc(p.title)}">${star}${esc(clip(p.title, 20))}</td>` +
+                  `<td>${fmt(p.reach)}</td><td>${fmt(p.likes)}</td><td>${fmt(p.comments)}</td><td>${fmt(p.shares)}</td>` +
+                  `<td>${multHtml(p) || "—"} ${tierChip(p)}</td></tr>`;
+        });
+      });
       document.getElementById(elId).innerHTML = colgroup +
         `<tr><th>日期</th><th>主題</th><th>標題</th><th>觸及</th><th>按讚</th><th>留言</th><th>分享</th><th>相對平均</th></tr>` +
-        platDates.map(dt => {
-          const best = posts.filter(p => p.date === dt && p.plat === plat)
-            .sort((a, b) => b.interactions - a.interactions)[0];
-          return `<tr><td>${dayLabel(dt)}</td><td>${esc(best.topic)}</td>` +
-                 `<td style="white-space:normal" title="${esc(best.title)}">${esc(clip(best.title, 20))}</td>` +
-                 `<td>${fmt(best.reach)}</td><td>${fmt(best.likes)}</td><td>${fmt(best.comments)}</td><td>${fmt(best.shares)}</td>` +
-                 `<td>${multHtml(best) || "—"} ${tierChip(best)}</td></tr>`;
-        }).join("");
+        body;
     }
   }
 
