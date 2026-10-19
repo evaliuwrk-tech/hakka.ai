@@ -228,6 +228,7 @@
     <button data-view="week">週報</button>
     <button data-view="month">月報</button>
     <button data-view="home">首頁成效</button>
+    <button data-view="pv">瀏覽量趨勢</button>
     <button data-view="followers">追蹤人數</button>
     <button data-view="report">分析報告</button>
     <button data-view="trend">年度趨勢與KPI</button>
@@ -392,6 +393,36 @@
     <h2 class="sec">點擊最高的細項</h2>
     <p class="sec-note">依細項點擊(home_click)排序;「客語認證」等區塊尚未埋設細項曝光,其曝光與點擊率以「—」顯示。</p>
     <div class="tbl-scroll"><table class="data" id="h-item-click-table"></table></div>
+  </section>
+
+  <!-- ================= 瀏覽量趨勢 ================= -->
+  <section class="view" id="view-pv">
+    <h2 class="sec">每月瀏覽量趨勢</h2>
+    <p class="sec-note">GA4 網站瀏覽量(screenPageViews),近 12 個月;月資料以完整月份計。</p>
+    <div class="tiles" id="pv-tiles-m"></div>
+    <div class="card wide">
+      <div class="chart-box tall"><canvas id="pv-month"></canvas></div>
+    </div>
+    <details class="tbl"><summary>每月瀏覽量數據表</summary>
+      <div class="tbl-scroll"><table class="data" id="pv-month-table"></table></div>
+    </details>
+
+    <h2 class="sec">每週瀏覽量趨勢</h2>
+    <p class="sec-note">由每日瀏覽量加總為每週(週一~週日),僅列完整週。</p>
+    <div class="tiles" id="pv-tiles-w"></div>
+    <div class="card wide">
+      <div class="chart-box tall"><canvas id="pv-week"></canvas></div>
+    </div>
+    <details class="tbl"><summary>每週瀏覽量數據表</summary>
+      <div class="tbl-scroll"><table class="data" id="pv-week-table"></table></div>
+    </details>
+
+    <h2 class="sec">瀏覽量升降分析</h2>
+    <p class="sec-note" id="pv-intro"></p>
+    <h3 style="margin:14px 0 6px">每月</h3>
+    <div class="an-card" id="pv-ana-month"></div>
+    <h3 style="margin:18px 0 6px">每週</h3>
+    <div class="an-card" id="pv-ana-week"></div>
   </section>
 
   <!-- ================= 追蹤人數 ================= -->
@@ -1182,12 +1213,72 @@
       (E.itemsByClick || []).map((it, i) => `<tr><td>${i + 1}</td><td style="text-align:left">${it[0]}</td><td>${fmt(it[1])}</td><td>${it[2] == null ? "—" : fmt(it[2])}</td><td>${ctr(it[1], it[2])}</td></tr>`).join("");
   }
 
-  const built = { month: false, week: false, day: false, home: false, followers: false, trend: false, report: true };
+  /* ============================================================
+     瀏覽量趨勢(每月 + 每週 + 升降分析)
+     ============================================================ */
+  function buildPageviews() {
+    const c = C();
+    // ---- 每月 ----
+    const pv = G.pageViews, labels = G.months, n = pv.length;
+    const maxV = Math.max(...pv), minV = Math.min(...pv);
+    document.getElementById("pv-tiles-m").innerHTML =
+      tile(`最新月(${labels[n - 1]})`, fmt(pv[n - 1]), deltaHtml(pv[n - 1], pv[n - 2])) +
+      tile("近 12 月最高", fmt(maxV), labels[pv.indexOf(maxV)]) +
+      tile("近 12 月最低", fmt(minV), labels[pv.indexOf(minV)]);
+    makeChart("pv-month", {
+      type: "bar",
+      data: { labels, datasets: [{ label: "瀏覽量", data: pv, backgroundColor: c.s1, borderRadius: 4, maxBarThickness: 30 }] },
+      options: baseOpts({ plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` 瀏覽量:${fmt(ctx.parsed.y)}` } } } })
+    });
+    document.getElementById("pv-month-table").innerHTML =
+      `<tr><th>月份</th><th>瀏覽量</th><th>較前月</th></tr>` +
+      labels.map((l, i) => `<tr><td>${l}</td><td>${fmt(pv[i])}</td><td>${i ? deltaHtml(pv[i], pv[i - 1]) : "—"}</td></tr>`).join("");
+
+    // ---- 每週(由 daily 加總,僅完整週)----
+    const daily = G.daily, start = new Date(G.dailyStart + "T00:00:00"), wmap = {};
+    const isoLocal = dt => `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, "0")}-${String(dt.getDate()).padStart(2, "0")}`;
+    daily.forEach((row, idx) => {
+      const d = new Date(start); d.setDate(start.getDate() + idx);
+      const mon = new Date(d); mon.setDate(d.getDate() - ((d.getDay() + 6) % 7));
+      const key = isoLocal(mon);
+      (wmap[key] = wmap[key] || { sum: 0, days: 0 }).sum += row[2];
+      wmap[key].days++;
+    });
+    const wkeys = Object.keys(wmap).filter(k => wmap[k].days === 7).sort();
+    const wlabels = wkeys.map(k => { const d = new Date(k + "T00:00:00"), e = new Date(d); e.setDate(d.getDate() + 6); return `${d.getMonth() + 1}/${d.getDate()}~${e.getMonth() + 1}/${e.getDate()}`; });
+    const wvals = wkeys.map(k => wmap[k].sum), wn = wvals.length;
+    const wmax = Math.max(...wvals), wmin = Math.min(...wvals);
+    document.getElementById("pv-tiles-w").innerHTML =
+      tile(`最新完整週(${wlabels[wn - 1]})`, fmt(wvals[wn - 1]), deltaHtml(wvals[wn - 1], wvals[wn - 2], "前一週")) +
+      tile("區間最高週", fmt(wmax), wlabels[wvals.indexOf(wmax)]) +
+      tile("區間最低週", fmt(wmin), wlabels[wvals.indexOf(wmin)]);
+    makeChart("pv-week", {
+      type: "bar",
+      data: { labels: wlabels, datasets: [{ label: "瀏覽量", data: wvals, backgroundColor: c.s2, borderRadius: 4, maxBarThickness: 26 }] },
+      options: baseOpts({ plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` 瀏覽量:${fmt(ctx.parsed.y)}` } } } })
+    });
+    document.getElementById("pv-week-table").innerHTML =
+      `<tr><th>週次</th><th>瀏覽量</th><th>較前週</th></tr>` +
+      wlabels.map((l, i) => `<tr><td>${l}</td><td>${fmt(wvals[i])}</td><td>${i ? deltaHtml(wvals[i], wvals[i - 1], "前週") : "—"}</td></tr>`).join("");
+
+    // ---- 升降分析 ----
+    const A = D.pageviewAnalysis;
+    if (A) {
+      document.getElementById("pv-intro").textContent = A.intro || "";
+      const items = arr => (arr || []).map(it =>
+        `<div class="an-item"><div class="pt">${it.point}</div><div class="ev">${it.evidence}</div></div>`).join("");
+      document.getElementById("pv-ana-month").innerHTML = items(A.monthly);
+      document.getElementById("pv-ana-week").innerHTML = items(A.weekly);
+    }
+  }
+
+  const built = { month: false, week: false, day: false, home: false, pv: false, followers: false, trend: false, report: true };
   function buildView(v) {
     if (v === "month") renderMonth();
     else if (v === "week") { renderWeek(); buildWeekCharts(); }
     else if (v === "day") { renderDay(); buildDayTable(); }
     else if (v === "home") buildHomeEvents();
+    else if (v === "pv") buildPageviews();
     else if (v === "followers") buildFollowers();
     else if (v === "trend") buildTrend();
     built[v] = true;
