@@ -391,7 +391,7 @@
     <div class="tbl-scroll"><table class="data" id="h-item-view-table"></table></div>
 
     <h2 class="sec">點擊最高的細項</h2>
-    <p class="sec-note">依細項點擊(home_click)排序;「客語認證」等區塊尚未埋設細項曝光,其曝光與點擊率以「—」顯示。</p>
+    <p class="sec-note">依細項點擊(home_click)排序。標「※」之曝光為「區塊曝光」:無輪播區塊(如客語認證)滑入時各項目同時可見,故以該區塊曝光為分母計點擊率,同區塊各項目曝光相同。</p>
     <div class="tbl-scroll"><table class="data" id="h-item-click-table"></table></div>
   </section>
 
@@ -1177,6 +1177,15 @@
       `<strong>點擊率 = 點擊 ÷ 曝光</strong>。曝光=該區塊/細項進入使用者可視範圍的次數;點擊=其中連結被點擊的次數。比率越高,代表該版位越能吸引使用者進一步點擊。`;
 
     const blocks = E.blocks || [];
+    // 無輪播區塊(如客語認證)之細項不另記細項曝光:滑到該區塊時各項目同時可見,
+    // 故以「區塊曝光(home_block_view)」為該項曝光(同區塊各項目相同),點擊率=點擊÷區塊曝光。
+    const blockView = {};
+    blocks.forEach(b => { blockView[b[0]] = b[1]; });
+    const itemExp = it => {
+      if (it[2] != null) return { vw: it[2], mark: "" };
+      const bv = blockView[String(it[0]).split("｜")[0]];
+      return bv != null ? { vw: bv, mark: "※" } : { vw: null, mark: "" };
+    };
     const totV = blocks.reduce((a, b) => a + b[1], 0);
     const totC = blocks.reduce((a, b) => a + b[2], 0);
     const topCtr = blocks.filter(b => b[1] > 0).slice().sort((a, b) => (b[2] / b[1]) - (a[2] / a[1]))[0];
@@ -1210,7 +1219,7 @@
 
     document.getElementById("h-item-click-table").innerHTML =
       `<tr><th>#</th><th>細項</th><th>點擊</th><th>曝光</th><th>點擊率</th></tr>` +
-      (E.itemsByClick || []).map((it, i) => `<tr><td>${i + 1}</td><td style="text-align:left">${it[0]}</td><td>${fmt(it[1])}</td><td>${it[2] == null ? "—" : fmt(it[2])}</td><td>${ctr(it[1], it[2])}</td></tr>`).join("");
+      (E.itemsByClick || []).map((it, i) => { const e = itemExp(it); return `<tr><td>${i + 1}</td><td style="text-align:left">${it[0]}</td><td>${fmt(it[1])}</td><td>${e.vw == null ? "—" : fmt(e.vw) + e.mark}</td><td>${ctr(it[1], e.vw)}</td></tr>`; }).join("");
   }
 
   /* ============================================================
