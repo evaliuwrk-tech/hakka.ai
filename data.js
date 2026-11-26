@@ -4,7 +4,7 @@
         社群互動=平臺原生值;KPI達成率=當月FB+IG合計÷年度目標值。
    ========================================================= */
 const DASHBOARD_DATA = {
- "updated": "民國115年11月16日",
+ "updated": "民國115年11月26日",
  "latestLabel": "115年10月",
  "socialLatestKey": "202610",
  "ga4": {
@@ -1484,45 +1484,52 @@ const DASHBOARD_DATA = {
      "基礎級暨初級題庫-聽力理解-單句測驗",
      1146
     ]
+   ],
+   "2026-11-16": [
+    [
+     "詞彙查詢",
+     31107
+    ],
+    [
+     "基礎級暨初級模擬測驗",
+     10700
+    ],
+    [
+     "基礎級暨初級模擬測驗-測驗練習",
+     7602
+    ],
+    [
+     "首頁",
+     5411
+    ],
+    [
+     "生活客語專區",
+     3490
+    ],
+    [
+     "基礎級暨初級題庫",
+     2951
+    ],
+    [
+     "基礎級暨初級題庫-口語測驗-1看圖表達",
+     2786
+    ],
+    [
+     "Hakka GO !",
+     2610
+    ],
+    [
+     "線上課程",
+     2094
+    ],
+    [
+     "詞彙學習-基礎級",
+     1635
+    ]
    ]
   },
-  "dailyStart": "2026-08-17",
+  "dailyStart": "2026-08-24",
   "daily": [
-   [
-    1719,
-    2808,
-    25136
-   ],
-   [
-    1656,
-    2758,
-    26848
-   ],
-   [
-    1573,
-    2664,
-    23386
-   ],
-   [
-    1673,
-    2748,
-    26032
-   ],
-   [
-    1958,
-    3158,
-    30477
-   ],
-   [
-    1416,
-    2203,
-    20015
-   ],
-   [
-    1141,
-    1802,
-    14031
-   ],
    [
     1340,
     2291,
@@ -1942,6 +1949,41 @@ const DASHBOARD_DATA = {
     998,
     1325,
     8537
+   ],
+   [
+    1321,
+    1816,
+    11412
+   ],
+   [
+    1563,
+    2118,
+    14478
+   ],
+   [
+    1560,
+    2056,
+    12973
+   ],
+   [
+    1631,
+    2230,
+    16713
+   ],
+   [
+    1562,
+    2355,
+    16782
+   ],
+   [
+    965,
+    1326,
+    8285
+   ],
+   [
+    1020,
+    1376,
+    8104
    ]
   ]
  },
@@ -1984,7 +2026,7 @@ const DASHBOARD_DATA = {
     45,
     48,
     51,
-    29
+    38
    ],
    "likes": [
     603,
@@ -1997,7 +2039,7 @@ const DASHBOARD_DATA = {
     2660,
     2895,
     2350,
-    1237
+    1632
    ],
    "reach": [
     5943,
@@ -2010,7 +2052,7 @@ const DASHBOARD_DATA = {
     54068,
     57099,
     44948,
-    41807
+    0
    ],
    "shares": [
     80,
@@ -2023,7 +2065,7 @@ const DASHBOARD_DATA = {
     1208,
     1629,
     1126,
-    875
+    1163
    ],
    "comments": [
     34,
@@ -2036,7 +2078,7 @@ const DASHBOARD_DATA = {
     265,
     646,
     412,
-    201
+    221
    ],
    "views": [
     13340,
@@ -2049,20 +2091,33 @@ const DASHBOARD_DATA = {
     75601,
     85996,
     77338,
-    41807
+    48988
    ],
    "interactions": [
-    718,
-    922,
-    1176,
-    1317,
-    2870,
-    3791,
-    4922,
-    4201,
-    5234,
-    3924,
-    2313
+    717,
+    921,
+    1170,
+    1314,
+    2795,
+    3800,
+    4891,
+    4133,
+    5170,
+    3888,
+    3016
+   ],
+   "viewers": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    20372
    ]
   },
   "ig": {
@@ -2077,7 +2132,7 @@ const DASHBOARD_DATA = {
     45,
     48,
     53,
-    44
+    48
    ],
    "likes": [
     322,
@@ -2090,7 +2145,7 @@ const DASHBOARD_DATA = {
     923,
     878,
     1085,
-    411
+    519
    ],
    "reach": [
     4843,
@@ -2103,7 +2158,7 @@ const DASHBOARD_DATA = {
     10937,
     10104,
     13513,
-    5771
+    7700
    ],
    "shares": [
     27,
@@ -2116,7 +2171,7 @@ const DASHBOARD_DATA = {
     29,
     34,
     44,
-    86
+    89
    ],
    "comments": [
     4,
@@ -2129,7 +2184,7 @@ const DASHBOARD_DATA = {
     62,
     157,
     162,
-    37
+    40
    ],
    "views": [
     14657,
@@ -2142,7 +2197,7 @@ const DASHBOARD_DATA = {
     28579,
     28912,
     31813,
-    14582
+    18844
    ],
    "interactions": [
     358,
@@ -2155,7 +2210,20 @@ const DASHBOARD_DATA = {
     1046,
     1102,
     1328,
-    546
+    664
+   ],
+   "viewers": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
    ]
   },
   "topics": {
@@ -2168,7 +2236,8 @@ const DASHBOARD_DATA = {
       "shares": 6,
       "comments": 3,
       "views": 957,
-      "interactions": 54
+      "interactions": 0,
+      "viewers": 54
      },
      "今天吃什麼": {
       "posts": 3,
@@ -2177,7 +2246,8 @@ const DASHBOARD_DATA = {
       "shares": 3,
       "comments": 3,
       "views": 883,
-      "interactions": 53
+      "interactions": 0,
+      "viewers": 53
      },
      "AI主播": {
       "posts": 5,
@@ -2186,7 +2256,8 @@ const DASHBOARD_DATA = {
       "shares": 1,
       "comments": 0,
       "views": 1611,
-      "interactions": 69
+      "interactions": 0,
+      "viewers": 69
      },
      "疊字疊起來": {
       "posts": 2,
@@ -2195,7 +2266,8 @@ const DASHBOARD_DATA = {
       "shares": 2,
       "comments": 2,
       "views": 676,
-      "interactions": 35
+      "interactions": 0,
+      "viewers": 35
      },
      "客庄生活": {
       "posts": 2,
@@ -2204,7 +2276,8 @@ const DASHBOARD_DATA = {
       "shares": 4,
       "comments": 1,
       "views": 990,
-      "interactions": 44
+      "interactions": 0,
+      "viewers": 44
      },
      "客家音樂": {
       "posts": 2,
@@ -2213,7 +2286,8 @@ const DASHBOARD_DATA = {
       "shares": 6,
       "comments": 2,
       "views": 650,
-      "interactions": 45
+      "interactions": 0,
+      "viewers": 45
      },
      "未分類": {
       "posts": 17,
@@ -2222,7 +2296,8 @@ const DASHBOARD_DATA = {
       "shares": 45,
       "comments": 19,
       "views": 6424,
-      "interactions": 342
+      "interactions": 0,
+      "viewers": 342
      },
      "社會議題": {
       "posts": 2,
@@ -2231,7 +2306,8 @@ const DASHBOARD_DATA = {
       "shares": 10,
       "comments": 2,
       "views": 566,
-      "interactions": 41
+      "interactions": 0,
+      "viewers": 41
      },
      "語錄系列": {
       "posts": 2,
@@ -2240,7 +2316,8 @@ const DASHBOARD_DATA = {
       "shares": 3,
       "comments": 2,
       "views": 583,
-      "interactions": 35
+      "interactions": 0,
+      "viewers": 35
      }
     },
     "202602": {
@@ -2251,7 +2328,8 @@ const DASHBOARD_DATA = {
       "shares": 135,
       "comments": 80,
       "views": 16478,
-      "interactions": 847
+      "interactions": 0,
+      "viewers": 847
      },
      "AI主播": {
       "posts": 4,
@@ -2260,7 +2338,8 @@ const DASHBOARD_DATA = {
       "shares": 2,
       "comments": 0,
       "views": 1247,
-      "interactions": 75
+      "interactions": 0,
+      "viewers": 75
      }
     },
     "202603": {
@@ -2271,7 +2350,8 @@ const DASHBOARD_DATA = {
       "shares": 112,
       "comments": 81,
       "views": 28824,
-      "interactions": 1032
+      "interactions": 0,
+      "viewers": 1032
      },
      "AI主播": {
       "posts": 5,
@@ -2280,7 +2360,8 @@ const DASHBOARD_DATA = {
       "shares": 8,
       "comments": 2,
       "views": 3803,
-      "interactions": 144
+      "interactions": 0,
+      "viewers": 144
      }
     },
     "202604": {
@@ -2291,7 +2372,8 @@ const DASHBOARD_DATA = {
       "shares": 60,
       "comments": 24,
       "views": 3171,
-      "interactions": 211
+      "interactions": 0,
+      "viewers": 211
      },
      "活動推廣": {
       "posts": 2,
@@ -2300,7 +2382,8 @@ const DASHBOARD_DATA = {
       "shares": 19,
       "comments": 5,
       "views": 1522,
-      "interactions": 86
+      "interactions": 0,
+      "viewers": 86
      },
      "今天吃什麼": {
       "posts": 4,
@@ -2309,7 +2392,8 @@ const DASHBOARD_DATA = {
       "shares": 34,
       "comments": 16,
       "views": 2055,
-      "interactions": 129
+      "interactions": 0,
+      "viewers": 129
      },
      "疊字疊起來": {
       "posts": 4,
@@ -2318,7 +2402,8 @@ const DASHBOARD_DATA = {
       "shares": 56,
       "comments": 16,
       "views": 3507,
-      "interactions": 152
+      "interactions": 0,
+      "viewers": 152
      },
      "客庄生活": {
       "posts": 4,
@@ -2327,7 +2412,8 @@ const DASHBOARD_DATA = {
       "shares": 77,
       "comments": 24,
       "views": 3880,
-      "interactions": 214
+      "interactions": 0,
+      "viewers": 214
      },
      "AI主播": {
       "posts": 3,
@@ -2336,7 +2422,8 @@ const DASHBOARD_DATA = {
       "shares": 52,
       "comments": 2,
       "views": 1857,
-      "interactions": 120
+      "interactions": 0,
+      "viewers": 120
      },
      "客家音樂": {
       "posts": 3,
@@ -2345,7 +2432,8 @@ const DASHBOARD_DATA = {
       "shares": 51,
       "comments": 11,
       "views": 2184,
-      "interactions": 130
+      "interactions": 0,
+      "viewers": 130
      },
      "社會議題": {
       "posts": 3,
@@ -2354,7 +2442,8 @@ const DASHBOARD_DATA = {
       "shares": 66,
       "comments": 18,
       "views": 4334,
-      "interactions": 159
+      "interactions": 0,
+      "viewers": 159
      },
      "日常情境互動": {
       "posts": 2,
@@ -2363,7 +2452,8 @@ const DASHBOARD_DATA = {
       "shares": 34,
       "comments": 18,
       "views": 1776,
-      "interactions": 116
+      "interactions": 0,
+      "viewers": 116
      }
     },
     "202605": {
@@ -2374,7 +2464,8 @@ const DASHBOARD_DATA = {
       "shares": 87,
       "comments": 19,
       "views": 2321,
-      "interactions": 223
+      "interactions": 0,
+      "viewers": 223
      },
      "AI主播": {
       "posts": 5,
@@ -2383,7 +2474,8 @@ const DASHBOARD_DATA = {
       "shares": 66,
       "comments": 14,
       "views": 2391,
-      "interactions": 207
+      "interactions": 0,
+      "viewers": 207
      },
      "疊字疊起來": {
       "posts": 5,
@@ -2392,7 +2484,8 @@ const DASHBOARD_DATA = {
       "shares": 119,
       "comments": 19,
       "views": 3013,
-      "interactions": 270
+      "interactions": 0,
+      "viewers": 270
      },
      "客庄生活": {
       "posts": 5,
@@ -2401,7 +2494,8 @@ const DASHBOARD_DATA = {
       "shares": 195,
       "comments": 34,
       "views": 16694,
-      "interactions": 459
+      "interactions": 0,
+      "viewers": 459
      },
      "客家音樂": {
       "posts": 4,
@@ -2410,7 +2504,8 @@ const DASHBOARD_DATA = {
       "shares": 114,
       "comments": 22,
       "views": 2845,
-      "interactions": 278
+      "interactions": 0,
+      "viewers": 278
      },
      "社會議題": {
       "posts": 4,
@@ -2419,7 +2514,8 @@ const DASHBOARD_DATA = {
       "shares": 166,
       "comments": 34,
       "views": 3107,
-      "interactions": 345
+      "interactions": 0,
+      "viewers": 345
      },
      "語錄系列": {
       "posts": 4,
@@ -2428,7 +2524,8 @@ const DASHBOARD_DATA = {
       "shares": 172,
       "comments": 21,
       "views": 2915,
-      "interactions": 339
+      "interactions": 0,
+      "viewers": 339
      },
      "日常情境互動": {
       "posts": 4,
@@ -2437,7 +2534,8 @@ const DASHBOARD_DATA = {
       "shares": 174,
       "comments": 35,
       "views": 2923,
-      "interactions": 356
+      "interactions": 0,
+      "viewers": 356
      },
      "機動貼文": {
       "posts": 3,
@@ -2446,7 +2544,8 @@ const DASHBOARD_DATA = {
       "shares": 104,
       "comments": 89,
       "views": 5537,
-      "interactions": 393
+      "interactions": 0,
+      "viewers": 393
      }
     },
     "202606": {
@@ -2457,7 +2556,8 @@ const DASHBOARD_DATA = {
       "shares": 232,
       "comments": 34,
       "views": 12548,
-      "interactions": 472
+      "interactions": 0,
+      "viewers": 472
      },
      "社會議題": {
       "posts": 5,
@@ -2466,7 +2566,8 @@ const DASHBOARD_DATA = {
       "shares": 177,
       "comments": 37,
       "views": 2717,
-      "interactions": 345
+      "interactions": 0,
+      "viewers": 345
      },
      "語錄系列": {
       "posts": 4,
@@ -2475,7 +2576,8 @@ const DASHBOARD_DATA = {
       "shares": 124,
       "comments": 23,
       "views": 2699,
-      "interactions": 253
+      "interactions": 0,
+      "viewers": 253
      },
      "日常情境互動": {
       "posts": 4,
@@ -2484,7 +2586,8 @@ const DASHBOARD_DATA = {
       "shares": 67,
       "comments": 30,
       "views": 2406,
-      "interactions": 207
+      "interactions": 0,
+      "viewers": 207
      },
      "AI主播": {
       "posts": 4,
@@ -2493,7 +2596,8 @@ const DASHBOARD_DATA = {
       "shares": 53,
       "comments": 13,
       "views": 1593,
-      "interactions": 157
+      "interactions": 0,
+      "viewers": 157
      },
      "今天吃什麼": {
       "posts": 4,
@@ -2502,7 +2606,8 @@ const DASHBOARD_DATA = {
       "shares": 105,
       "comments": 30,
       "views": 1836,
-      "interactions": 232
+      "interactions": 0,
+      "viewers": 232
      },
      "疊字疊起來": {
       "posts": 4,
@@ -2511,7 +2616,8 @@ const DASHBOARD_DATA = {
       "shares": 108,
       "comments": 22,
       "views": 3748,
-      "interactions": 263
+      "interactions": 0,
+      "viewers": 263
      },
      "客家音樂": {
       "posts": 4,
@@ -2520,7 +2626,8 @@ const DASHBOARD_DATA = {
       "shares": 119,
       "comments": 36,
       "views": 4904,
-      "interactions": 307
+      "interactions": 0,
+      "viewers": 307
      },
      "機動貼文": {
       "posts": 9,
@@ -2529,7 +2636,8 @@ const DASHBOARD_DATA = {
       "shares": 433,
       "comments": 262,
       "views": 31073,
-      "interactions": 1555
+      "interactions": 0,
+      "viewers": 1555
      }
     },
     "202607": {
@@ -2540,7 +2648,8 @@ const DASHBOARD_DATA = {
       "shares": 160,
       "comments": 16,
       "views": 3979,
-      "interactions": 334
+      "interactions": 0,
+      "viewers": 334
      },
      "機動貼文": {
       "posts": 10,
@@ -2549,7 +2658,8 @@ const DASHBOARD_DATA = {
       "shares": 532,
       "comments": 305,
       "views": 56557,
-      "interactions": 2611
+      "interactions": 0,
+      "viewers": 2611
      },
      "日常情境互動": {
       "posts": 5,
@@ -2558,7 +2668,8 @@ const DASHBOARD_DATA = {
       "shares": 143,
       "comments": 17,
       "views": 2611,
-      "interactions": 280
+      "interactions": 0,
+      "viewers": 280
      },
      "AI主播": {
       "posts": 5,
@@ -2567,7 +2678,8 @@ const DASHBOARD_DATA = {
       "shares": 154,
       "comments": 12,
       "views": 2334,
-      "interactions": 277
+      "interactions": 0,
+      "viewers": 277
      },
      "今天吃什麼": {
       "posts": 5,
@@ -2576,7 +2688,8 @@ const DASHBOARD_DATA = {
       "shares": 93,
       "comments": 16,
       "views": 4024,
-      "interactions": 231
+      "interactions": 0,
+      "viewers": 231
      },
      "疊字疊起來": {
       "posts": 4,
@@ -2585,7 +2698,8 @@ const DASHBOARD_DATA = {
       "shares": 121,
       "comments": 15,
       "views": 3990,
-      "interactions": 254
+      "interactions": 0,
+      "viewers": 254
      },
      "客家音樂": {
       "posts": 4,
@@ -2594,7 +2708,8 @@ const DASHBOARD_DATA = {
       "shares": 139,
       "comments": 21,
       "views": 3806,
-      "interactions": 282
+      "interactions": 0,
+      "viewers": 282
      },
      "社會議題": {
       "posts": 4,
@@ -2603,7 +2718,8 @@ const DASHBOARD_DATA = {
       "shares": 179,
       "comments": 24,
       "views": 2854,
-      "interactions": 325
+      "interactions": 0,
+      "viewers": 325
      },
      "客庄生活": {
       "posts": 4,
@@ -2612,7 +2728,8 @@ const DASHBOARD_DATA = {
       "shares": 172,
       "comments": 20,
       "views": 4191,
-      "interactions": 328
+      "interactions": 0,
+      "viewers": 328
      }
     },
     "202608": {
@@ -2623,7 +2740,8 @@ const DASHBOARD_DATA = {
       "shares": 333,
       "comments": 137,
       "views": 50736,
-      "interactions": 2322
+      "interactions": 0,
+      "viewers": 2322
      },
      "疊字疊起來": {
       "posts": 4,
@@ -2632,7 +2750,8 @@ const DASHBOARD_DATA = {
       "shares": 97,
       "comments": 15,
       "views": 3648,
-      "interactions": 218
+      "interactions": 0,
+      "viewers": 218
      },
      "客家音樂": {
       "posts": 5,
@@ -2641,7 +2760,8 @@ const DASHBOARD_DATA = {
       "shares": 169,
       "comments": 16,
       "views": 3795,
-      "interactions": 294
+      "interactions": 0,
+      "viewers": 294
      },
      "社會議題": {
       "posts": 4,
@@ -2650,7 +2770,8 @@ const DASHBOARD_DATA = {
       "shares": 137,
       "comments": 16,
       "views": 3120,
-      "interactions": 274
+      "interactions": 0,
+      "viewers": 274
      },
      "客庄生活": {
       "posts": 7,
@@ -2659,7 +2780,8 @@ const DASHBOARD_DATA = {
       "shares": 240,
       "comments": 25,
       "views": 5794,
-      "interactions": 470
+      "interactions": 0,
+      "viewers": 470
      },
      "語錄系列": {
       "posts": 2,
@@ -2668,7 +2790,8 @@ const DASHBOARD_DATA = {
       "shares": 69,
       "comments": 10,
       "views": 1449,
-      "interactions": 127
+      "interactions": 0,
+      "viewers": 127
      },
      "日常情境互動": {
       "posts": 5,
@@ -2677,7 +2800,8 @@ const DASHBOARD_DATA = {
       "shares": 89,
       "comments": 24,
       "views": 2516,
-      "interactions": 224
+      "interactions": 0,
+      "viewers": 224
      },
      "AI主播": {
       "posts": 4,
@@ -2686,7 +2810,8 @@ const DASHBOARD_DATA = {
       "shares": 39,
       "comments": 9,
       "views": 1854,
-      "interactions": 119
+      "interactions": 0,
+      "viewers": 119
      },
      "今天吃什麼": {
       "posts": 4,
@@ -2695,7 +2820,8 @@ const DASHBOARD_DATA = {
       "shares": 35,
       "comments": 13,
       "views": 2689,
-      "interactions": 153
+      "interactions": 0,
+      "viewers": 153
      }
     },
     "202609": {
@@ -2706,7 +2832,8 @@ const DASHBOARD_DATA = {
       "shares": 134,
       "comments": 18,
       "views": 2914,
-      "interactions": 273
+      "interactions": 0,
+      "viewers": 273
      },
      "機動貼文": {
       "posts": 14,
@@ -2715,7 +2842,8 @@ const DASHBOARD_DATA = {
       "shares": 666,
       "comments": 494,
       "views": 57364,
-      "interactions": 3201
+      "interactions": 0,
+      "viewers": 3201
      },
      "語錄系列": {
       "posts": 5,
@@ -2724,7 +2852,8 @@ const DASHBOARD_DATA = {
       "shares": 139,
       "comments": 25,
       "views": 4379,
-      "interactions": 297
+      "interactions": 0,
+      "viewers": 297
      },
      "疊字疊起來": {
       "posts": 4,
@@ -2733,7 +2862,8 @@ const DASHBOARD_DATA = {
       "shares": 126,
       "comments": 14,
       "views": 4100,
-      "interactions": 255
+      "interactions": 0,
+      "viewers": 255
      },
      "AI主播": {
       "posts": 4,
@@ -2742,7 +2872,8 @@ const DASHBOARD_DATA = {
       "shares": 68,
       "comments": 9,
       "views": 2047,
-      "interactions": 166
+      "interactions": 0,
+      "viewers": 166
      },
      "今天吃什麼": {
       "posts": 4,
@@ -2751,7 +2882,8 @@ const DASHBOARD_DATA = {
       "shares": 138,
       "comments": 26,
       "views": 4986,
-      "interactions": 277
+      "interactions": 0,
+      "viewers": 277
      },
      "客家音樂": {
       "posts": 4,
@@ -2760,7 +2892,8 @@ const DASHBOARD_DATA = {
       "shares": 114,
       "comments": 27,
       "views": 4197,
-      "interactions": 257
+      "interactions": 0,
+      "viewers": 257
      },
      "日常情境互動": {
       "posts": 5,
@@ -2769,7 +2902,8 @@ const DASHBOARD_DATA = {
       "shares": 137,
       "comments": 23,
       "views": 2854,
-      "interactions": 289
+      "interactions": 0,
+      "viewers": 289
      },
      "客庄生活": {
       "posts": 4,
@@ -2778,7 +2912,8 @@ const DASHBOARD_DATA = {
       "shares": 107,
       "comments": 10,
       "views": 3155,
-      "interactions": 219
+      "interactions": 0,
+      "viewers": 219
      }
     },
     "202610": {
@@ -2789,7 +2924,8 @@ const DASHBOARD_DATA = {
       "shares": 403,
       "comments": 221,
       "views": 49261,
-      "interactions": 2032
+      "interactions": 0,
+      "viewers": 2032
      },
      "社會議題": {
       "posts": 5,
@@ -2798,7 +2934,8 @@ const DASHBOARD_DATA = {
       "shares": 102,
       "comments": 26,
       "views": 3340,
-      "interactions": 261
+      "interactions": 0,
+      "viewers": 261
      },
      "AI主播": {
       "posts": 5,
@@ -2807,7 +2944,8 @@ const DASHBOARD_DATA = {
       "shares": 62,
       "comments": 10,
       "views": 2738,
-      "interactions": 182
+      "interactions": 0,
+      "viewers": 182
      },
      "今天吃什麼": {
       "posts": 5,
@@ -2816,7 +2954,8 @@ const DASHBOARD_DATA = {
       "shares": 53,
       "comments": 38,
       "views": 3237,
-      "interactions": 212
+      "interactions": 0,
+      "viewers": 212
      },
      "疊字疊起來": {
       "posts": 5,
@@ -2825,7 +2964,8 @@ const DASHBOARD_DATA = {
       "shares": 122,
       "comments": 32,
       "views": 5119,
-      "interactions": 310
+      "interactions": 0,
+      "viewers": 310
      },
      "客家音樂": {
       "posts": 4,
@@ -2834,7 +2974,8 @@ const DASHBOARD_DATA = {
       "shares": 82,
       "comments": 20,
       "views": 3785,
-      "interactions": 219
+      "interactions": 0,
+      "viewers": 219
      },
      "客庄生活": {
       "posts": 4,
@@ -2843,7 +2984,8 @@ const DASHBOARD_DATA = {
       "shares": 112,
       "comments": 22,
       "views": 2641,
-      "interactions": 234
+      "interactions": 0,
+      "viewers": 234
      },
      "日常情境互動": {
       "posts": 4,
@@ -2852,7 +2994,8 @@ const DASHBOARD_DATA = {
       "shares": 71,
       "comments": 21,
       "views": 2714,
-      "interactions": 189
+      "interactions": 0,
+      "viewers": 189
      },
      "語錄系列": {
       "posts": 4,
@@ -2861,99 +3004,100 @@ const DASHBOARD_DATA = {
       "shares": 119,
       "comments": 22,
       "views": 4503,
-      "interactions": 285
+      "interactions": 0,
+      "viewers": 285
      }
     },
     "202611": {
      "客家音樂": {
-      "posts": 3,
-      "likes": 63,
+      "posts": 4,
+      "likes": 83,
       "reach": 0,
-      "shares": 70,
-      "comments": 13,
-      "views": 1377,
-      "interactions": 304
+      "shares": 97,
+      "comments": 14,
+      "views": 1959,
+      "interactions": 124,
+      "viewers": 617
      },
      "機動貼文": {
-      "posts": 11,
-      "likes": 842,
+      "posts": 13,
+      "likes": 1144,
       "reach": 0,
-      "shares": 393,
-      "comments": 146,
-      "views": 32172,
-      "interactions": 11153
+      "shares": 427,
+      "comments": 153,
+      "views": 37423,
+      "interactions": 717,
+      "viewers": 15944
      },
      "疊字疊起來": {
-      "posts": 1,
-      "likes": 21,
+      "posts": 3,
+      "likes": 52,
       "reach": 0,
-      "shares": 38,
-      "comments": 8,
-      "views": 487,
-      "interactions": 67
+      "shares": 73,
+      "comments": 10,
+      "views": 1410,
+      "interactions": 121,
+      "viewers": 559
      },
      "客庄生活": {
-      "posts": 2,
-      "likes": 50,
+      "posts": 3,
+      "likes": 76,
       "reach": 0,
-      "shares": 63,
-      "comments": 7,
-      "views": 1314,
-      "interactions": 520
+      "shares": 99,
+      "comments": 10,
+      "views": 1808,
+      "interactions": 126,
+      "viewers": 789
      },
      "語錄系列": {
-      "posts": 2,
-      "likes": 50,
+      "posts": 3,
+      "likes": 71,
       "reach": 0,
-      "shares": 55,
-      "comments": 9,
-      "views": 845,
-      "interactions": 295
+      "shares": 83,
+      "comments": 12,
+      "views": 1267,
+      "interactions": 108,
+      "viewers": 523
      },
      "日常情境互動": {
-      "posts": 1,
-      "likes": 15,
+      "posts": 2,
+      "likes": 33,
       "reach": 0,
-      "shares": 42,
-      "comments": 3,
-      "views": 273,
-      "interactions": 60
+      "shares": 84,
+      "comments": 5,
+      "views": 517,
+      "interactions": 62,
+      "viewers": 208
      },
      "AI主播": {
-      "posts": 2,
-      "likes": 32,
+      "posts": 3,
+      "likes": 46,
       "reach": 0,
-      "shares": 33,
+      "shares": 55,
       "comments": 0,
-      "views": 1564,
-      "interactions": 298
+      "views": 1963,
+      "interactions": 82,
+      "viewers": 596
      },
      "今天吃什麼": {
-      "posts": 2,
-      "likes": 40,
+      "posts": 3,
+      "likes": 58,
       "reach": 0,
-      "shares": 75,
-      "comments": 5,
-      "views": 779,
-      "interactions": 320
+      "shares": 107,
+      "comments": 6,
+      "views": 1181,
+      "interactions": 105,
+      "viewers": 509
      },
      "社會議題": {
-      "posts": 2,
-      "likes": 35,
+      "posts": 4,
+      "likes": 69,
       "reach": 0,
-      "shares": 102,
-      "comments": 5,
-      "views": 739,
-      "interactions": 231
-     },
-     "未分類": {
-      "posts": 3,
-      "likes": 89,
-      "reach": 0,
-      "shares": 4,
-      "comments": 5,
-      "views": 2257,
-      "interactions": 1843
+      "shares": 138,
+      "comments": 11,
+      "views": 1460,
+      "interactions": 184,
+      "viewers": 627
      }
     }
    },
@@ -2966,7 +3110,8 @@ const DASHBOARD_DATA = {
       "shares": 27,
       "comments": 4,
       "views": 14657,
-      "interactions": 358
+      "interactions": 358,
+      "viewers": 0
      }
     },
     "202602": {
@@ -2977,7 +3122,8 @@ const DASHBOARD_DATA = {
       "shares": 39,
       "comments": 41,
       "views": 14868,
-      "interactions": 426
+      "interactions": 426,
+      "viewers": 0
      }
     },
     "202603": {
@@ -2988,7 +3134,8 @@ const DASHBOARD_DATA = {
       "shares": 17,
       "comments": 9,
       "views": 11495,
-      "interactions": 525
+      "interactions": 525,
+      "viewers": 0
      }
     },
     "202604": {
@@ -2999,7 +3146,8 @@ const DASHBOARD_DATA = {
       "shares": 21,
       "comments": 14,
       "views": 2286,
-      "interactions": 139
+      "interactions": 139,
+      "viewers": 0
      },
      "活動推廣": {
       "posts": 3,
@@ -3008,7 +3156,8 @@ const DASHBOARD_DATA = {
       "shares": 19,
       "comments": 5,
       "views": 1943,
-      "interactions": 94
+      "interactions": 94,
+      "viewers": 0
      },
      "今天吃什麼": {
       "posts": 4,
@@ -3017,7 +3166,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 3,
       "views": 917,
-      "interactions": 61
+      "interactions": 61,
+      "viewers": 0
      },
      "疊字疊起來": {
       "posts": 4,
@@ -3026,7 +3176,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 7,
       "views": 1331,
-      "interactions": 74
+      "interactions": 74,
+      "viewers": 0
      },
      "AI主播": {
       "posts": 3,
@@ -3035,7 +3186,8 @@ const DASHBOARD_DATA = {
       "shares": 10,
       "comments": 4,
       "views": 1271,
-      "interactions": 74
+      "interactions": 74,
+      "viewers": 0
      },
      "客庄生活": {
       "posts": 3,
@@ -3044,7 +3196,8 @@ const DASHBOARD_DATA = {
       "shares": 25,
       "comments": 12,
       "views": 1787,
-      "interactions": 110
+      "interactions": 110,
+      "viewers": 0
      },
      "客家音樂": {
       "posts": 3,
@@ -3053,7 +3206,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 3,
       "views": 694,
-      "interactions": 50
+      "interactions": 50,
+      "viewers": 0
      },
      "社會議題": {
       "posts": 3,
@@ -3062,7 +3216,8 @@ const DASHBOARD_DATA = {
       "shares": 2,
       "comments": 3,
       "views": 720,
-      "interactions": 50
+      "interactions": 50,
+      "viewers": 0
      },
      "日常情境互動": {
       "posts": 2,
@@ -3071,7 +3226,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 4,
       "views": 503,
-      "interactions": 37
+      "interactions": 37,
+      "viewers": 0
      }
     },
     "202605": {
@@ -3082,7 +3238,8 @@ const DASHBOARD_DATA = {
       "shares": 3,
       "comments": 24,
       "views": 1716,
-      "interactions": 125
+      "interactions": 125,
+      "viewers": 0
      },
      "AI主播": {
       "posts": 5,
@@ -3091,7 +3248,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 5,
       "views": 1476,
-      "interactions": 106
+      "interactions": 106,
+      "viewers": 0
      },
      "疊字疊起來": {
       "posts": 5,
@@ -3100,7 +3258,8 @@ const DASHBOARD_DATA = {
       "shares": 3,
       "comments": 14,
       "views": 2236,
-      "interactions": 151
+      "interactions": 151,
+      "viewers": 0
      },
      "客庄生活": {
       "posts": 5,
@@ -3109,7 +3268,8 @@ const DASHBOARD_DATA = {
       "shares": 2,
       "comments": 16,
       "views": 1877,
-      "interactions": 124
+      "interactions": 124,
+      "viewers": 0
      },
      "客家音樂": {
       "posts": 4,
@@ -3118,7 +3278,8 @@ const DASHBOARD_DATA = {
       "shares": 4,
       "comments": 17,
       "views": 1621,
-      "interactions": 130
+      "interactions": 130,
+      "viewers": 0
      },
      "社會議題": {
       "posts": 4,
@@ -3127,7 +3288,8 @@ const DASHBOARD_DATA = {
       "shares": 10,
       "comments": 21,
       "views": 2218,
-      "interactions": 149
+      "interactions": 149,
+      "viewers": 0
      },
      "語錄系列": {
       "posts": 4,
@@ -3136,7 +3298,8 @@ const DASHBOARD_DATA = {
       "shares": 3,
       "comments": 14,
       "views": 1402,
-      "interactions": 103
+      "interactions": 103,
+      "viewers": 0
      },
      "日常情境互動": {
       "posts": 4,
@@ -3145,7 +3308,8 @@ const DASHBOARD_DATA = {
       "shares": 2,
       "comments": 12,
       "views": 1319,
-      "interactions": 91
+      "interactions": 91,
+      "viewers": 0
      },
      "機動貼文": {
       "posts": 3,
@@ -3154,7 +3318,8 @@ const DASHBOARD_DATA = {
       "shares": 81,
       "comments": 82,
       "views": 3148,
-      "interactions": 261
+      "interactions": 261,
+      "viewers": 0
      }
     },
     "202606": {
@@ -3165,7 +3330,8 @@ const DASHBOARD_DATA = {
       "shares": 3,
       "comments": 30,
       "views": 2809,
-      "interactions": 140
+      "interactions": 140,
+      "viewers": 0
      },
      "社會議題": {
       "posts": 5,
@@ -3174,7 +3340,8 @@ const DASHBOARD_DATA = {
       "shares": 4,
       "comments": 28,
       "views": 2152,
-      "interactions": 119
+      "interactions": 119,
+      "viewers": 0
      },
      "語錄系列": {
       "posts": 4,
@@ -3183,7 +3350,8 @@ const DASHBOARD_DATA = {
       "shares": 1,
       "comments": 22,
       "views": 1279,
-      "interactions": 91
+      "interactions": 91,
+      "viewers": 0
      },
      "日常情境互動": {
       "posts": 4,
@@ -3192,7 +3360,8 @@ const DASHBOARD_DATA = {
       "shares": 1,
       "comments": 26,
       "views": 1621,
-      "interactions": 102
+      "interactions": 102,
+      "viewers": 0
      },
      "AI主播": {
       "posts": 4,
@@ -3201,7 +3370,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 11,
       "views": 1008,
-      "interactions": 70
+      "interactions": 70,
+      "viewers": 0
      },
      "今天吃什麼": {
       "posts": 4,
@@ -3210,7 +3380,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 21,
       "views": 1287,
-      "interactions": 73
+      "interactions": 73,
+      "viewers": 0
      },
      "疊字疊起來": {
       "posts": 4,
@@ -3219,7 +3390,8 @@ const DASHBOARD_DATA = {
       "shares": 1,
       "comments": 13,
       "views": 1655,
-      "interactions": 75
+      "interactions": 75,
+      "viewers": 0
      },
      "客家音樂": {
       "posts": 4,
@@ -3228,7 +3400,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 27,
       "views": 1443,
-      "interactions": 89
+      "interactions": 89,
+      "viewers": 0
      },
      "機動貼文": {
       "posts": 9,
@@ -3237,7 +3410,8 @@ const DASHBOARD_DATA = {
       "shares": 29,
       "comments": 93,
       "views": 3872,
-      "interactions": 344
+      "interactions": 344,
+      "viewers": 0
      }
     },
     "202607": {
@@ -3248,7 +3422,8 @@ const DASHBOARD_DATA = {
       "shares": 2,
       "comments": 8,
       "views": 2427,
-      "interactions": 92
+      "interactions": 92,
+      "viewers": 0
      },
      "機動貼文": {
       "posts": 10,
@@ -3257,7 +3432,8 @@ const DASHBOARD_DATA = {
       "shares": 9,
       "comments": 70,
       "views": 6771,
-      "interactions": 430
+      "interactions": 430,
+      "viewers": 0
      },
      "日常情境互動": {
       "posts": 5,
@@ -3266,7 +3442,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 9,
       "views": 2530,
-      "interactions": 89
+      "interactions": 89,
+      "viewers": 0
      },
      "AI主播": {
       "posts": 5,
@@ -3275,7 +3452,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 6,
       "views": 1643,
-      "interactions": 74
+      "interactions": 74,
+      "viewers": 0
      },
      "今天吃什麼": {
       "posts": 5,
@@ -3284,7 +3462,8 @@ const DASHBOARD_DATA = {
       "shares": 2,
       "comments": 8,
       "views": 2643,
-      "interactions": 90
+      "interactions": 90,
+      "viewers": 0
      },
      "疊字疊起來": {
       "posts": 4,
@@ -3293,7 +3472,8 @@ const DASHBOARD_DATA = {
       "shares": 4,
       "comments": 7,
       "views": 2606,
-      "interactions": 82
+      "interactions": 82,
+      "viewers": 0
      },
      "客家音樂": {
       "posts": 4,
@@ -3302,7 +3482,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 6,
       "views": 2555,
-      "interactions": 85
+      "interactions": 85,
+      "viewers": 0
      },
      "社會議題": {
       "posts": 4,
@@ -3311,7 +3492,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 6,
       "views": 1752,
-      "interactions": 56
+      "interactions": 56,
+      "viewers": 0
      },
      "客庄生活": {
       "posts": 4,
@@ -3320,7 +3502,8 @@ const DASHBOARD_DATA = {
       "shares": 1,
       "comments": 6,
       "views": 2414,
-      "interactions": 80
+      "interactions": 80,
+      "viewers": 0
      }
     },
     "202608": {
@@ -3331,7 +3514,8 @@ const DASHBOARD_DATA = {
       "shares": 23,
       "comments": 41,
       "views": 7552,
-      "interactions": 435
+      "interactions": 435,
+      "viewers": 0
      },
      "疊字疊起來": {
       "posts": 5,
@@ -3340,7 +3524,8 @@ const DASHBOARD_DATA = {
       "shares": 3,
       "comments": 2,
       "views": 3429,
-      "interactions": 104
+      "interactions": 104,
+      "viewers": 0
      },
      "客家音樂": {
       "posts": 5,
@@ -3349,7 +3534,8 @@ const DASHBOARD_DATA = {
       "shares": 1,
       "comments": 2,
       "views": 3704,
-      "interactions": 95
+      "interactions": 95,
+      "viewers": 0
      },
      "客庄生活": {
       "posts": 5,
@@ -3358,7 +3544,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 4,
       "views": 3629,
-      "interactions": 85
+      "interactions": 85,
+      "viewers": 0
      },
      "社會議題": {
       "posts": 4,
@@ -3367,7 +3554,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 2,
       "views": 2193,
-      "interactions": 69
+      "interactions": 69,
+      "viewers": 0
      },
      "語錄系列": {
       "posts": 4,
@@ -3376,7 +3564,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 3,
       "views": 2119,
-      "interactions": 73
+      "interactions": 73,
+      "viewers": 0
      },
      "AI主播": {
       "posts": 4,
@@ -3385,7 +3574,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 2,
       "views": 1396,
-      "interactions": 48
+      "interactions": 48,
+      "viewers": 0
      },
      "今天吃什麼": {
       "posts": 4,
@@ -3394,7 +3584,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 3,
       "views": 2287,
-      "interactions": 74
+      "interactions": 74,
+      "viewers": 0
      },
      "日常情境互動": {
       "posts": 4,
@@ -3403,7 +3594,8 @@ const DASHBOARD_DATA = {
       "shares": 2,
       "comments": 3,
       "views": 2270,
-      "interactions": 63
+      "interactions": 63,
+      "viewers": 0
      }
     },
     "202609": {
@@ -3414,7 +3606,8 @@ const DASHBOARD_DATA = {
       "shares": 1,
       "comments": 7,
       "views": 2344,
-      "interactions": 67
+      "interactions": 67,
+      "viewers": 0
      },
      "機動貼文": {
       "posts": 14,
@@ -3423,7 +3616,8 @@ const DASHBOARD_DATA = {
       "shares": 27,
       "comments": 80,
       "views": 8576,
-      "interactions": 466
+      "interactions": 466,
+      "viewers": 0
      },
      "語錄系列": {
       "posts": 5,
@@ -3432,7 +3626,8 @@ const DASHBOARD_DATA = {
       "shares": 1,
       "comments": 9,
       "views": 2692,
-      "interactions": 89
+      "interactions": 89,
+      "viewers": 0
      },
      "疊字疊起來": {
       "posts": 4,
@@ -3441,7 +3636,8 @@ const DASHBOARD_DATA = {
       "shares": 1,
       "comments": 9,
       "views": 2959,
-      "interactions": 88
+      "interactions": 88,
+      "viewers": 0
      },
      "AI主播": {
       "posts": 4,
@@ -3450,7 +3646,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 6,
       "views": 1383,
-      "interactions": 59
+      "interactions": 59,
+      "viewers": 0
      },
      "今天吃什麼": {
       "posts": 4,
@@ -3459,7 +3656,8 @@ const DASHBOARD_DATA = {
       "shares": 1,
       "comments": 13,
       "views": 2635,
-      "interactions": 83
+      "interactions": 83,
+      "viewers": 0
      },
      "客家音樂": {
       "posts": 4,
@@ -3468,7 +3666,8 @@ const DASHBOARD_DATA = {
       "shares": 3,
       "comments": 11,
       "views": 3203,
-      "interactions": 100
+      "interactions": 100,
+      "viewers": 0
      },
      "日常情境互動": {
       "posts": 5,
@@ -3477,7 +3676,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 11,
       "views": 2805,
-      "interactions": 81
+      "interactions": 81,
+      "viewers": 0
      },
      "客庄生活": {
       "posts": 4,
@@ -3486,7 +3686,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 11,
       "views": 2315,
-      "interactions": 69
+      "interactions": 69,
+      "viewers": 0
      }
     },
     "202610": {
@@ -3497,7 +3698,8 @@ const DASHBOARD_DATA = {
       "shares": 32,
       "comments": 65,
       "views": 12540,
-      "interactions": 592
+      "interactions": 592,
+      "viewers": 0
      },
      "社會議題": {
       "posts": 5,
@@ -3506,7 +3708,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 13,
       "views": 2441,
-      "interactions": 90
+      "interactions": 90,
+      "viewers": 0
      },
      "AI主播": {
       "posts": 5,
@@ -3515,7 +3718,8 @@ const DASHBOARD_DATA = {
       "shares": 4,
       "comments": 10,
       "views": 1432,
-      "interactions": 88
+      "interactions": 88,
+      "viewers": 0
      },
      "今天吃什麼": {
       "posts": 5,
@@ -3524,7 +3728,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 14,
       "views": 2466,
-      "interactions": 95
+      "interactions": 95,
+      "viewers": 0
      },
      "疊字疊起來": {
       "posts": 5,
@@ -3533,7 +3738,8 @@ const DASHBOARD_DATA = {
       "shares": 2,
       "comments": 10,
       "views": 3048,
-      "interactions": 107
+      "interactions": 107,
+      "viewers": 0
      },
      "客家音樂": {
       "posts": 4,
@@ -3542,7 +3748,8 @@ const DASHBOARD_DATA = {
       "shares": 5,
       "comments": 10,
       "views": 4042,
-      "interactions": 129
+      "interactions": 129,
+      "viewers": 0
      },
      "客庄生活": {
       "posts": 4,
@@ -3551,7 +3758,8 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 14,
       "views": 1945,
-      "interactions": 68
+      "interactions": 68,
+      "viewers": 0
      },
      "語錄系列": {
       "posts": 4,
@@ -3560,7 +3768,8 @@ const DASHBOARD_DATA = {
       "shares": 1,
       "comments": 15,
       "views": 2140,
-      "interactions": 94
+      "interactions": 94,
+      "viewers": 0
      },
      "日常情境互動": {
       "posts": 4,
@@ -3569,105 +3778,115 @@ const DASHBOARD_DATA = {
       "shares": 0,
       "comments": 11,
       "views": 1759,
-      "interactions": 65
+      "interactions": 65,
+      "viewers": 0
      }
     },
     "202611": {
      "客家音樂": {
-      "posts": 3,
-      "likes": 35,
-      "reach": 245,
+      "posts": 4,
+      "likes": 41,
+      "reach": 335,
       "shares": 44,
       "comments": 7,
-      "views": 1073,
-      "interactions": 86
+      "views": 1404,
+      "interactions": 92,
+      "viewers": 0
      },
      "機動貼文": {
-      "posts": 12,
-      "likes": 247,
-      "reach": 3792,
-      "shares": 42,
-      "comments": 15,
-      "views": 8173,
-      "interactions": 312
+      "posts": 15,
+      "likes": 292,
+      "reach": 4851,
+      "shares": 44,
+      "comments": 17,
+      "views": 9731,
+      "interactions": 362,
+      "viewers": 0
      },
      "疊字疊起來": {
-      "posts": 2,
-      "likes": 20,
-      "reach": 220,
+      "posts": 3,
+      "likes": 27,
+      "reach": 333,
       "shares": 0,
       "comments": 2,
-      "views": 698,
-      "interactions": 23
+      "views": 1096,
+      "interactions": 30,
+      "viewers": 0
      },
      "客庄生活": {
-      "posts": 2,
-      "likes": 35,
-      "reach": 379,
+      "posts": 3,
+      "likes": 47,
+      "reach": 506,
       "shares": 0,
-      "comments": 3,
-      "views": 1225,
-      "interactions": 40
+      "comments": 4,
+      "views": 1633,
+      "interactions": 53,
+      "viewers": 0
      },
      "語錄系列": {
-      "posts": 2,
-      "likes": 18,
-      "reach": 241,
+      "posts": 3,
+      "likes": 33,
+      "reach": 375,
       "shares": 0,
       "comments": 3,
-      "views": 821,
-      "interactions": 21
+      "views": 1299,
+      "interactions": 38,
+      "viewers": 0
      },
      "社會議題": {
-      "posts": 2,
-      "likes": 15,
-      "reach": 181,
+      "posts": 3,
+      "likes": 21,
+      "reach": 282,
       "shares": 0,
       "comments": 3,
-      "views": 636,
-      "interactions": 18
+      "views": 968,
+      "interactions": 24,
+      "viewers": 0
      },
      "AI主播": {
-      "posts": 2,
-      "likes": 12,
-      "reach": 242,
+      "posts": 3,
+      "likes": 23,
+      "reach": 414,
       "shares": 0,
       "comments": 0,
-      "views": 464,
-      "interactions": 13
+      "views": 787,
+      "interactions": 25,
+      "viewers": 0
      },
      "今天吃什麼": {
-      "posts": 2,
-      "likes": 18,
-      "reach": 244,
-      "shares": 0,
+      "posts": 3,
+      "likes": 22,
+      "reach": 309,
+      "shares": 1,
       "comments": 2,
-      "views": 803,
-      "interactions": 20
+      "views": 1001,
+      "interactions": 25,
+      "viewers": 0
      },
      "日常情境互動": {
-      "posts": 2,
-      "likes": 11,
-      "reach": 227,
+      "posts": 3,
+      "likes": 13,
+      "reach": 295,
       "shares": 0,
       "comments": 2,
-      "views": 689,
-      "interactions": 13
+      "views": 925,
+      "interactions": 15,
+      "viewers": 0
      },
      "未分類": {
-      "posts": 15,
+      "posts": 8,
       "likes": 0,
       "reach": 0,
       "shares": 0,
       "comments": 0,
       "views": 0,
-      "interactions": 0
+      "interactions": 0,
+      "viewers": 0
      }
     }
    }
   },
   "weeks": [
-   "2026-08-17",
    "2026-08-24",
    "2026-08-31",
    "2026-09-07",
@@ -3679,11 +3898,11 @@ const DASHBOARD_DATA = {
    "2026-10-19",
    "2026-10-26",
    "2026-11-02",
-   "2026-11-09"
+   "2026-11-09",
+   "2026-11-16"
   ],
   "weeklyFb": {
    "posts": [
-    10,
     9,
     10,
     12,
@@ -3695,10 +3914,10 @@ const DASHBOARD_DATA = {
     11,
     11,
     14,
-    14
+    14,
+    9
    ],
    "likes": [
-    744,
     289,
     426,
     860,
@@ -3710,10 +3929,10 @@ const DASHBOARD_DATA = {
     564,
     404,
     743,
-    471
+    471,
+    395
    ],
    "reach": [
-    15279,
     5502,
     6122,
     17942,
@@ -3724,11 +3943,11 @@ const DASHBOARD_DATA = {
     13562,
     11763,
     7890,
-    23993,
-    17344
+    0,
+    0,
+    0
    ],
    "shares": [
-    259,
     286,
     329,
     513,
@@ -3740,10 +3959,10 @@ const DASHBOARD_DATA = {
     251,
     338,
     616,
-    233
+    233,
+    288
    ],
    "comments": [
-    78,
     23,
     65,
     264,
@@ -3755,27 +3974,57 @@ const DASHBOARD_DATA = {
     71,
     88,
     138,
-    59
+    59,
+    20
    ],
    "interactions": [
-    1094,
-    602,
-    829,
-    1650,
-    712,
-    1797,
-    742,
-    891,
-    907,
-    897,
-    835,
+    598,
+    820,
+    1637,
+    705,
+    1768,
+    733,
+    889,
+    892,
+    886,
+    830,
     1497,
-    763
+    763,
+    703
+   ],
+   "views": [
+    8093,
+    12306,
+    29464,
+    8855,
+    31387,
+    11411,
+    17617,
+    26140,
+    15542,
+    11642,
+    23993,
+    15584,
+    8941
+   ],
+   "viewers": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    11615,
+    7192
    ]
   },
   "weeklyIg": {
    "posts": [
-    10,
     9,
     10,
     12,
@@ -3787,10 +4036,10 @@ const DASHBOARD_DATA = {
     11,
     11,
     14,
-    14
+    14,
+    11
    ],
    "likes": [
-    205,
     179,
     183,
     249,
@@ -3802,10 +4051,10 @@ const DASHBOARD_DATA = {
     241,
     123,
     211,
-    198
+    198,
+    108
    ],
    "reach": [
-    2751,
     1904,
     1927,
     3083,
@@ -3817,10 +4066,10 @@ const DASHBOARD_DATA = {
     2902,
     2047,
     2702,
-    3008
+    3008,
+    1929
    ],
    "shares": [
-    12,
     1,
     2,
     10,
@@ -3832,10 +4081,10 @@ const DASHBOARD_DATA = {
     14,
     1,
     74,
-    12
+    12,
+    3
    ],
    "comments": [
-    22,
     9,
     37,
     29,
@@ -3847,10 +4096,10 @@ const DASHBOARD_DATA = {
     39,
     31,
     27,
-    10
+    10,
+    3
    ],
    "interactions": [
-    247,
     199,
     229,
     298,
@@ -3862,10 +4111,301 @@ const DASHBOARD_DATA = {
     291,
     162,
     318,
-    226
+    226,
+    118
+   ],
+   "views": [
+    5280,
+    5885,
+    8163,
+    5399,
+    8197,
+    6904,
+    9488,
+    6484,
+    6562,
+    4570,
+    7803,
+    6610,
+    4262
+   ],
+   "viewers": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
    ]
   },
   "recentPosts": [
+   {
+    "date": "2026-11-22",
+    "plat": "ig",
+    "topic": "日常情境互動",
+    "title": "❄️ 小雪到！冬意漸濃，記得添衣保暖！ 老古人言說：「小雪雪毋落，大雪霜毋降」 意思是小雪時節若沒下雪 到了大雪也可能不見霜降 提醒大家留意天氣變化、順應節氣 天冷了，記得穿暖暖，迎接冬天！🧣 📍小雪：小雪📍 四縣腔：seuˋ xiedˋ 海陸腔：siauˊ sied 大埔腔：siau^ sied^ 饒平腔：siauˋ siedˋ【siau^ sedˋ】【siau^ siedˋ】 詔安腔：sioo^ siedˊ #小雪 #24節氣 #哈客網路學院 輪播廣告 hakka_e.learning_center",
+    "likes": 2,
+    "reach": 68,
+    "shares": 0,
+    "comments": 0,
+    "views": 236,
+    "interactions": 2,
+    "viewers": 0
+   },
+   {
+    "date": "2026-11-22",
+    "plat": "fb",
+    "topic": "日常情境互動",
+    "title": "❄️ 小雪到！冬意漸濃，記得添衣保暖！ 老古人言說：「小雪雪毋落，大雪霜毋降」 意思是小雪時節若沒下雪 到了大雪也可能不見霜降 提醒大家留意天氣變化、順應節氣 天冷了，記得穿暖暖，迎接冬天！🧣 📍小雪：小雪📍 四縣腔：seuˋ xiedˋ 海陸腔：siauˊ sied 大埔腔：siau^ sied^ 饒平腔：siauˋ siedˋ【siau^ sedˋ】【siau^ siedˋ】 詔安腔：sioo^ siedˊ 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #小雪 #24節氣 #哈客網路學院 多媒體 哈客網路學院 Hakka e-Learning Center",
+    "likes": 18,
+    "reach": 0,
+    "shares": 42,
+    "comments": 2,
+    "views": 244,
+    "interactions": 62,
+    "viewers": 148
+   },
+   {
+    "date": "2026-11-21",
+    "plat": "ig",
+    "topic": "機動貼文",
+    "title": "阿強哥打嘴鼓EP18-昆蟲【四縣+海陸】 其餘腔調可以參考我們的貼文喔🤗 Reel hakka_e.learning_center",
+    "likes": 12,
+    "reach": 191,
+    "shares": 1,
+    "comments": 2,
+    "views": 292,
+    "interactions": 15,
+    "viewers": 0
+   },
+   {
+    "date": "2026-11-21",
+    "plat": "ig",
+    "topic": "疊字疊起來",
+    "title": "💧【外頭下雨，屋裡也在滴水】 雨才下沒多久，天花板就開始漏水 水珠一滴接一滴，趕緊拿盆子來接 這種水滴不停落下的樣子 客語可以說「澹澹汀汀」！ 🗒️澹澹汀汀：滴水貌；物件成一條一條地向下垂。🗒️ 四縣腔：damˇ damˇ din din 海陸腔：dam dam dinˇ dinˇ 大埔腔：damˇ damˇ dinˋ dinˋ 饒平腔：dam dam dinˋ dinˋ【damˋ damˋ din^ din^】 #疊字疊起來 #澹澹汀汀 #哈客網路學院 輪播廣告 hakka_e.learning_center",
+    "likes": 7,
+    "reach": 113,
+    "shares": 0,
+    "comments": 0,
+    "views": 398,
+    "interactions": 7,
+    "viewers": 0
+   },
+   {
+    "date": "2026-11-21",
+    "plat": "fb",
+    "topic": "機動貼文",
+    "title": "阿強哥打嘴鼓EP18-昆蟲【四縣+海陸】 其餘腔調可以參考我們的貼文喔🤗 Reel 哈客網路學院 Hakka e-Learning Center",
+    "likes": 236,
+    "reach": 0,
+    "shares": 32,
+    "comments": 5,
+    "views": 6334,
+    "interactions": 290,
+    "viewers": 5660
+   },
+   {
+    "date": "2026-11-21",
+    "plat": "fb",
+    "topic": "疊字疊起來",
+    "title": "💧【外頭下雨，屋裡也在滴水】 雨才下沒多久，天花板就開始漏水 水珠一滴接一滴，趕緊拿盆子來接 這種水滴不停落下的樣子 客語可以說「澹澹汀汀」！ 🗒️澹澹汀汀：滴水貌；物件成一條一條地向下垂。🗒️ 四縣腔：damˇ damˇ din din 海陸腔：dam dam dinˇ dinˇ 大埔腔：damˇ damˇ dinˋ dinˋ 饒平腔：dam dam dinˋ dinˋ【damˋ damˋ din^ din^】 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #疊字疊起來 #澹澹汀汀 #哈客網路學院 多媒體 哈客網路學院 Hakka e-Learning Center",
+    "likes": 22,
+    "reach": 0,
+    "shares": 33,
+    "comments": 1,
+    "views": 349,
+    "interactions": 56,
+    "viewers": 197
+   },
+   {
+    "date": "2026-11-20",
+    "plat": "ig",
+    "topic": "AI主播",
+    "title": "【每日一客語AI主播】 ✨客委會支持改善六堆三百紀念公園及西勢車站 攜手地方打造友善客庄空間✨ 古主委來到屏東縣內埔鄉同竹田鄉 勘查「六堆三百紀念公園」摎「西勢車頭」 希望中央同地方共下，打造符合民眾想望个客庄空間 六堆三百紀念公園保有歷史據點 用「行讀六堆」做骨心 竹田鄉西勢車頭用大禾埕「西勢堂」做構想 營造全齡分享、友善安全个公共場所 #哈客網路學院 #每日一客語AI主播 #逐日一客語 #客家委員會 #客家話好簡單 #hakka #hakkalanguage Reel hakka_e.learning_center",
+    "likes": 11,
+    "reach": 172,
+    "shares": 0,
+    "comments": 0,
+    "views": 323,
+    "interactions": 12,
+    "viewers": 0
+   },
+   {
+    "date": "2026-11-20",
+    "plat": "ig",
+    "topic": "今天吃什麼",
+    "title": "🥢【今天吃什麼｜炆爌肉】 「炆爌肉」用半肥半瘦的五花肉搭配筍乾 慢慢煮到入味 肉香與筍乾香融進湯汁 客語的「炆」，就是用小火慢慢燜煮 今天共下來做這道料理吧~ 留一點時間，煮出鹹香下飯的家常味！ 👉簡單做法 1️⃣ 筍乾事先泡發、洗淨，五花肉切塊 2️⃣ 薑片、蔥、蒜與辣椒下鍋爆香，加入五花肉拌炒 3️⃣ 加糖、醬油炒勻，再放入筍乾、水與少許米酒 4️⃣ 煮滾後加蓋，以中小火燜約50分鐘，至肉熟軟、湯汁略收即可 👇爌肉配筍乾，你喜歡肉多一點，還是筍乾多一點？ 🗒️半肥腈：半肥半瘦的肉類🗒️ 四縣腔：ban piˇ jiangˊ 海陸腔：banˇ pui ziangˋ 大埔腔：banˋ puiˇ",
+    "likes": 4,
+    "reach": 65,
+    "shares": 1,
+    "comments": 0,
+    "views": 198,
+    "interactions": 5,
+    "viewers": 0
+   },
+   {
+    "date": "2026-11-20",
+    "plat": "fb",
+    "topic": "AI主播",
+    "title": "【每日一客語AI主播】 ✨客委會支持改善六堆三百紀念公園及西勢車站 攜手地方打造友善客庄空間✨ 古主委來到屏東縣內埔鄉同竹田鄉 勘查「六堆三百紀念公園」摎「西勢車頭」 希望中央同地方共下，打造符合民眾想望个客庄空間 六堆三百紀念公園保有歷史據點 用「行讀六堆」做骨心 竹田鄉西勢車頭用大禾埕「西勢堂」做構想 營造全齡分享、友善安全个公共場所 #哈客網路學院 #每日一客語AI主播 #逐日一客語 #客家委員會 #客家話好簡單 #hakka #hakkalanguage Reel 哈客網路學院 Hakka e-Learning Center",
+    "likes": 14,
+    "reach": 0,
+    "shares": 22,
+    "comments": 0,
+    "views": 318,
+    "interactions": 36,
+    "viewers": 258
+   },
+   {
+    "date": "2026-11-20",
+    "plat": "fb",
+    "topic": "今天吃什麼",
+    "title": "🥢【今天吃什麼｜炆爌肉】 「炆爌肉」用半肥半瘦的五花肉搭配筍乾 慢慢煮到入味 肉香與筍乾香融進湯汁 客語的「炆」，就是用小火慢慢燜煮 今天共下來做這道料理吧~ 留一點時間，煮出鹹香下飯的家常味！ 👉簡單做法 1️⃣ 筍乾事先泡發、洗淨，五花肉切塊 2️⃣ 薑片、蔥、蒜與辣椒下鍋爆香，加入五花肉拌炒 3️⃣ 加糖、醬油炒勻，再放入筍乾、水與少許米酒 4️⃣ 煮滾後加蓋，以中小火燜約50分鐘，至肉熟軟、湯汁略收即可 👇爌肉配筍乾，你喜歡肉多一點，還是筍乾多一點？ 🗒️半肥腈：半肥半瘦的肉類🗒️ 四縣腔：ban piˇ jiangˊ 海陸腔：banˇ pui ziangˋ 大埔腔：banˋ puiˇ",
+    "likes": 18,
+    "reach": 0,
+    "shares": 32,
+    "comments": 1,
+    "views": 334,
+    "interactions": 51,
+    "viewers": 164
+   },
+   {
+    "date": "2026-11-19",
+    "plat": "ig",
+    "topic": "機動貼文",
+    "title": "〈 客家話喊阿公阿婆不稀奇，你有聽過叫阿婆「阿姐」、叫阿公「阿爹」的嗎？〉▍大埔腔 在東勢、新社、石岡等山城地區，大家對阿公阿婆的稱呼超級多變！ ▍大埔腔怎麼說爺爺奶奶? 爺爺：阿爹、阿公 奶奶：阿奶、阿婆、阿嬤，竟然還有叫「阿姐」的！ 這些不同的叫法，其實隱藏著早期移民社會多元融合的歷史秘密喔。 雖然叫法不同，但疼孫子的心都是一樣的啦。 你家都怎麼稱呼阿公阿婆呢？留言告訴我們！ Reel hakka_affairs_council",
+    "likes": 18,
+    "reach": 446,
+    "shares": 1,
+    "comments": 0,
+    "views": 664,
+    "interactions": 20,
+    "viewers": 0
+   },
+   {
+    "date": "2026-11-19",
+    "plat": "ig",
+    "topic": "客家音樂",
+    "title": "💔 曖昧最惱人！客語唱出少女心事！ 有感覺樂團 F.E.E.L.【還得人惱喔 !!】 靈感來自一段曾經心動的戀情 把曖昧期的猜疑與小脾氣寫成歌 原來客語「還得人惱」不僅是字面意思的「真令人討厭」 也能是傲嬌又可愛的撒嬌告白！🎶 👇共下來聽【還得人惱喔 !!】👇 https://youtu.be/_yo01n11S34?si=Mc75ImV44lIh_ZXp 📍得人惱：討人厭📍 四縣腔：dedˋ nginˇ nauˊ 海陸腔：ded ngin nauˋ 大埔腔：ded^ nginˇ nau+ 饒平腔：dedˋ ngin nauˇ【dedˋ nginˋ nauˇ】 #得人惱 #討人厭 #哈客網路學",
+    "likes": 6,
+    "reach": 90,
+    "shares": 0,
+    "comments": 0,
+    "views": 331,
+    "interactions": 6,
+    "viewers": 0
+   },
+   {
+    "date": "2026-11-19",
+    "plat": "fb",
+    "topic": "客家音樂",
+    "title": "💔 曖昧最惱人！客語唱出少女心事！ 有感覺樂團 F.E.E.L.【還得人惱喔 !!】 靈感來自一段曾經心動的戀情 把曖昧期的猜疑與小脾氣寫成歌 原來客語「還得人惱」不僅是字面意思的「真令人討厭」 也能是傲嬌又可愛的撒嬌告白！🎶 👇共下來聽【還得人惱喔 !!】👇 https://youtu.be/_yo01n11S34?si=Mc75ImV44lIh_ZXp 📍得人惱：討人厭📍 四縣腔：dedˋ nginˇ nauˊ 海陸腔：ded ngin nauˋ 大埔腔：ded^ nginˇ nau+ 饒平腔：dedˋ ngin nauˇ【dedˋ nginˋ nauˇ】 👇查這句怎麼講！《哈客網路學院》",
+    "likes": 20,
+    "reach": 0,
+    "shares": 27,
+    "comments": 1,
+    "views": 283,
+    "interactions": 48,
+    "viewers": 170
+   },
+   {
+    "date": "2026-11-18",
+    "plat": "ig",
+    "topic": "語錄系列",
+    "title": "【感情好，白開水也甜】 「人情好，食水甜」－客家諺語 感情好的時候，連對方的小迷糊都覺得可愛 鬧了彆扭，同一件事卻怎麼看都不順眼 明明是同一個人 心情一變，看對方的眼光也跟著變了。 🗒️人情好，食水甜：感情好時，連白開水都覺得甜。比喻彼此感情好時，容易看見對方的好；感情變淡時，卻容易只看見缺點。🗒️ 四縣腔：nginˇ qinˇ hoˋ，siid suiˋ tiamˇ 海陸腔：ngin cin hoˊ，shidˋ shuiˊ tiam 大埔腔：nginˇ cinˇ ho^，shidˋ shui^ tiamˇ 饒平腔：ngin cin hoˋ，shid fiˋ tiam 詔安腔：nginˋ ci",
+    "likes": 15,
+    "reach": 134,
+    "shares": 0,
+    "comments": 0,
+    "views": 478,
+    "interactions": 17,
+    "viewers": 0
+   },
+   {
+    "date": "2026-11-18",
+    "plat": "fb",
+    "topic": "語錄系列",
+    "title": "【感情好，白開水也甜】 「人情好，食水甜」－客家諺語 感情好的時候，連對方的小迷糊都覺得可愛 鬧了彆扭，同一件事卻怎麼看都不順眼 明明是同一個人 心情一變，看對方的眼光也跟著變了。 🗒️人情好，食水甜：感情好時，連白開水都覺得甜。比喻彼此感情好時，容易看見對方的好；感情變淡時，卻容易只看見缺點。🗒️ 四縣腔：nginˇ qinˇ hoˋ，siid suiˋ tiamˇ 海陸腔：ngin cin hoˊ，shidˋ shuiˊ tiam 大埔腔：nginˇ cinˇ ho^，shidˋ shui^ tiamˇ 饒平腔：ngin cin hoˋ，shid fiˋ tiam 詔安腔：nginˋ ci",
+    "likes": 21,
+    "reach": 0,
+    "shares": 28,
+    "comments": 3,
+    "views": 367,
+    "interactions": 52,
+    "viewers": 210
+   },
+   {
+    "date": "2026-11-17",
+    "plat": "ig",
+    "topic": "機動貼文",
+    "title": "大埔腔〈🦪 以前的雞鴨吃得比人還好？超巨大「河蚌」居然是牠們的豪華下午茶！〉 河裡超巨大的「河蚌」（客家話叫：螺螷 loˇbeˊ / 蚢蟜 kongˇ kauˋ），人居然不愛吃？ 因為河蚌肉質太堅韌，咬不動，早期客家人索性把它拿去當家禽的飼料🦆🐓（這雞鴨也吃太補了吧！） 而且吃完的巨大蚌殼也不會丟，直接拿來當舀飼料的工具🥄 什麼叫做「物盡其用」的生活智慧？看客家人就知道啦！ #名師說典故 #大埔腔 #客話當生趣 Reel hakka_affairs_council",
+    "likes": 15,
+    "reach": 422,
+    "shares": 0,
+    "comments": 0,
+    "views": 602,
+    "interactions": 15,
+    "viewers": 0
+   },
+   {
+    "date": "2026-11-17",
+    "plat": "ig",
+    "topic": "社會議題",
+    "title": "🏥 從政策倡議到AI智慧醫療，打造健康台灣！ 「健康台灣」理念於2023年提出 邀集醫界人士參與論壇，凝聚醫療改革建言 透過AI風險預測、三高防治與遠距照護 讓醫療從疾病治療走向主動預防 從醫院延伸至偏鄉與居家 打造更智慧、全面的健康照護網絡！🤖💚 📍人工智慧：指電腦模擬人類智慧及行為的科技。📍 四縣腔：nginˇ gungˊ zii fi 海陸腔：ngin gungˋ zhiˇ fui+ 大埔腔：nginˇ gung+ zhiˋ fuiˋ 饒平腔：ngin gungˇ zhiˋ fuiˊ 詔安腔：nginˋ gungˇ di^ fui #人工智慧 #科技 #哈客網路學院 #新詞 輪播廣告 h",
+    "likes": 6,
+    "reach": 101,
+    "shares": 0,
+    "comments": 0,
+    "views": 332,
+    "interactions": 6,
+    "viewers": 0
+   },
+   {
+    "date": "2026-11-17",
+    "plat": "fb",
+    "topic": "社會議題",
+    "title": "🏥 從政策倡議到AI智慧醫療，打造健康台灣！ 「健康台灣」理念於2023年提出 邀集醫界人士參與論壇，凝聚醫療改革建言 透過AI風險預測、三高防治與遠距照護 讓醫療從疾病治療走向主動預防 從醫院延伸至偏鄉與居家 打造更智慧、全面的健康照護網絡！🤖💚 📍人工智慧：指電腦模擬人類智慧及行為的科技。📍 四縣腔：nginˇ gungˊ zii fi 海陸腔：ngin gungˋ zhiˇ fui+ 大埔腔：nginˇ gung+ zhiˋ fuiˋ 饒平腔：ngin gungˇ zhiˋ fuiˊ 詔安腔：nginˋ gungˇ di^ fui 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #人工智慧",
+    "likes": 20,
+    "reach": 0,
+    "shares": 36,
+    "comments": 4,
+    "views": 243,
+    "interactions": 60,
+    "viewers": 130
+   },
+   {
+    "date": "2026-11-16",
+    "plat": "ig",
+    "topic": "客庄生活",
+    "title": "🌳 客家電音帶路！一起闖進奇幻森林！ 由火焰蟲樂團、大獅兄家族人偶劇團，攜手西勢國小 帶來的《火焰蟲森林-音樂情境劇》，即將於11月29日登場！ 這是一場結合電音、舞蹈與人偶的奇幻冒險！ 雖然目前線上索票已經結束，但還有現場索票可以選擇喔~ 讓我們一起大手牽小手，一起享受親子同樂時光！🎶 👇活動詳情請至【臺灣客家文化館】粉絲專頁👇 https://www.facebook.com/share/p/14rMfrkgucf/ 📍冒險：冒險📍 四縣腔：mo hiamˋ 海陸腔：mo+ hiamˊ 大埔腔：moˋ hiam^ 饒平腔：moˊ hiamˋ【mo hiam^】【mo hiamˋ】 詔安腔：",
+    "likes": 12,
+    "reach": 127,
+    "shares": 0,
+    "comments": 1,
+    "views": 408,
+    "interactions": 13,
+    "viewers": 0
+   },
+   {
+    "date": "2026-11-16",
+    "plat": "fb",
+    "topic": "客庄生活",
+    "title": "🌳 客家電音帶路！一起闖進奇幻森林！ 由火焰蟲樂團、大獅兄家族人偶劇團，攜手西勢國小 帶來的《火焰蟲森林-音樂情境劇》，即將於11月29日登場！ 這是一場結合電音、舞蹈與人偶的奇幻冒險！ 雖然目前線上索票已經結束，但還有現場索票可以選擇喔~ 讓我們一起大手牽小手，一起享受親子同樂時光！🎶 👇活動詳情請至【臺灣客家文化館】粉絲專頁👇 https://www.facebook.com/share/p/14rMfrkgucf/ 📍冒險：冒險📍 四縣腔：mo hiamˋ 海陸腔：mo+ hiamˊ 大埔腔：moˋ hiam^ 饒平腔：moˊ hiamˋ【mo hiam^】【mo hiamˋ】 詔安腔：",
+    "likes": 26,
+    "reach": 0,
+    "shares": 36,
+    "comments": 3,
+    "views": 469,
+    "interactions": 65,
+    "viewers": 255
+   },
    {
     "date": "2026-11-15",
     "plat": "ig",
@@ -3876,7 +4416,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 1,
     "views": 282,
-    "interactions": 7
+    "interactions": 7,
+    "viewers": 0
    },
    {
     "date": "2026-11-15",
@@ -3888,7 +4429,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 0,
     "views": 279,
-    "interactions": 6
+    "interactions": 6,
+    "viewers": 0
    },
    {
     "date": "2026-11-15",
@@ -3899,8 +4441,9 @@ const DASHBOARD_DATA = {
     "reach": 0,
     "shares": 3,
     "comments": 1,
-    "views": 629,
-    "interactions": 344
+    "views": 1029,
+    "interactions": 70,
+    "viewers": 502
    },
    {
     "date": "2026-11-15",
@@ -3911,8 +4454,9 @@ const DASHBOARD_DATA = {
     "reach": 0,
     "shares": 0,
     "comments": 2,
-    "views": 282,
-    "interactions": 173
+    "views": 581,
+    "interactions": 76,
+    "viewers": 316
    },
    {
     "date": "2026-11-14",
@@ -3924,7 +4468,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 1,
     "views": 311,
-    "interactions": 15
+    "interactions": 15,
+    "viewers": 0
    },
    {
     "date": "2026-11-14",
@@ -3936,31 +4481,34 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 0,
     "views": 378,
-    "interactions": 12
+    "interactions": 12,
+    "viewers": 0
    },
    {
     "date": "2026-11-14",
     "plat": "fb",
-    "topic": "未分類",
+    "topic": "機動貼文",
     "title": "阿強哥打嘴鼓EP17-竹筍【四縣+海陸】 其餘腔調可以參考我們的貼文喔🤗 Reel 哈客網路學院 Hakka e-Learning Center",
     "likes": 66,
     "reach": 0,
     "shares": 2,
     "comments": 2,
-    "views": 1523,
-    "interactions": 1392
+    "views": 1862,
+    "interactions": 132,
+    "viewers": 1637
    },
    {
     "date": "2026-11-14",
     "plat": "fb",
-    "topic": "未分類",
+    "topic": "疊字疊起來",
     "title": "🚚【疊字疊起來｜謦謦硜硜】 空貨車開過凹凸不平的石子路 車身隨著路面搖晃 一路傳來清脆的碰撞聲 這種物體互相撞擊的清脆聲音 客語可以說「謦謦硜硜」！ 🗒️磬磬硜硜：形容物體彼此撞擊發出的清脆響聲🗒️ 四縣腔：kin kin kong kong 海陸腔：kinˇ kinˇ kongˇ kongˇ 大埔腔：kinˋ kinˋ kuangˋ kuangˋ 饒平腔：kinˋ kinˋ kongˋ kongˋ 詔安腔：kin kin kong kong 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #疊字疊起來 #謦謦硜硜 #哈客網路學院 多媒體 哈客網路學院 Hakka e-Learning Cent",
     "likes": 9,
     "reach": 0,
     "shares": 2,
     "comments": 1,
-    "views": 380,
-    "interactions": 233
+    "views": 574,
+    "interactions": 65,
+    "viewers": 295
    },
    {
     "date": "2026-11-13",
@@ -3972,7 +4520,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 1,
     "views": 338,
-    "interactions": 7
+    "interactions": 7,
+    "viewers": 0
    },
    {
     "date": "2026-11-13",
@@ -3984,19 +4533,21 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 0,
     "views": 188,
-    "interactions": 5
+    "interactions": 5,
+    "viewers": 0
    },
    {
     "date": "2026-11-13",
     "plat": "fb",
-    "topic": "未分類",
+    "topic": "社會議題",
     "title": "💛 11月13日世界友善日，讓善意成為日常！ 由世界善良運動組織發起，1998年正式訂立 呼籲大家跨越族群與文化界線，傳遞善意 從生活中的小事，例如扶老人過馬路、替有需要的人讓座 或給陌生人一個微笑，都是溫暖世界的小力量！😊 今天，就讓我們一起傳遞善意吧😍 📍善良：善良、良善📍 四縣腔：san liongˇ 海陸腔：shan+ liong 大埔腔：shenˋ liongˇ 饒平腔：shanˊ liong【san liongˋ】【shan liong】 詔安腔：shen liongˋ 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #世界友善日 #善良 #哈客網路學院 多媒體 哈客網路學院 Hak",
     "likes": 14,
     "reach": 0,
     "shares": 0,
     "comments": 2,
-    "views": 354,
-    "interactions": 218
+    "views": 447,
+    "interactions": 67,
+    "viewers": 253
    },
    {
     "date": "2026-11-13",
@@ -4007,8 +4558,9 @@ const DASHBOARD_DATA = {
     "reach": 0,
     "shares": 0,
     "comments": 0,
-    "views": 275,
-    "interactions": 240
+    "views": 356,
+    "interactions": 46,
+    "viewers": 280
    },
    {
     "date": "2026-11-12",
@@ -4020,7 +4572,8 @@ const DASHBOARD_DATA = {
     "shares": 5,
     "comments": 0,
     "views": 843,
-    "interactions": 28
+    "interactions": 28,
+    "viewers": 0
    },
    {
     "date": "2026-11-12",
@@ -4032,7 +4585,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 1,
     "views": 429,
-    "interactions": 12
+    "interactions": 12,
+    "viewers": 0
    },
    {
     "date": "2026-11-12",
@@ -4043,8 +4597,9 @@ const DASHBOARD_DATA = {
     "reach": 0,
     "shares": 26,
     "comments": 8,
-    "views": 1489,
-    "interactions": 1193
+    "views": 0,
+    "interactions": 0,
+    "viewers": 0
    },
    {
     "date": "2026-11-12",
@@ -4055,8 +4610,9 @@ const DASHBOARD_DATA = {
     "reach": 0,
     "shares": 28,
     "comments": 3,
-    "views": 438,
-    "interactions": 252
+    "views": 506,
+    "interactions": 54,
+    "viewers": 277
    },
    {
     "date": "2026-11-11",
@@ -4068,7 +4624,8 @@ const DASHBOARD_DATA = {
     "shares": 5,
     "comments": 2,
     "views": 948,
-    "interactions": 68
+    "interactions": 68,
+    "viewers": 0
    },
    {
     "date": "2026-11-11",
@@ -4080,7 +4637,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 1,
     "views": 318,
-    "interactions": 9
+    "interactions": 9,
+    "viewers": 0
    },
    {
     "date": "2026-11-11",
@@ -4091,8 +4649,9 @@ const DASHBOARD_DATA = {
     "reach": 0,
     "shares": 47,
     "comments": 15,
-    "views": 7323,
-    "interactions": 6459
+    "views": 7700,
+    "interactions": 192,
+    "viewers": 6673
    },
    {
     "date": "2026-11-11",
@@ -4103,8 +4662,9 @@ const DASHBOARD_DATA = {
     "reach": 0,
     "shares": 24,
     "comments": 6,
-    "views": 406,
-    "interactions": 236
+    "views": 461,
+    "interactions": 56,
+    "viewers": 254
    },
    {
     "date": "2026-11-10",
@@ -4116,7 +4676,8 @@ const DASHBOARD_DATA = {
     "shares": 1,
     "comments": 0,
     "views": 769,
-    "interactions": 18
+    "interactions": 18,
+    "viewers": 0
    },
    {
     "date": "2026-11-10",
@@ -4128,7 +4689,8 @@ const DASHBOARD_DATA = {
     "shares": 1,
     "comments": 0,
     "views": 497,
-    "interactions": 7
+    "interactions": 7,
+    "viewers": 0
    },
    {
     "date": "2026-11-10",
@@ -4140,7 +4702,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 2,
     "views": 291,
-    "interactions": 10
+    "interactions": 10,
+    "viewers": 0
    },
    {
     "date": "2026-11-10",
@@ -4151,8 +4714,9 @@ const DASHBOARD_DATA = {
     "reach": 0,
     "shares": 25,
     "comments": 12,
-    "views": 2266,
-    "interactions": 1695
+    "views": 0,
+    "interactions": 0,
+    "viewers": 0
    },
    {
     "date": "2026-11-10",
@@ -4163,8 +4727,9 @@ const DASHBOARD_DATA = {
     "reach": 0,
     "shares": 5,
     "comments": 3,
-    "views": 835,
-    "interactions": 484
+    "views": 868,
+    "interactions": 33,
+    "viewers": 494
    },
    {
     "date": "2026-11-10",
@@ -4175,8 +4740,9 @@ const DASHBOARD_DATA = {
     "reach": 0,
     "shares": 41,
     "comments": 2,
-    "views": 323,
-    "interactions": 146
+    "views": 354,
+    "interactions": 57,
+    "viewers": 159
    },
    {
     "date": "2026-11-09",
@@ -4188,7 +4754,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 1,
     "views": 739,
-    "interactions": 22
+    "interactions": 22,
+    "viewers": 0
    },
    {
     "date": "2026-11-09",
@@ -4199,8 +4766,9 @@ const DASHBOARD_DATA = {
     "reach": 0,
     "shares": 30,
     "comments": 2,
-    "views": 821,
-    "interactions": 461
+    "views": 846,
+    "interactions": 61,
+    "viewers": 475
    },
    {
     "date": "2026-11-08",
@@ -4212,7 +4780,8 @@ const DASHBOARD_DATA = {
     "shares": 44,
     "comments": 7,
     "views": 625,
-    "interactions": 78
+    "interactions": 78,
+    "viewers": 0
    },
    {
     "date": "2026-11-08",
@@ -4224,7 +4793,8 @@ const DASHBOARD_DATA = {
     "shares": 44,
     "comments": 7,
     "views": 625,
-    "interactions": 78
+    "interactions": 0,
+    "viewers": 78
    },
    {
     "date": "2026-11-07",
@@ -4236,7 +4806,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 1,
     "views": 351,
-    "interactions": 6
+    "interactions": 6,
+    "viewers": 0
    },
    {
     "date": "2026-11-07",
@@ -4248,7 +4819,8 @@ const DASHBOARD_DATA = {
     "shares": 4,
     "comments": 3,
     "views": 541,
-    "interactions": 38
+    "interactions": 38,
+    "viewers": 0
    },
    {
     "date": "2026-11-07",
@@ -4260,7 +4832,8 @@ const DASHBOARD_DATA = {
     "shares": 61,
     "comments": 3,
     "views": 416,
-    "interactions": 85
+    "interactions": 0,
+    "viewers": 85
    },
    {
     "date": "2026-11-07",
@@ -4272,7 +4845,8 @@ const DASHBOARD_DATA = {
     "shares": 61,
     "comments": 10,
     "views": 8398,
-    "interactions": 299
+    "interactions": 0,
+    "viewers": 299
    },
    {
     "date": "2026-11-06",
@@ -4284,7 +4858,8 @@ const DASHBOARD_DATA = {
     "shares": 26,
     "comments": 8,
     "views": 1850,
-    "interactions": 73
+    "interactions": 73,
+    "viewers": 0
    },
    {
     "date": "2026-11-06",
@@ -4296,7 +4871,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 0,
     "views": 276,
-    "interactions": 8
+    "interactions": 8,
+    "viewers": 0
    },
    {
     "date": "2026-11-06",
@@ -4308,7 +4884,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 1,
     "views": 374,
-    "interactions": 8
+    "interactions": 8,
+    "viewers": 0
    },
    {
     "date": "2026-11-06",
@@ -4320,7 +4897,8 @@ const DASHBOARD_DATA = {
     "shares": 26,
     "comments": 8,
     "views": 1850,
-    "interactions": 73
+    "interactions": 0,
+    "viewers": 73
    },
    {
     "date": "2026-11-06",
@@ -4332,7 +4910,8 @@ const DASHBOARD_DATA = {
     "shares": 33,
     "comments": 0,
     "views": 1289,
-    "interactions": 58
+    "interactions": 0,
+    "viewers": 58
    },
    {
     "date": "2026-11-06",
@@ -4344,7 +4923,8 @@ const DASHBOARD_DATA = {
     "shares": 47,
     "comments": 2,
     "views": 341,
-    "interactions": 68
+    "interactions": 0,
+    "viewers": 68
    },
    {
     "date": "2026-11-05",
@@ -4356,7 +4936,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 0,
     "views": 830,
-    "interactions": 17
+    "interactions": 17,
+    "viewers": 0
    },
    {
     "date": "2026-11-05",
@@ -4368,7 +4949,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 1,
     "views": 345,
-    "interactions": 8
+    "interactions": 8,
+    "viewers": 0
    },
    {
     "date": "2026-11-05",
@@ -4380,7 +4962,8 @@ const DASHBOARD_DATA = {
     "shares": 41,
     "comments": 5,
     "views": 2930,
-    "interactions": 138
+    "interactions": 0,
+    "viewers": 138
    },
    {
     "date": "2026-11-05",
@@ -4392,7 +4975,8 @@ const DASHBOARD_DATA = {
     "shares": 42,
     "comments": 3,
     "views": 273,
-    "interactions": 60
+    "interactions": 0,
+    "viewers": 60
    },
    {
     "date": "2026-11-04",
@@ -4404,7 +4988,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 2,
     "views": 503,
-    "interactions": 12
+    "interactions": 12,
+    "viewers": 0
    },
    {
     "date": "2026-11-04",
@@ -4416,7 +5001,8 @@ const DASHBOARD_DATA = {
     "shares": 31,
     "comments": 3,
     "views": 439,
-    "interactions": 59
+    "interactions": 0,
+    "viewers": 59
    },
    {
     "date": "2026-11-03",
@@ -4428,7 +5014,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 0,
     "views": 674,
-    "interactions": 20
+    "interactions": 20,
+    "viewers": 0
    },
    {
     "date": "2026-11-03",
@@ -4440,7 +5027,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 0,
     "views": 386,
-    "interactions": 16
+    "interactions": 16,
+    "viewers": 0
    },
    {
     "date": "2026-11-03",
@@ -4452,7 +5040,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 2,
     "views": 486,
-    "interactions": 18
+    "interactions": 18,
+    "viewers": 0
    },
    {
     "date": "2026-11-03",
@@ -4464,7 +5053,8 @@ const DASHBOARD_DATA = {
     "shares": 29,
     "comments": 3,
     "views": 1988,
-    "interactions": 105
+    "interactions": 0,
+    "viewers": 105
    },
    {
     "date": "2026-11-03",
@@ -4476,7 +5066,8 @@ const DASHBOARD_DATA = {
     "shares": 33,
     "comments": 4,
     "views": 824,
-    "interactions": 81
+    "interactions": 0,
+    "viewers": 81
    },
    {
     "date": "2026-11-03",
@@ -4488,7 +5079,8 @@ const DASHBOARD_DATA = {
     "shares": 33,
     "comments": 5,
     "views": 493,
-    "interactions": 59
+    "interactions": 0,
+    "viewers": 59
    },
    {
     "date": "2026-11-02",
@@ -4500,7 +5092,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 0,
     "views": 242,
-    "interactions": 5
+    "interactions": 5,
+    "viewers": 0
    },
    {
     "date": "2026-11-02",
@@ -4512,7 +5105,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 2,
     "views": 320,
-    "interactions": 11
+    "interactions": 11,
+    "viewers": 0
    },
    {
     "date": "2026-11-02",
@@ -4524,7 +5118,8 @@ const DASHBOARD_DATA = {
     "shares": 97,
     "comments": 77,
     "views": 3640,
-    "interactions": 282
+    "interactions": 0,
+    "viewers": 282
    },
    {
     "date": "2026-11-02",
@@ -4536,7 +5131,8 @@ const DASHBOARD_DATA = {
     "shares": 38,
     "comments": 8,
     "views": 487,
-    "interactions": 67
+    "interactions": 0,
+    "viewers": 67
    },
    {
     "date": "2026-11-01",
@@ -4548,7 +5144,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 0,
     "views": 169,
-    "interactions": 2
+    "interactions": 2,
+    "viewers": 0
    },
    {
     "date": "2026-11-01",
@@ -4560,7 +5157,8 @@ const DASHBOARD_DATA = {
     "shares": 26,
     "comments": 4,
     "views": 470,
-    "interactions": 53
+    "interactions": 0,
+    "viewers": 53
    },
    {
     "date": "2026-10-31",
@@ -4572,7 +5170,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 18,
     "views": 320,
-    "interactions": 31
+    "interactions": 31,
+    "viewers": 0
    },
    {
     "date": "2026-10-31",
@@ -4584,7 +5183,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 2,
     "views": 380,
-    "interactions": 12
+    "interactions": 12,
+    "viewers": 0
    },
    {
     "date": "2026-10-31",
@@ -4596,7 +5196,8 @@ const DASHBOARD_DATA = {
     "shares": 30,
     "comments": 32,
     "views": 555,
-    "interactions": 91
+    "interactions": 0,
+    "viewers": 91
    },
    {
     "date": "2026-10-31",
@@ -4608,7 +5209,8 @@ const DASHBOARD_DATA = {
     "shares": 30,
     "comments": 3,
     "views": 379,
-    "interactions": 53
+    "interactions": 0,
+    "viewers": 53
    },
    {
     "date": "2026-10-30",
@@ -4620,7 +5222,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 0,
     "views": 232,
-    "interactions": 10
+    "interactions": 10,
+    "viewers": 0
    },
    {
     "date": "2026-10-30",
@@ -4632,7 +5235,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 3,
     "views": 392,
-    "interactions": 20
+    "interactions": 20,
+    "viewers": 0
    },
    {
     "date": "2026-10-30",
@@ -4644,7 +5248,8 @@ const DASHBOARD_DATA = {
     "shares": 16,
     "comments": 1,
     "views": 386,
-    "interactions": 35
+    "interactions": 0,
+    "viewers": 35
    },
    {
     "date": "2026-10-30",
@@ -4656,7 +5261,8 @@ const DASHBOARD_DATA = {
     "shares": 16,
     "comments": 9,
     "views": 413,
-    "interactions": 45
+    "interactions": 0,
+    "viewers": 45
    },
    {
     "date": "2026-10-29",
@@ -4668,7 +5274,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 0,
     "views": 555,
-    "interactions": 17
+    "interactions": 17,
+    "viewers": 0
    },
    {
     "date": "2026-10-29",
@@ -4680,7 +5287,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 2,
     "views": 303,
-    "interactions": 10
+    "interactions": 10,
+    "viewers": 0
    },
    {
     "date": "2026-10-29",
@@ -4692,7 +5300,8 @@ const DASHBOARD_DATA = {
     "shares": 39,
     "comments": 1,
     "views": 1381,
-    "interactions": 86
+    "interactions": 0,
+    "viewers": 86
    },
    {
     "date": "2026-10-29",
@@ -4704,7 +5313,8 @@ const DASHBOARD_DATA = {
     "shares": 39,
     "comments": 7,
     "views": 299,
-    "interactions": 69
+    "interactions": 0,
+    "viewers": 69
    },
    {
     "date": "2026-10-28",
@@ -4716,7 +5326,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 2,
     "views": 449,
-    "interactions": 12
+    "interactions": 12,
+    "viewers": 0
    },
    {
     "date": "2026-10-28",
@@ -4728,7 +5339,8 @@ const DASHBOARD_DATA = {
     "shares": 34,
     "comments": 5,
     "views": 732,
-    "interactions": 66
+    "interactions": 0,
+    "viewers": 66
    },
    {
     "date": "2026-10-27",
@@ -4740,7 +5352,8 @@ const DASHBOARD_DATA = {
     "shares": 1,
     "comments": 0,
     "views": 898,
-    "interactions": 26
+    "interactions": 26,
+    "viewers": 0
    },
    {
     "date": "2026-10-27",
@@ -4752,7 +5365,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 2,
     "views": 393,
-    "interactions": 10
+    "interactions": 10,
+    "viewers": 0
    },
    {
     "date": "2026-10-27",
@@ -4764,7 +5378,8 @@ const DASHBOARD_DATA = {
     "shares": 38,
     "comments": 17,
     "views": 5154,
-    "interactions": 202
+    "interactions": 0,
+    "viewers": 202
    },
    {
     "date": "2026-10-27",
@@ -4776,7 +5391,8 @@ const DASHBOARD_DATA = {
     "shares": 37,
     "comments": 2,
     "views": 678,
-    "interactions": 63
+    "interactions": 0,
+    "viewers": 63
    },
    {
     "date": "2026-10-26",
@@ -4788,7 +5404,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 2,
     "views": 479,
-    "interactions": 12
+    "interactions": 12,
+    "viewers": 0
    },
    {
     "date": "2026-10-26",
@@ -4800,7 +5417,8 @@ const DASHBOARD_DATA = {
     "shares": 33,
     "comments": 7,
     "views": 1195,
-    "interactions": 72
+    "interactions": 0,
+    "viewers": 72
    },
    {
     "date": "2026-10-25",
@@ -4812,7 +5430,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 2,
     "views": 558,
-    "interactions": 0
+    "interactions": 0,
+    "viewers": 0
    },
    {
     "date": "2026-10-25",
@@ -4824,7 +5443,8 @@ const DASHBOARD_DATA = {
     "shares": 35,
     "comments": 5,
     "views": 601,
-    "interactions": 60
+    "interactions": 0,
+    "viewers": 60
    },
    {
     "date": "2026-10-24",
@@ -4836,7 +5456,8 @@ const DASHBOARD_DATA = {
     "shares": 4,
     "comments": 8,
     "views": 622,
-    "interactions": 58
+    "interactions": 58,
+    "viewers": 0
    },
    {
     "date": "2026-10-24",
@@ -4848,7 +5469,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 2,
     "views": 585,
-    "interactions": 24
+    "interactions": 24,
+    "viewers": 0
    },
    {
     "date": "2026-10-24",
@@ -4860,7 +5482,8 @@ const DASHBOARD_DATA = {
     "shares": 20,
     "comments": 2,
     "views": 2203,
-    "interactions": 141
+    "interactions": 0,
+    "viewers": 141
    },
    {
     "date": "2026-10-24",
@@ -4872,7 +5495,8 @@ const DASHBOARD_DATA = {
     "shares": 28,
     "comments": 9,
     "views": 639,
-    "interactions": 60
+    "interactions": 0,
+    "viewers": 60
    },
    {
     "date": "2026-10-23",
@@ -4884,7 +5508,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 2,
     "views": 276,
-    "interactions": 13
+    "interactions": 13,
+    "viewers": 0
    },
    {
     "date": "2026-10-23",
@@ -4896,7 +5521,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 4,
     "views": 384,
-    "interactions": 16
+    "interactions": 16,
+    "viewers": 0
    },
    {
     "date": "2026-10-23",
@@ -4908,7 +5534,8 @@ const DASHBOARD_DATA = {
     "shares": 13,
     "comments": 2,
     "views": 508,
-    "interactions": 42
+    "interactions": 0,
+    "viewers": 42
    },
    {
     "date": "2026-10-23",
@@ -4920,7 +5547,8 @@ const DASHBOARD_DATA = {
     "shares": 16,
     "comments": 3,
     "views": 618,
-    "interactions": 45
+    "interactions": 0,
+    "viewers": 45
    },
    {
     "date": "2026-10-22",
@@ -4932,7 +5560,8 @@ const DASHBOARD_DATA = {
     "shares": 3,
     "comments": 4,
     "views": 983,
-    "interactions": 39
+    "interactions": 39,
+    "viewers": 0
    },
    {
     "date": "2026-10-22",
@@ -4944,7 +5573,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 4,
     "views": 459,
-    "interactions": 19
+    "interactions": 19,
+    "viewers": 0
    },
    {
     "date": "2026-10-22",
@@ -4956,7 +5586,8 @@ const DASHBOARD_DATA = {
     "shares": 16,
     "comments": 2,
     "views": 2544,
-    "interactions": 97
+    "interactions": 0,
+    "viewers": 97
    },
    {
     "date": "2026-10-22",
@@ -4968,7 +5599,8 @@ const DASHBOARD_DATA = {
     "shares": 1,
     "comments": 19,
     "views": 540,
-    "interactions": 44
+    "interactions": 0,
+    "viewers": 44
    },
    {
     "date": "2026-10-21",
@@ -4980,7 +5612,8 @@ const DASHBOARD_DATA = {
     "shares": 1,
     "comments": 4,
     "views": 639,
-    "interactions": 31
+    "interactions": 31,
+    "viewers": 0
    },
    {
     "date": "2026-10-21",
@@ -4992,7 +5625,8 @@ const DASHBOARD_DATA = {
     "shares": 28,
     "comments": 8,
     "views": 941,
-    "interactions": 72
+    "interactions": 0,
+    "viewers": 72
    },
    {
     "date": "2026-10-20",
@@ -5004,7 +5638,8 @@ const DASHBOARD_DATA = {
     "shares": 6,
     "comments": 2,
     "views": 1011,
-    "interactions": 52
+    "interactions": 52,
+    "viewers": 0
    },
    {
     "date": "2026-10-20",
@@ -5016,7 +5651,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 4,
     "views": 569,
-    "interactions": 18
+    "interactions": 18,
+    "viewers": 0
    },
    {
     "date": "2026-10-20",
@@ -5028,7 +5664,8 @@ const DASHBOARD_DATA = {
     "shares": 27,
     "comments": 9,
     "views": 4637,
-    "interactions": 186
+    "interactions": 0,
+    "viewers": 186
    },
    {
     "date": "2026-10-20",
@@ -5040,7 +5677,8 @@ const DASHBOARD_DATA = {
     "shares": 33,
     "comments": 6,
     "views": 620,
-    "interactions": 62
+    "interactions": 0,
+    "viewers": 62
    },
    {
     "date": "2026-10-19",
@@ -5052,7 +5690,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 3,
     "views": 476,
-    "interactions": 21
+    "interactions": 21,
+    "viewers": 0
    },
    {
     "date": "2026-10-19",
@@ -5064,7 +5703,8 @@ const DASHBOARD_DATA = {
     "shares": 34,
     "comments": 6,
     "views": 1691,
-    "interactions": 88
+    "interactions": 0,
+    "viewers": 88
    },
    {
     "date": "2026-10-18",
@@ -5076,7 +5716,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 3,
     "views": 446,
-    "interactions": 17
+    "interactions": 17,
+    "viewers": 0
    },
    {
     "date": "2026-10-18",
@@ -5088,7 +5729,8 @@ const DASHBOARD_DATA = {
     "shares": 10,
     "comments": 2,
     "views": 537,
-    "interactions": 38
+    "interactions": 0,
+    "viewers": 38
    },
    {
     "date": "2026-10-17",
@@ -5100,7 +5742,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 9,
     "views": 448,
-    "interactions": 33
+    "interactions": 33,
+    "viewers": 0
    },
    {
     "date": "2026-10-17",
@@ -5112,7 +5755,8 @@ const DASHBOARD_DATA = {
     "shares": 1,
     "comments": 3,
     "views": 638,
-    "interactions": 24
+    "interactions": 24,
+    "viewers": 0
    },
    {
     "date": "2026-10-17",
@@ -5124,7 +5768,8 @@ const DASHBOARD_DATA = {
     "shares": 27,
     "comments": 22,
     "views": 12924,
-    "interactions": 420
+    "interactions": 0,
+    "viewers": 420
    },
    {
     "date": "2026-10-17",
@@ -5136,7 +5781,8 @@ const DASHBOARD_DATA = {
     "shares": 24,
     "comments": 7,
     "views": 759,
-    "interactions": 53
+    "interactions": 0,
+    "viewers": 53
    },
    {
     "date": "2026-10-16",
@@ -5148,7 +5794,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 3,
     "views": 333,
-    "interactions": 19
+    "interactions": 19,
+    "viewers": 0
    },
    {
     "date": "2026-10-16",
@@ -5160,7 +5807,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 3,
     "views": 418,
-    "interactions": 15
+    "interactions": 15,
+    "viewers": 0
    },
    {
     "date": "2026-10-16",
@@ -5172,7 +5820,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 0,
     "views": 476,
-    "interactions": 17
+    "interactions": 0,
+    "viewers": 17
    },
    {
     "date": "2026-10-16",
@@ -5184,7 +5833,8 @@ const DASHBOARD_DATA = {
     "shares": 1,
     "comments": 2,
     "views": 624,
-    "interactions": 25
+    "interactions": 0,
+    "viewers": 25
    },
    {
     "date": "2026-10-15",
@@ -5196,7 +5846,8 @@ const DASHBOARD_DATA = {
     "shares": 1,
     "comments": 3,
     "views": 741,
-    "interactions": 33
+    "interactions": 33,
+    "viewers": 0
    },
    {
     "date": "2026-10-15",
@@ -5208,7 +5859,8 @@ const DASHBOARD_DATA = {
     "shares": 30,
     "comments": 2,
     "views": 644,
-    "interactions": 55
+    "interactions": 0,
+    "viewers": 55
    },
    {
     "date": "2026-10-14",
@@ -5220,7 +5872,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 7,
     "views": 514,
-    "interactions": 26
+    "interactions": 26,
+    "viewers": 0
    },
    {
     "date": "2026-10-14",
@@ -5232,7 +5885,8 @@ const DASHBOARD_DATA = {
     "shares": 44,
     "comments": 5,
     "views": 1637,
-    "interactions": 97
+    "interactions": 0,
+    "viewers": 97
    },
    {
     "date": "2026-10-13",
@@ -5244,7 +5898,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 7,
     "views": 504,
-    "interactions": 24
+    "interactions": 24,
+    "viewers": 0
    },
    {
     "date": "2026-10-13",
@@ -5256,7 +5911,8 @@ const DASHBOARD_DATA = {
     "shares": 26,
     "comments": 5,
     "views": 687,
-    "interactions": 55
+    "interactions": 0,
+    "viewers": 55
    },
    {
     "date": "2026-10-12",
@@ -5268,7 +5924,8 @@ const DASHBOARD_DATA = {
     "shares": 9,
     "comments": 4,
     "views": 1332,
-    "interactions": 63
+    "interactions": 63,
+    "viewers": 0
    },
    {
     "date": "2026-10-12",
@@ -5280,7 +5937,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 3,
     "views": 602,
-    "interactions": 19
+    "interactions": 19,
+    "viewers": 0
    },
    {
     "date": "2026-10-12",
@@ -5292,7 +5950,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 4,
     "views": 508,
-    "interactions": 19
+    "interactions": 19,
+    "viewers": 0
    },
    {
     "date": "2026-10-12",
@@ -5304,7 +5963,8 @@ const DASHBOARD_DATA = {
     "shares": 2,
     "comments": 0,
     "views": 5331,
-    "interactions": 53
+    "interactions": 0,
+    "viewers": 53
    },
    {
     "date": "2026-10-12",
@@ -5316,7 +5976,8 @@ const DASHBOARD_DATA = {
     "shares": 0,
     "comments": 3,
     "views": 1976,
-    "interactions": 30
+    "interactions": 0,
+    "viewers": 30
    },
    {
     "date": "2026-10-12",
@@ -5328,439 +5989,8 @@ const DASHBOARD_DATA = {
     "shares": 30,
     "comments": 9,
     "views": 545,
-    "interactions": 64
-   },
-   {
-    "date": "2026-10-11",
-    "plat": "ig",
-    "topic": "客家音樂",
-    "title": "【我爸講海陸，我媽講四縣】金曲入圍歌手陳瑋儒的雙腔調搖滾 🎸 家庭餐桌激發的靈感！ 陳瑋儒把父親的海陸腔與母親的四縣腔巧妙融入美式輕搖滾 用洗腦旋律帶來雙腔對照 讓我們跟著金曲入圍好歌 一起輕鬆聽懂客語聲調之美！ 👇共下來聽《我爸講海陸，我媽講四縣》👇 https://youtu.be/73joaM7ArLg?si=mxWEDGMlumyaaqsR 📍腔頭：腔調📍 四縣腔：kiongˊ teuˇ 海陸腔：kiongˋ teu 大埔腔：kiong+ teuˇ 饒平腔：kiongˇ teu【kiongˇ teuˋ】 #金曲獎 #四縣腔 #海陸腔 #哈客網路學院 輪播廣告 hakka_e.learn",
-    "likes": 55,
-    "reach": 455,
-    "shares": 0,
-    "comments": 4,
-    "views": 1296,
-    "interactions": 62
-   },
-   {
-    "date": "2026-10-11",
-    "plat": "fb",
-    "topic": "客家音樂",
-    "title": "【我爸講海陸，我媽講四縣】金曲入圍歌手陳瑋儒的雙腔調搖滾 🎸 家庭餐桌激發的靈感！ 陳瑋儒把父親的海陸腔與母親的四縣腔巧妙融入美式輕搖滾 用洗腦旋律帶來雙腔對照 讓我們跟著金曲入圍好歌 一起輕鬆聽懂客語聲調之美！ 👇共下來聽《我爸講海陸，我媽講四縣》👇 https://youtu.be/73joaM7ArLg?si=mxWEDGMlumyaaqsR 📍腔頭：腔調📍 四縣腔：kiongˊ teuˇ 海陸腔：kiongˋ teu 大埔腔：kiong+ teuˇ 饒平腔：kiongˇ teu【kiongˇ teuˋ】 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #金曲獎 #四縣腔 #海陸腔 #哈客",
-    "likes": 39,
-    "reach": 513,
-    "shares": 13,
-    "comments": 4,
-    "views": 1162,
-    "interactions": 56
-   },
-   {
-    "date": "2026-10-10",
-    "plat": "ig",
-    "topic": "機動貼文",
-    "title": "🎉 10/10 雙十國慶到啦！ 今天一起放鬆心情、享受假期 😎✨ 哈客網路學院祝大家雙十快樂，日日都有好心情！ #雙十節快樂 #國慶日 #哈客網路學院 #假期愉快 Reel hakka_e.learning_center",
-    "likes": 28,
-    "reach": 371,
-    "shares": 0,
-    "comments": 2,
-    "views": 621,
-    "interactions": 30
-   },
-   {
-    "date": "2026-10-10",
-    "plat": "ig",
-    "topic": "日常情境互動",
-    "title": "🥳歡慶十月十日！願這片土地繁榮昌盛，祝國家生日快樂🎉 雙十國慶到！在這個特別的日子裡 哈客網路學院邀請大家一起熱情祝福我們的國家生日快樂！ 願這片孕育多樣文化與珍貴客家歲月的土地 平安順心、繁榮昌盛！ 📍生日：生日📍 四縣腔：sangˊ ngidˋ 海陸腔：sangˋ ngid 大埔腔：sang+ ngid^ 饒平腔：sangˇ ngidˋ 詔安腔：sangˇ ngidˊ #生日 #雙十國慶 #哈客網路學院 輪播廣告 hakka_e.learning_center",
-    "likes": 18,
-    "reach": 168,
-    "shares": 0,
-    "comments": 2,
-    "views": 549,
-    "interactions": 20
-   },
-   {
-    "date": "2026-10-10",
-    "plat": "fb",
-    "topic": "機動貼文",
-    "title": "🎉 10/10 雙十國慶到啦！ 今天一起放鬆心情、享受假期 😎✨ 哈客網路學院祝大家雙十快樂，日日都有好心情！ #雙十節快樂 #國慶日 #哈客網路學院 #假期愉快 Reel 哈客網路學院 Hakka e-Learning Center",
-    "likes": 29,
-    "reach": 443,
-    "shares": 11,
-    "comments": 10,
-    "views": 730,
-    "interactions": 50
-   },
-   {
-    "date": "2026-10-10",
-    "plat": "fb",
-    "topic": "疊字疊起來",
-    "title": "🥳歡慶十月十日！願這片土地繁榮昌盛，祝國家生日快樂🎉 雙十國慶到！在這個特別的日子裡 哈客網路學院邀請大家一起熱情祝福我們的國家生日快樂！ 願這片孕育多樣文化與珍貴客家歲月的土地 平安順心、繁榮昌盛！ 📍生日：生日📍 四縣腔：sangˊ ngidˋ 海陸腔：sangˋ ngid 大埔腔：sang+ ngid^ 饒平腔：sangˇ ngidˋ 詔安腔：sangˇ ngidˊ 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #生日 #雙十國慶 #哈客網路學院 多媒體 哈客網路學院 Hakka e-Learning Center",
-    "likes": 28,
-    "reach": 292,
-    "shares": 0,
-    "comments": 7,
-    "views": 697,
-    "interactions": 35
-   },
-   {
-    "date": "2026-10-09",
-    "plat": "ig",
-    "topic": "AI主播",
-    "title": "【每日一客語AI主播】✨第三屆樟之細路徒步嘉年華登場 臺日韓步道夥伴共下行路✨ 第三屆樟之細路徒步嘉年華 10月3號在苗栗登場🙌 邀請日本、韓國步道朋友 摎國內健行愛好者共下行路 感受里山客庄自然个靚😍 #哈客網路學院 #每日一客語AI主播 #逐日一客語 #客家委員會 #客家話好簡單 #hakka #hakkalanguage Reel hakka_e.learning_center",
-    "likes": 18,
-    "reach": 172,
-    "shares": 4,
-    "comments": 3,
-    "views": 305,
-    "interactions": 27
-   },
-   {
-    "date": "2026-10-09",
-    "plat": "ig",
-    "topic": "今天吃什麼",
-    "title": "🍠【今天吃什麼｜地瓜球】 夜市常見的「地瓜球」 客語新詞說作「番薯球」 外皮酥脆、裡面Q彈 一口一顆，讓人忍不住繼續吃😋 今天共下來做番薯球！ 👉簡單做法 1️⃣ 地瓜去皮切塊，蒸熟後趁熱壓成泥 2️⃣ 加入砂糖，再分次加入樹薯粉揉成粉糰 3️⃣ 將粉糰搓成長條、切成小段，再揉成小球 4️⃣ 放入油鍋炸至浮起，輕壓幾次使其膨脹，再炸至金黃即可 👇你吃地瓜球，喜歡外酥內Q，還是酥脆空心？留言告訴我們！ 🗒️番薯球：地瓜球，地瓜與粉類搓成團後，再截成小團油炸成小球狀的食品🗒️ 四縣腔：fanˊ suˇ kiuˇ 海陸腔：fanˋ shu kiu 大埔腔：fan+ shuˇ kiuˇ 饒平腔：fan",
-    "likes": 13,
-    "reach": 132,
-    "shares": 0,
-    "comments": 3,
-    "views": 444,
-    "interactions": 16
-   },
-   {
-    "date": "2026-10-09",
-    "plat": "fb",
-    "topic": "AI主播",
-    "title": "【每日一客語AI主播】✨第三屆樟之細路徒步嘉年華登場 臺日韓步道夥伴共下行路✨ 第三屆樟之細路徒步嘉年華 10月3號在苗栗登場🙌 邀請日本、韓國步道朋友 摎國內健行愛好者共下行路 感受里山客庄自然个靚😍 #哈客網路學院 #每日一客語AI主播 #逐日一客語 #客家委員會 #客家話好簡單 #hakka #hakkalanguage Reel 哈客網路學院 Hakka e-Learning Center",
-    "likes": 21,
-    "reach": 324,
-    "shares": 0,
-    "comments": 4,
-    "views": 472,
-    "interactions": 25
-   },
-   {
-    "date": "2026-10-09",
-    "plat": "fb",
-    "topic": "今天吃什麼",
-    "title": "🍠【今天吃什麼｜地瓜球】 夜市常見的「地瓜球」 客語新詞說作「番薯球」 外皮酥脆、裡面Q彈 一口一顆，讓人忍不住繼續吃😋 今天共下來做番薯球！ 👉簡單做法 1️⃣ 地瓜去皮切塊，蒸熟後趁熱壓成泥 2️⃣ 加入砂糖，再分次加入樹薯粉揉成粉糰 3️⃣ 將粉糰搓成長條、切成小段，再揉成小球 4️⃣ 放入油鍋炸至浮起，輕壓幾次使其膨脹，再炸至金黃即可 👇你吃地瓜球，喜歡外酥內Q，還是酥脆空心？留言告訴我們！ 🗒️番薯球：地瓜球，地瓜與粉類搓成團後，再截成小團油炸成小球狀的食品🗒️ 四縣腔：fanˊ suˇ kiuˇ 海陸腔：fanˋ shu kiu 大埔腔：fan+ shuˇ kiuˇ 饒平腔：fan",
-    "likes": 27,
-    "reach": 515,
-    "shares": 11,
-    "comments": 5,
-    "views": 1083,
-    "interactions": 43
-   },
-   {
-    "date": "2026-10-08",
-    "plat": "ig",
-    "topic": "機動貼文",
-    "title": "老天鵝～客話當生趣！EP.3 〈星仔瀉屎〉senˊ eˋ xia siiˋ【四縣腔】 先別笑！ 客家人看到劃過天際的流星，竟然把它叫做「星仔瀉屎」！ 是不是瞬間有畫面了🤣 這個超可愛的說法，其實藏著早期客家人觀察自然的想像力。 原來客語這麼有梗！快來看看這個名字怎麼來的～ #名師說典故 #四縣腔 #客話當生趣 #龔萬灶 Reel hakka_affairs_council",
-    "likes": 36,
-    "reach": 616,
-    "shares": 6,
-    "comments": 2,
-    "views": 1040,
-    "interactions": 47
-   },
-   {
-    "date": "2026-10-08",
-    "plat": "ig",
-    "topic": "機動貼文",
-    "title": "📢【自學大擂臺｜客語拼音學習 得獎公告】📢 🎉抽獎結果出爐囉！ 恭喜10位中獎哈粉🎉 📌請中獎者於10/15（四）23:59前完成以下兩項領獎手續： 1️.填寫得獎禮品寄送資料表單 https://docs.google.com/forms/d/1RTo4CbRAxDXL7MJgGL_Db8vynozh7MTi4Kg4Mw2j3vw/edit?pli=1 2️.主動私訊「哈客網路學院」粉專，並提供： ⭕追蹤粉專畫面截圖 📢注意事項📢 1. 逾期回復視同放棄領獎權利。 2. 請確認表單中的姓名、電話、郵遞區號及收件地址正確無誤，以免影響獎品寄送。 3. 得獎人需配合下列事項，否則視同取消得獎資格",
-    "likes": 22,
-    "reach": 377,
-    "shares": 0,
-    "comments": 1,
-    "views": 886,
-    "interactions": 24
-   },
-   {
-    "date": "2026-10-08",
-    "plat": "ig",
-    "topic": "社會議題",
-    "title": "柿紅露凝寒意濃！解鎖24節氣中的「寒露」 🍂 「白露身不露，寒露腳不露」 到了寒露，地氣轉寒，特別要注意足部保暖！ 老古人言「寒露到，柿子紅」 客庄此時也迎來柿餅香與秋收季 順應節氣穿暖吃潤 跟著哈客網路學院一起感受古人的生活智慧！ 📍寒露：寒露📍 四縣腔：honˇ lu 海陸腔：hon luˇ 大埔腔：honˇ luˋ 饒平腔：hon luˋ【honˋ lu^】 詔安腔：honˋ lu #寒露 #二十四節氣 #哈客網路學院 輪播廣告 hakka_e.learning_center",
-    "likes": 13,
-    "reach": 123,
-    "shares": 0,
-    "comments": 3,
-    "views": 435,
-    "interactions": 16
-   },
-   {
-    "date": "2026-10-08",
-    "plat": "fb",
-    "topic": "機動貼文",
-    "title": "📢【自學大擂臺｜客語拼音學習 得獎公告】📢 🎉抽獎結果出爐囉！ 恭喜10位中獎哈粉🎉 📌請中獎者於10/15（四）23:59前完成以下兩項領獎手續： 1️.填寫得獎禮品寄送資料表單 https://docs.google.com/forms/d/1RTo4CbRAxDXL7MJgGL_Db8vynozh7MTi4Kg4Mw2j3vw/edit?pli=1 2️.主動私訊「哈客網路學院」粉專，並提供： ⭕追蹤粉專畫面截圖 📢注意事項📢 1. 逾期回復視同放棄領獎權利。 2. 請確認表單中的姓名、電話、郵遞區號及收件地址正確無誤，以免影響獎品寄送。 3. 得獎人需配合下列事項，否則視同取消得獎資格",
-    "likes": 42,
-    "reach": 613,
-    "shares": 0,
-    "comments": 10,
-    "views": 2126,
-    "interactions": 52
-   },
-   {
-    "date": "2026-10-08",
-    "plat": "fb",
-    "topic": "社會議題",
-    "title": "柿紅露凝寒意濃！解鎖24節氣中的「寒露」 🍂 「白露身不露，寒露腳不露」 到了寒露，地氣轉寒，特別要注意足部保暖！ 老古人言「寒露到，柿子紅」 客庄此時也迎來柿餅香與秋收季 順應節氣穿暖吃潤 跟著哈客網路學院一起感受古人的生活智慧！ 📍寒露：寒露📍 四縣腔：honˇ lu 海陸腔：hon luˇ 大埔腔：honˇ luˋ 饒平腔：hon luˋ【honˋ lu^】 詔安腔：honˋ lu 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #寒露 #二十四節氣 #哈客網路學院 多媒體 哈客網路學院 Hakka e-Learning Center",
-    "likes": 28,
-    "reach": 307,
-    "shares": 0,
-    "comments": 7,
-    "views": 691,
-    "interactions": 35
-   },
-   {
-    "date": "2026-10-07",
-    "plat": "ig",
-    "topic": "機動貼文",
-    "title": "阿強哥打嘴鼓EP13-寒露 其餘腔調可以參考我們的貼文喔🤗 Reel hakka_e.learning_center",
-    "likes": 31,
-    "reach": 323,
-    "shares": 0,
-    "comments": 1,
-    "views": 508,
-    "interactions": 35
-   },
-   {
-    "date": "2026-10-07",
-    "plat": "ig",
-    "topic": "機動貼文",
-    "title": "🦢 老天鵝～客話當生趣！EP.2 〈上同下〉【四縣腔】 同樣一個「上」竟然有不只一種念法？ 同樣一個「下」也能念出不同聲音？ 第一次聽客家人講這句話的人，幾乎都會懷疑自己耳朵聽錯👇 「下下下來，上上上棚去」 到底哪裡不一樣？ 原來客語裡藏著超有趣的「變聲」現象！ 跟著龔萬灶老師一起挑戰你的耳朵👂 #名師說典故 #四縣腔 #客話當生趣 #客家話 #客家 Reel hakka_affairs_council",
-    "likes": 43,
-    "reach": 647,
-    "shares": 2,
-    "comments": 2,
-    "views": 1048,
-    "interactions": 52
-   },
-   {
-    "date": "2026-10-07",
-    "plat": "ig",
-    "topic": "語錄系列",
-    "title": "【別讓魯莽，傷了和氣】 「挨著神打著佛」－客家諺語 做事只顧著往前衝 一不小心就可能冒犯別人 多看一步、多想一下 不是畏首畏尾 而是替彼此留下尊重的空間。 🗒️挨著神打著佛：本指觸犯神佛，後來用來形容冒犯別人或做事魯莽🗒️ 四縣腔：aiˊ doˋ siinˇ daˋ doˋ fud 海陸腔：aiˋ doˊ shin daˊ doˊ fudˋ 大埔腔：e+ do^ shinˇ da^ do^ fudˋ 饒平腔：eˇ doˋ shin daˋ doˋ fud #挨著神打著佛 #客語詞彙 #哈客網路學院 輪播廣告 hakka_e.learning_center",
-    "likes": 22,
-    "reach": 147,
-    "shares": 0,
-    "comments": 2,
-    "views": 538,
-    "interactions": 25
-   },
-   {
-    "date": "2026-10-07",
-    "plat": "fb",
-    "topic": "機動貼文",
-    "title": "阿強哥打嘴鼓EP13-寒露 其餘腔調可以參考我們的貼文喔🤗 Reel 哈客網路學院 Hakka e-Learning Center",
-    "likes": 103,
-    "reach": 2135,
-    "shares": 23,
-    "comments": 17,
-    "views": 2417,
-    "interactions": 143
-   },
-   {
-    "date": "2026-10-07",
-    "plat": "fb",
-    "topic": "語錄系列",
-    "title": "【別讓魯莽，傷了和氣】 「挨著神打著佛」－客家諺語 做事只顧著往前衝 一不小心就可能冒犯別人 多看一步、多想一下 不是畏首畏尾 而是替彼此留下尊重的空間。 🗒️挨著神打著佛：本指觸犯神佛，後來用來形容冒犯別人或做事魯莽🗒️ 四縣腔：aiˊ doˋ siinˇ daˋ doˋ fud 海陸腔：aiˋ doˊ shin daˊ doˊ fudˋ 大埔腔：e+ do^ shinˇ da^ do^ fudˋ 饒平腔：eˇ doˋ shin daˋ doˋ fud 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #挨著神打著佛 #客語詞彙 #哈客網路學院 多媒體 哈客網路學院 Hakka e-Learni",
-    "likes": 33,
-    "reach": 595,
-    "shares": 13,
-    "comments": 4,
-    "views": 1193,
-    "interactions": 50
-   },
-   {
-    "date": "2026-10-06",
-    "plat": "ig",
-    "topic": "客庄生活",
-    "title": "體驗木雕之鄉！2026三義木雕藝術節登場🙌 不只看木雕，更要親手體驗！ 在木雕博物館與水美木雕街 發現職人工藝與慢城生活美學 三義木雕藝術節帶你深度探索獨特的客庄文化魅力！ 👇活動詳情請至【客家委員會】官網👇 https://www.hakka.gov.tw/chhakka/app/data/view?module=CountryHakkaEvents&id=332&serno=fd21c685-2657-4fad-adbb-abfbb25b7d35 📍雕刻：雕刻📍 四縣腔：diauˊ kiedˋ/kadˋ 海陸腔：diauˋ kied/kad 大埔腔：diau+ kied^/kad^ 饒平腔",
-    "likes": 15,
-    "reach": 144,
-    "shares": 0,
-    "comments": 1,
-    "views": 479,
-    "interactions": 16
-   },
-   {
-    "date": "2026-10-06",
-    "plat": "fb",
-    "topic": "日常情境互動",
-    "title": "體驗木雕之鄉！2026三義木雕藝術節登場🙌 不只看木雕，更要親手體驗！ 在木雕博物館與水美木雕街 發現職人工藝與慢城生活美學 三義木雕藝術節帶你深度探索獨特的客庄文化魅力！ 👇活動詳情請至【客家委員會】官網👇 https://www.hakka.gov.tw/chhakka/app/data/view?module=CountryHakkaEvents&id=332&serno=fd21c685-2657-4fad-adbb-abfbb25b7d35 📍雕刻：雕刻📍 四縣腔：diauˊ kiedˋ/kadˋ 海陸腔：diauˋ kied/kad 大埔腔：diau+ kied^/kad^ 饒平腔",
-    "likes": 27,
-    "reach": 463,
-    "shares": 13,
-    "comments": 4,
-    "views": 996,
-    "interactions": 44
-   },
-   {
-    "date": "2026-10-05",
-    "plat": "ig",
-    "topic": "機動貼文",
-    "title": "🎯【自學大擂臺-交流區】🎯 找不到新詞彙的客語說法？ 還是有更道地的說法想和大家分享？ 哈客網路學院「自學大擂臺」第二場活動來囉🎉 進入「交流區」，搜尋詞彙、查看大家提供的客語說法；如果查不到資料，或有更道地的說法，歡迎「提供說法」送出建議!完成任務還有機會獲得好禮🎁 📅活動期間 115年9月7日（00:00）至115年9月27日（23:59），共3週。 (預計於10月8日公告得獎名單) 🎉活動詳情請見【哈客網路學院】臉書粉絲團🎉 https://www.facebook.com/profile.php?id=100083348530515&locale=zh_TW 快來交流區搜尋新詞、看看客",
-    "likes": 20,
-    "reach": 197,
-    "shares": 0,
-    "comments": 4,
-    "views": 500,
-    "interactions": 24
-   },
-   {
-    "date": "2026-10-05",
-    "plat": "ig",
-    "topic": "疊字疊起來",
-    "title": "🌀【疊字疊起來｜癲癲倲倲】 因為年歲漸長或疾病影響 有時會忘了這樣、漏了那樣 思緒也變得混亂，說話顛三倒四😵 這種渾沌糊塗的樣子 客語可以說「癲癲倲倲」 🗒️癲癲倲倲：形容因年老或疾病而神智不清、渾沌糊塗的樣子🗒️ 四縣腔：dienˊ dienˊ dungˊ dungˊ 海陸腔：dienˋ dienˋ dungˋ dungˋ 大埔腔：dien+ dien+ dung+ dung+ 饒平腔：dienˇ dienˇ dungˇ dungˇ【denˇ denˇ dungˇ dungˇ】 #疊字疊起來 #癲癲倲倲 #哈客網路學院 輪播廣告 hakka_e.learning_center",
-    "likes": 24,
-    "reach": 317,
-    "shares": 1,
-    "comments": 1,
-    "views": 839,
-    "interactions": 27
-   },
-   {
-    "date": "2026-10-05",
-    "plat": "fb",
-    "topic": "機動貼文",
-    "title": "🎯【自學大擂臺-交流區】🎯 找不到新詞彙的客語說法？ 還是有更道地的說法想和大家分享？ 哈客網路學院「自學大擂臺」第二場活動來囉🎉 進入「交流區」，搜尋詞彙、查看大家提供的客語說法；如果查不到資料，或有更道地的說法，歡迎「提供說法」送出建議!完成任務還有機會獲得好禮🎁 📅活動期間 115年10月5日（00:00）至10月25日（23:59），共3週。 (預計於11月5日公告得獎名單) 📌參加方式 1️.追蹤哈客網路學院 Facebook 粉絲專頁。 2️.按讚並公開分享本篇活動貼文。 3️.點擊本篇置頂留言連結，進入哈客網路學院「交流區」。 4️.在本篇留言處附上「交流區」任一畫面截圖，並留言",
-    "likes": 114,
-    "reach": 1408,
-    "shares": 116,
-    "comments": 81,
-    "views": 5252,
-    "interactions": 313
-   },
-   {
-    "date": "2026-10-05",
-    "plat": "fb",
-    "topic": "客庄生活",
-    "title": "🌀【疊字疊起來｜癲癲倲倲】 因為年歲漸長或疾病影響 有時會忘了這樣、漏了那樣 思緒也變得混亂，說話顛三倒四😵 這種渾沌糊塗的樣子 客語可以說「癲癲倲倲」 🗒️癲癲倲倲：形容因年老或疾病而神智不清、渾沌糊塗的樣子🗒️ 四縣腔：dienˊ dienˊ dungˊ dungˊ 海陸腔：dienˋ dienˋ dungˋ dungˋ 大埔腔：dien+ dien+ dung+ dung+ 饒平腔：dienˇ dienˇ dungˇ dungˇ【denˇ denˇ dungˇ dungˇ】 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #疊字疊起來 #癲癲倲倲 #哈客網路學院 多媒體 哈客網路學院 Ha",
-    "likes": 28,
-    "reach": 354,
-    "shares": 12,
-    "comments": 5,
-    "views": 798,
-    "interactions": 45
-   },
-   {
-    "date": "2026-10-04",
-    "plat": "ig",
-    "topic": "客家音樂",
-    "title": "用溫柔女聲喚醒記憶！後生山歌歌后宋竹梅 🎤 桃園中壢女孩宋竹梅，從小深耕客語 是Z世代的「後生山歌歌后」！ 從傳統山歌唱到客語創作 她用溫柔有力的嗓音，唱出被喚醒的客家記憶。 👇共下來聽這位「後生山歌歌后」的音樂作品及創作歷程👇 https://www.hakkaradio.org.tw/program/play/id/321/audioId/101316 📍播客：播客，Podcast的中譯，是一種數位媒體。📍 四縣腔：boˊ kiedˋ 海陸腔：boˇ kied 大埔腔：boˋ kag^ 饒平腔：boˇ kiedˋ 詔安腔：booˆ kaˊ #播客 #Podcast #新詞 #哈客網路學院 ",
-    "likes": 27,
-    "reach": 481,
-    "shares": 4,
-    "comments": 1,
-    "views": 1447,
-    "interactions": 34
-   },
-   {
-    "date": "2026-10-04",
-    "plat": "fb",
-    "topic": "客家音樂",
-    "title": "用溫柔女聲喚醒記憶！後生山歌歌后宋竹梅 🎤 桃園中壢女孩宋竹梅，從小深耕客語 是Z世代的「後生山歌歌后」！ 從傳統山歌唱到客語創作 她用溫柔有力的嗓音，唱出被喚醒的客家記憶。 👇共下來聽這位「後生山歌歌后」的音樂作品及創作歷程👇 https://www.hakkaradio.org.tw/program/play/id/321/audioId/101316 📍播客：播客，Podcast的中譯，是一種數位媒體。📍 四縣腔：boˊ kiedˋ 海陸腔：boˇ kied 大埔腔：boˋ kag^ 饒平腔：boˇ kiedˋ 詔安腔：booˆ kaˊ 👇查這句怎麼講！《哈客網路學院》交流區連結在置頂留",
-    "likes": 32,
-    "reach": 731,
-    "shares": 24,
-    "comments": 9,
-    "views": 1485,
-    "interactions": 65
-   },
-   {
-    "date": "2026-10-03",
-    "plat": "ig",
-    "topic": "機動貼文",
-    "title": "有不知道怎麼說的客家話嗎？🤔 來【交流區】尋看啊！🔍 找不到也不用怕～ 💬 提供你的說法 🗣️ 選擇熟悉腔調 🎙️ 還可以錄音分享 共下交流，讓客語有更多聲音！✨ 👉 哈客網路學院「交流區」 #哈客網路學院 #交流區 #客語 #共下發聲 Reel hakka_e.learning_center",
-    "likes": 19,
-    "reach": 363,
-    "shares": 1,
-    "comments": 2,
-    "views": 585,
-    "interactions": 22
-   },
-   {
-    "date": "2026-10-03",
-    "plat": "ig",
-    "topic": "疊字疊起來",
-    "title": "【這桶水，怎麼一路灑出來？】 水桶裝得太滿 走路時一搖一晃 裡面的水就不斷濺出來💦 這種液體受外力搖動 從容器裡溢出的樣子 客語可以說「晃晃激激」 🗒️晃晃激激：液體因搖動而溢出的樣子；「半桶水晃晃激激」也比喻能力不足又愛喧嚷炫耀的人🗒️ 四縣腔：gongˇ gongˇ gieb gieb 海陸腔：gong gong giebˋ giebˋ 大埔腔：gongˇ gongˇ giebˋ giebˋ 饒平腔：gong gong gieb gieb 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #客語疊字 #晃晃激激 #哈客網路學院 輪播廣告 hakka_e.learning_center",
-    "likes": 19,
-    "reach": 185,
-    "shares": 0,
-    "comments": 1,
-    "views": 616,
-    "interactions": 23
-   },
-   {
-    "date": "2026-10-03",
-    "plat": "fb",
-    "topic": "機動貼文",
-    "title": "有不知道怎麼說的客家話嗎？🤔 來【交流區】尋看啊！🔍 找不到也不用怕～ 💬 提供你的說法 🗣️ 選擇熟悉腔調 🎙️ 還可以錄音分享 共下交流，讓客語有更多聲音！✨ 👉 哈客網路學院「交流區」 #哈客網路學院 #交流區 #客語 #共下發聲 Reel 哈客網路學院 Hakka e-Learning Center",
-    "likes": 73,
-    "reach": 1029,
-    "shares": 42,
-    "comments": 13,
-    "views": 1345,
-    "interactions": 128
-   },
-   {
-    "date": "2026-10-03",
-    "plat": "fb",
-    "topic": "疊字疊起來",
-    "title": "🪣【這桶水，怎麼一路灑出來？】 水桶裝得太滿 走路時一搖一晃 裡面的水就不斷濺出來💦 這種液體受外力搖動 從容器裡溢出的樣子 客語可以說「晃晃激激」 🗒️晃晃激激：液體因搖動而溢出的樣子；「半桶水晃晃激激」也比喻能力不足又愛喧嚷炫耀的人🗒️ 四縣腔：gongˇ gongˇ gieb gieb 海陸腔：gong gong giebˋ giebˋ 大埔腔：gongˇ gongˇ giebˋ giebˋ 饒平腔：gong gong gieb gieb 👇查這句怎麼講！《哈客網路學院》在置頂留言👇 #客語疊字 #晃晃激激 #哈客網路學院 多媒體 哈客網路學院 Hakka e-Learning Cent",
-    "likes": 26,
-    "reach": 264,
-    "shares": 31,
-    "comments": 5,
-    "views": 777,
-    "interactions": 62
-   },
-   {
-    "date": "2026-10-02",
-    "plat": "ig",
-    "topic": "AI主播",
-    "title": "【每日一客語AI主播】✨駁二客庄黃昏市場開張 講客買菜玩出客庄味✨ 客委會9月26號在高雄駁二藝術特區 舉辦「客庄臨暗市場當好尞」👏 分親子在輕鬆生趣个氣氛裡背 感受客庄生活文化😆 #哈客網路學院 #每日一客語AI主播 #逐日一客語 #客家委員會 #客家話好簡單 #hakka #hakkalanguage Reel hakka_e.learning_center",
-    "likes": 17,
-    "reach": 147,
-    "shares": 0,
-    "comments": 2,
-    "views": 286,
-    "interactions": 19
-   },
-   {
-    "date": "2026-10-02",
-    "plat": "ig",
-    "topic": "今天吃什麼",
-    "title": "🥣【今天吃什麼｜皮蛋瘦肉粥】 客語說的「馬尿卵」，就是皮蛋 教育部臺灣客語辭典也同步收錄「馬卵」的說法 入口滑順又暖胃 今天共下來煮「皮蛋瘦肉粥」 入口滑順又暖胃 👉簡單做法 1️⃣ 白米洗淨加水煮滾，轉小火煮至米粒軟爛 2️⃣ 豬肉絲加入醬油、白胡椒和少量太白粉拌勻 3️⃣ 將肉絲放入粥中煮熟，再加入切丁的皮蛋 4️⃣ 加入鹽和白胡椒調味，撒上蔥花即可 👇你吃皮蛋瘦肉粥，喜歡加蔥花還是配油條？留言告訴我們！ 🗒️馬尿卵／馬卵：皮蛋，以石灰、黏土、食鹽等材料醃製而成的蛋製品🗒️ 四縣腔：maˊ ngiau lonˋ／maˊ lonˋ 海陸腔：maˋ ngiau+ lonˊ／maˋ lonˊ 大",
-    "likes": 24,
-    "reach": 226,
-    "shares": 0,
-    "comments": 1,
-    "views": 753,
-    "interactions": 25
-   },
-   {
-    "date": "2026-10-02",
-    "plat": "fb",
-    "topic": "AI主播",
-    "title": "【每日一客語AI主播】✨駁二客庄黃昏市場開張 講客買菜玩出客庄味✨ 客委會9月26號在高雄駁二藝術特區 舉辦「客庄臨暗市場當好尞」👏 分親子在輕鬆生趣个氣氛裡背 感受客庄生活文化😆 #哈客網路學院 #每日一客語AI主播 #逐日一客語 #客家委員會 #客家話好簡單 #hakka #hakkalanguage Reel 哈客網路學院 Hakka e-Learning Center",
-    "likes": 26,
-    "reach": 651,
-    "shares": 33,
-    "comments": 3,
-    "views": 896,
-    "interactions": 63
-   },
-   {
-    "date": "2026-10-02",
-    "plat": "fb",
-    "topic": "今天吃什麼",
-    "title": "🥣【今天吃什麼｜皮蛋瘦肉粥】 客語說的「馬尿卵」，就是皮蛋 教育部臺灣客語辭典也同步收錄「馬卵」的說法 入口滑順又暖胃 今天共下來煮「皮蛋瘦肉粥」 入口滑順又暖胃 👉簡單做法 1️⃣ 白米洗淨加水煮滾，轉小火煮至米粒軟爛 2️⃣ 豬肉絲加入醬油、白胡椒和少量太白粉拌勻 3️⃣ 將肉絲放入粥中煮熟，再加入切丁的皮蛋 4️⃣ 加入鹽和白胡椒調味，撒上蔥花即可 👇你吃皮蛋瘦肉粥，喜歡加蔥花還是配油條？留言告訴我們！ 🗒️馬尿卵／馬卵：皮蛋，以石灰、黏土、食鹽等材料醃製而成的蛋製品🗒️ 四縣腔：maˊ ngiau lonˋ／maˊ lonˋ 海陸腔：maˋ ngiau+ lonˊ／maˋ lonˊ 大",
-    "likes": 24,
-    "reach": 342,
-    "shares": 1,
-    "comments": 5,
-    "views": 691,
-    "interactions": 31
+    "interactions": 0,
+    "viewers": 64
    }
   ]
  },
@@ -6033,8 +6263,8 @@ const DASHBOARD_DATA = {
   ],
   "weekly": [
    {
-    "point": "最新完整週(11/9~11/15)小幅回落,維持低檔盤整。",
-    "evidence": "本週 71,563,較前一週(11/2~11/8,76,698)回落約 7%;11 月各週落在約 7~8 萬,屬認證旺季結束後之低檔盤整,仍遠低於 9 月旺季每週約 15~20 萬。"
+    "point": "最新完整週(11/16~11/22)明顯回升。",
+    "evidence": "本週 88,747,較前一週(11/9~11/15,71,563)回升約 24%,為 11 月以來最高週(模擬測驗/題庫頁面瀏覽回溫);惟仍低於 9 月旺季每週約 15~20 萬。"
    },
    {
     "point": "10 月各週普遍低於 9 月。",
@@ -6055,7 +6285,7 @@ const DASHBOARD_DATA = {
   ]
  },
  "analysis": {
-  "period": "數據期間:114年11月~115年10月(月);115年8月17日~11月15日(週)",
+  "period": "數據期間:114年11月~115年10月(月);115年8月24日~11月22日(週)",
   "highlights": [
    "活躍使用者維持高檔、年增顯著:10月活躍34,056,較去年同期(114年10月23,470)成長45%;較9月(35,634)略降4%,屬認證旺季後回落。",
    "瀏覽量回落為真實下降(工程師已以主機access.log交互比對GA證實,非計數問題):10月瀏覽量355,427,較9月(658,714)降46%。「詞彙查詢」每次搜尋、點選推薦詞彙皆為一次新網路請求各記一次page_view,故瀏覽量下降代表實際查詢次數真實減少,與9月認證備考旺季結束一致;惟活躍使用者仍達34,056(YoY+45%),屬「到站人數增、每人查詢深度降」之真實行為變化,值得持續觀察。",
@@ -6275,10 +6505,14 @@ const DASHBOARD_DATA = {
     "date": "2026-11-09",
     "fb": null,
     "ig": 5112
+   },
+   {
+    "date": "2026-11-16",
+    "fb": null,
+    "ig": 5134
    }
   ],
   "weeks": [
-   "2026-08-17",
    "2026-08-24",
    "2026-08-31",
    "2026-09-07",
@@ -6290,10 +6524,10 @@ const DASHBOARD_DATA = {
    "2026-10-19",
    "2026-10-26",
    "2026-11-02",
-   "2026-11-09"
+   "2026-11-09",
+   "2026-11-16"
   ],
   "addsFb": [
-   52,
    24,
    15,
    104,
@@ -6305,10 +6539,10 @@ const DASHBOARD_DATA = {
    37,
    27,
    0,
+   0,
    0
   ],
   "addsIg": [
-   56,
    69,
    42,
    41,
@@ -6320,7 +6554,8 @@ const DASHBOARD_DATA = {
    28,
    18,
    27,
-   24
+   28,
+   22
   ]
  }
 };

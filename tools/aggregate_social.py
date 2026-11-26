@@ -17,7 +17,7 @@ OUT = sys.argv[1] if len(sys.argv) > 1 else "social.json"
 START = sys.argv[2] if len(sys.argv) > 2 else "202601"
 TODAY = datetime.date.today()
 END = f"{TODAY.year}{TODAY.month:02d}"
-METRICS = ["posts", "likes", "reach", "shares", "comments", "views", "interactions"]
+METRICS = ["posts", "likes", "reach", "shares", "comments", "views", "interactions", "viewers"]
 
 def month_range(start, end):
     y, m = int(start[:4]), int(start[4:])
@@ -59,6 +59,9 @@ def add(a, r, idx, like_col):
     a["comments"] += num(r[idx["留言數"]])
     a["views"] += num(r[idx["瀏覽次數"]])
     a["interactions"] += num(r[idx["互動次數"]])
+    vc = idx.get("瀏覽者")   # FB 自115年11月起 Meta 新增;欄位不存在時以 0 計
+    if vc is not None:
+        a["viewers"] += num(r[vc])
 
 def intify(d):
     for k, v in d.items():
@@ -83,6 +86,9 @@ for sheet, key in (("FB", "fb"), ("IG", "ig")):
     like_col = "按讚數和心情數" if sheet == "IG" else "按讚數"
     idx = {n: header.index(n) for n in
            ["發佈日期", "貼文主題", "標題", like_col, "觸及人數", "分享次數", "留言數", "瀏覽次數", "互動次數"]}
+    for vcol in ("瀏覽者", "瀏覽者人數"):   # FB 新欄位(美君 115年11月後新增);存在才讀
+        if vcol in header:
+            idx["瀏覽者"] = header.index(vcol); break
     add_col = next((i for i, h in enumerate(header) if h.endswith("新增追蹤")), None)
     tot_col = next((i for i, h in enumerate(header)
                     if h.endswith("追蹤") and "新增" not in h and "取消" not in h), None)
@@ -130,6 +136,7 @@ for sheet, key in (("FB", "fb"), ("IG", "ig")):
                 "comments": int(num(r[idx["留言數"]])),
                 "views": int(num(r[idx["瀏覽次數"]])),
                 "interactions": int(num(r[idx["互動次數"]])),
+                "viewers": int(num(r[idx["瀏覽者"]])) if idx.get("瀏覽者") is not None else 0,
             })
     out["monthly"][key] = {m: intify(v) for m, v in monthly.items()}
     out["topics"][key] = {m: {t: intify(v) for t, v in tv.items()} for m, tv in topics.items()}

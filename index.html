@@ -535,7 +535,7 @@
     <li>流量管道:初次造訪管道(firstUserDefaultChannelGroup)× 活躍使用者;「其他」含影音、AI 助理等少量來源。</li>
     <li>熱門頁面:細分頁面標題自 114年12月 起設定,先前月份無明細;「首頁(異版標題)」「(未設定子標題)」為網站頁面標題設定不同所致,GA4 分列計算。</li>
     <li>社群媒體:FB_IG_流量報告_統計圖表.xlsx 逐篇彙總;互動為 FB/IG 平臺原生值;週次以貼文發佈日期歸屬(週一~週日),僅列完整週。</li>
-    <li><strong>FB 指標改制(115年11月起)</strong>:Meta 自 115年11月 起調整 Facebook 指標——(1)停用「觸及」、改計「瀏覽量(Views)」,故 <strong>11月起 FB「觸及」欄採 Facebook 瀏覽量數值</strong>;(2)「互動次數」基準改為 Views 量級之廣義互動(與過往≈讚+留+分不同),為維持可比,<strong>11月起 FB「互動」改以「讚+留言+分享」合計</strong>。兩者皆與 10月以前定義不同,跨 11月之 FB 觸及/互動增減請留意係指標改制所致(IG 不受影響,仍為原值)。</li>
+    <li><strong>社群曝光指標口徑(Meta 115年11月改制)</strong>:FB 與 IG 曝光指標已不同——<strong>FB 比較「瀏覽次數＋瀏覽者人數＋觸及」</strong>(Meta 自115年11月停用 FB 觸及,11月起觸及顯示「待補」;瀏覽者人數取自美君新增之「瀏覽者」欄,自115年10月起有資料);<strong>IG 比較「瀏覽次數＋觸及人數」</strong>(IG 觸及保留,無瀏覽者欄)。另 FB「互動次數」11月起基準改為 Views 量級之廣義互動(與過往≈讚+留+分不同),為維持可比,<strong>11月起 FB「互動」改以「讚+留言+分享」合計</strong>。跨 11月之 FB 指標增減請留意係改制所致。</li>
     <li>週比較之 GA4 活躍使用者為每日活躍之平均(日均),跨日去重之精確口徑以月數據為準。</li>
     <li>KPI:「115年社群行銷KPI設定」基線值 +5% 為年度目標;達成率=當月 FB+IG 合計 ÷ 年度目標值。</li>
   </ul>
@@ -550,10 +550,20 @@
   const pct = (n, d = 1) => (n * 100).toFixed(d) + "%";
   const cssVar = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   const mmss = sec => `${Math.floor(sec / 60)}分${String(Math.round(sec % 60)).padStart(2, "0")}秒`;
-  const SOC_METRICS = [
-    ["posts", "貼文數"], ["reach", "觸及"], ["interactions", "互動"],
+  // FB/IG 曝光指標口徑不同(Meta 115年11月改制):
+  //   FB:瀏覽次數(views)+瀏覽者人數(viewers,美君新增「瀏覽者」欄)+觸及(reach,11月起消失→待補)。
+  //   IG:瀏覽次數(views)+觸及(reach,保留);IG 無瀏覽者欄。
+  const SOC_METRICS_FB = [
+    ["posts", "貼文數"], ["views", "瀏覽次數"], ["viewers", "瀏覽者人數"], ["reach", "觸及"], ["interactions", "互動"],
     ["likes", "按讚"], ["comments", "留言"], ["shares", "分享"]
   ];
+  const SOC_METRICS_IG = [
+    ["posts", "貼文數"], ["views", "瀏覽次數"], ["reach", "觸及"], ["interactions", "互動"],
+    ["likes", "按讚"], ["comments", "留言"], ["shares", "分享"]
+  ];
+  const socMetrics = plat => plat === "fb" ? SOC_METRICS_FB : SOC_METRICS_IG;
+  // 曝光指標(觸及/瀏覽者)缺值時顯示「待補」(FB 觸及11月起消失、瀏覽者需美君補欄)
+  const socPending = (m, v) => (m === "viewers" || m === "reach") && !v;
 
   document.getElementById("updated-note").textContent =
     `資料期間:${G.months[0]}~${D.latestLabel}(週數據至最新完整週)|更新日期:${D.updated}`;
@@ -730,8 +740,11 @@
 
     const sp = si > 0 ? si - 1 : null;
     for (const [plat, elId] of [["fb", "m-fb-tiles"], ["ig", "m-ig-tiles"]]) {
-      document.getElementById(elId).innerHTML = SOC_METRICS.map(([m, name]) =>
-        tile(name, fmt(S[plat][m][si]), sp == null ? "—" : deltaHtml(S[plat][m][si], S[plat][m][sp]))).join("");
+      document.getElementById(elId).innerHTML = socMetrics(plat).map(([m, name]) => {
+        const v = S[plat][m][si], p = sp == null ? null : S[plat][m][sp];
+        if (socPending(m, v)) return tile(name, "待補", "");
+        return tile(name, fmt(v), sp == null ? "—" : deltaHtml(v, p));
+      }).join("");
     }
 
     // 主題統計
@@ -815,8 +828,10 @@
       tile("瀏覽量", fmt(cur.pv), deltaHtml(cur.pv, prev.pv, "上週"))
     ].join("");
     for (const [plat, wk, elId] of [["fb", S.weeklyFb, "w-fb-tiles"], ["ig", S.weeklyIg, "w-ig-tiles"]]) {
-      document.getElementById(elId).innerHTML = SOC_METRICS.map(([m, name]) =>
-        tile(name, fmt(wk[m][i]), deltaHtml(wk[m][i], wk[m][p], "上週"))).join("");
+      document.getElementById(elId).innerHTML = socMetrics(plat).map(([m, name]) => {
+        if (socPending(m, wk[m][i])) return tile(name, "待補", "");
+        return tile(name, fmt(wk[m][i]), deltaHtml(wk[m][i], wk[m][p], "上週"));
+      }).join("");
     }
     // 對照表
     const rows = [];
@@ -825,14 +840,20 @@
     rows.push(["工作階段", prev.sessions, cur.sessions]);
     rows.push(["瀏覽量", prev.pv, cur.pv]);
     rows.push(["grp", "Facebook"]);
-    SOC_METRICS.forEach(([m, name]) => rows.push([name, S.weeklyFb[m][p], S.weeklyFb[m][i]]));
+    SOC_METRICS_FB.forEach(([m, name]) => rows.push([name, S.weeklyFb[m][p], S.weeklyFb[m][i], m]));
     rows.push(["grp", "Instagram"]);
-    SOC_METRICS.forEach(([m, name]) => rows.push([name, S.weeklyIg[m][p], S.weeklyIg[m][i]]));
+    SOC_METRICS_IG.forEach(([m, name]) => rows.push([name, S.weeklyIg[m][p], S.weeklyIg[m][i], m]));
     document.getElementById("w-table").innerHTML =
       `<tr><th>指標</th><th>上週(${weekLabel(weeks[p])})</th><th>本週(${weekLabel(weeks[i])})</th><th>增減</th><th>增減率</th></tr>` +
       rows.map(r => {
         if (r[0] === "grp") return `<tr class="grp"><td colspan="5">${r[1]}</td></tr>`;
-        const [name, a, b] = r, diff = b - a;
+        const [name, a, b, m] = r;
+        if (m === "viewers" || m === "reach") {
+          const ap = socPending(m, a), bp = socPending(m, b);
+          if (ap || bp)
+            return `<tr><td>${name}</td><td>${ap ? "待補" : fmt(a)}</td><td>${bp ? "待補" : fmt(b)}</td><td>—</td><td>—</td></tr>`;
+        }
+        const diff = b - a;
         const rate = a === 0 ? "—" : `<span class="${diff >= 0 ? "up" : "down"}">${diff >= 0 ? "+" : ""}${pct(diff / a)}</span>`;
         return `<tr><td>${name}</td><td>${fmt(a)}</td><td>${fmt(b)}</td>` +
                `<td><span class="${diff >= 0 ? "up" : "down"}">${diff >= 0 ? "+" : ""}${fmt(diff)}</span></td><td>${rate}</td></tr>`;
