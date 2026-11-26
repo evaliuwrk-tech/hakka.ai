@@ -913,34 +913,39 @@
     opt.value = dt; opt.textContent = dayLabel(dt);
     dSelect.appendChild(opt);
   });
-  // 各平臺近30日平均觸及(以最新貼文日回推30天)
-  const avgReach = { fb: 0, ig: 0 };
+  // 曝光基準:FB 以「瀏覽次數(views)」、IG 以「觸及(reach)」為準(FB 115年11月起無觸及)
+  const expKey = plat => plat === "fb" ? "views" : "reach";
+  const expName = plat => plat === "fb" ? "瀏覽次數" : "觸及";
+  const expVal = p => p[expKey(p.plat)] || 0;
+  // 各平臺近30日平均曝光(以最新貼文日回推30天)
+  const avgExp = { fb: 0, ig: 0 };
   if (postDates.length) {
     const cut = new Date(postDates[0] + "T00:00:00"); cut.setDate(cut.getDate() - 29);
     const cutIso = cut.toISOString().slice(0, 10);
     for (const plat of ["fb", "ig"]) {
+      const k = expKey(plat);
       const arr = posts.filter(p => p.plat === plat && p.date >= cutIso);
-      avgReach[plat] = arr.length ? arr.reduce((s2, p) => s2 + p.reach, 0) / arr.length : 0;
+      avgExp[plat] = arr.length ? arr.reduce((s2, p) => s2 + (p[k] || 0), 0) / arr.length : 0;
     }
   }
   const platName = { fb: "Facebook", ig: "Instagram" };
   const HOT = 2.0, LOW = 0.5;   // 爆款/低於水準門檻(相對平均倍數)
   const tierOf = m => m >= HOT ? "hot" : m < LOW ? "low" : "";
   function multHtml(p) {
-    if (!avgReach[p.plat]) return "";
-    const m = p.reach / avgReach[p.plat];
+    if (!avgExp[p.plat]) return "";
+    const m = expVal(p) / avgExp[p.plat];
     return `<span class="mult ${tierOf(m)}">×${m.toFixed(1)}</span>`;
   }
   function tierChip(p) {
-    if (!avgReach[p.plat]) return "";
-    const t = tierOf(p.reach / avgReach[p.plat]);
+    if (!avgExp[p.plat]) return "";
+    const t = tierOf(expVal(p) / avgExp[p.plat]);
     if (t === "hot") return '<span class="tier-chip hot">🔥 爆款</span>';
     if (t === "low") return '<span class="tier-chip low">▼ 低於水準</span>';
     return "";
   }
   document.getElementById("d-formula").innerHTML =
-    `<b>相對平均的計算方式</b>:該篇貼文「觸及人數」÷ 同平臺近 30 日每篇平均觸及` +
-    `(目前基準:FB 平均 ${fmt(avgReach.fb)}、IG 平均 ${fmt(avgReach.ig)},隨每次數據更新重算)。` +
+    `<b>相對平均的計算方式</b>:FB 以該篇「瀏覽次數」、IG 以「觸及人數」÷ 同平臺近 30 日每篇平均` +
+    `(FB 115年11月起無觸及,改以瀏覽次數為曝光基準;目前基準:FB 平均 ${fmt(avgExp.fb)} 瀏覽次數、IG 平均 ${fmt(avgExp.ig)} 觸及,隨每次數據更新重算)。` +
     `<br>標記規則:×${HOT.toFixed(1)} 以上 → <span class="tier-chip hot">🔥 爆款</span>&nbsp;;` +
     `×${LOW.toFixed(1)} 以下 → <span class="tier-chip low">▼ 低於水準</span>&nbsp;;其間為一般水準。` +
     `<span style="color:var(--text-muted)">(注意:發佈未滿2~3天的貼文數字仍在累積,倍數會偏低)</span>`;
@@ -960,11 +965,13 @@
         </div>
         <div class="title" title="${esc(p.title)}">${esc(clip(p.title, 64)) || "(無標題)"}</div>
         <div class="post-metrics">
-          <span>觸及 <b>${fmt(p.reach)}</b> ${multHtml(p)} 平均</span>
+          <span>${expName(p.plat)} <b>${fmt(expVal(p))}</b> ${multHtml(p)} 平均</span>
+          ${p.plat === "fb"
+            ? `<span>瀏覽者 <b>${p.viewers ? fmt(p.viewers) : "—"}</b></span>`
+            : `<span>瀏覽次數 <b>${fmt(p.views)}</b></span>`}
           <span>按讚 <b>${fmt(p.likes)}</b></span>
           <span>留言 <b>${fmt(p.comments)}</b></span>
           <span>分享 <b>${fmt(p.shares)}</b></span>
-          <span>瀏覽 <b>${fmt(p.views)}</b></span>
           <span style="color:var(--text-muted)">互動合計 ${fmt(p.interactions)}</span>
         </div>
       </div>`).join("") || '<p class="empty-note">該日無貼文</p>';
@@ -972,12 +979,15 @@
   dSelect.addEventListener("change", renderDay);
   function buildDayTable() {
     for (const [plat, elId] of [["fb", "d-best-fb"], ["ig", "d-best-ig"]]) {
+      // 曝光第2欄:FB=瀏覽者(viewers)、IG=觸及(reach);第1欄固定為瀏覽次數
+      const exp2key = plat === "fb" ? "viewers" : "reach";
+      const exp2name = plat === "fb" ? "瀏覽者" : "觸及";
       const platDates = [...new Set(posts.filter(p => p.plat === plat).map(p => p.date))]
         .sort().reverse().slice(0, 14);
       const colgroup =
-        `<colgroup><col style="width:8%"><col style="width:13%"><col style="width:29%">` +
-        `<col style="width:8%"><col style="width:7%"><col style="width:7%"><col style="width:7%">` +
-        `<col style="width:21%"></colgroup>`;
+        `<colgroup><col style="width:8%"><col style="width:12%"><col style="width:25%">` +
+        `<col style="width:9%"><col style="width:8%"><col style="width:7%"><col style="width:6%"><col style="width:6%">` +
+        `<col style="width:19%"></colgroup>`;
       let body = "";
       platDates.forEach((dt, di) => {
         const dayList = posts.filter(p => p.date === dt && p.plat === plat)
@@ -985,14 +995,15 @@
         dayList.forEach((p, i) => {
           const sep = (i === 0 && di > 0) ? ' style="border-top:2px solid var(--grid)"' : '';
           const star = (i === 0 && dayList.length > 1 && p.interactions > 0) ? "★ " : "";
+          const exp2 = (exp2key === "viewers" && !p.viewers) ? "—" : fmt(p[exp2key]);
           body += `<tr${sep}><td>${i === 0 ? dayLabel(dt) : ""}</td><td>${esc(p.topic)}</td>` +
                   `<td style="white-space:normal" title="${esc(p.title)}">${star}${esc(clip(p.title, 20))}</td>` +
-                  `<td>${fmt(p.reach)}</td><td>${fmt(p.likes)}</td><td>${fmt(p.comments)}</td><td>${fmt(p.shares)}</td>` +
+                  `<td>${fmt(p.views)}</td><td>${exp2}</td><td>${fmt(p.likes)}</td><td>${fmt(p.comments)}</td><td>${fmt(p.shares)}</td>` +
                   `<td>${multHtml(p) || "—"} ${tierChip(p)}</td></tr>`;
         });
       });
       document.getElementById(elId).innerHTML = colgroup +
-        `<tr><th>日期</th><th>主題</th><th>標題</th><th>觸及</th><th>按讚</th><th>留言</th><th>分享</th><th>相對平均</th></tr>` +
+        `<tr><th>日期</th><th>主題</th><th>標題</th><th>瀏覽次數</th><th>${exp2name}</th><th>按讚</th><th>留言</th><th>分享</th><th>相對平均</th></tr>` +
         body;
     }
   }
