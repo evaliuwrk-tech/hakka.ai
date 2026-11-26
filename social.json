@@ -1899,282 +1899,282 @@
   }
  },
  "weeks": [
-  "2026-08-24",
-  "2026-08-31",
-  "2026-09-07",
-  "2026-09-14",
-  "2026-09-21",
-  "2026-09-28",
-  "2026-10-05",
-  "2026-10-12",
-  "2026-10-19",
-  "2026-10-26",
-  "2026-11-02",
-  "2026-11-09",
-  "2026-11-16"
+  "2026-08-22",
+  "2026-08-29",
+  "2026-09-05",
+  "2026-09-12",
+  "2026-09-19",
+  "2026-09-26",
+  "2026-10-03",
+  "2026-10-10",
+  "2026-10-17",
+  "2026-10-24",
+  "2026-10-31",
+  "2026-11-07",
+  "2026-11-14"
  ],
  "weekly": {
   "fb": {
-   "2026-08-24": {
+   "2026-08-22": {
     "posts": 9,
-    "likes": 289,
-    "reach": 5502,
-    "shares": 286,
-    "comments": 23,
-    "views": 8093,
-    "interactions": 0,
-    "viewers": 602
-   },
-   "2026-08-31": {
-    "posts": 10,
-    "likes": 426,
-    "reach": 6122,
-    "shares": 329,
-    "comments": 65,
-    "views": 12306,
-    "interactions": 0,
-    "viewers": 829
-   },
-   "2026-09-07": {
-    "posts": 12,
-    "likes": 860,
-    "reach": 17942,
-    "shares": 513,
-    "comments": 264,
-    "views": 29464,
-    "interactions": 0,
-    "viewers": 1650
-   },
-   "2026-09-14": {
-    "posts": 10,
-    "likes": 302,
-    "reach": 4408,
-    "shares": 343,
-    "comments": 60,
-    "views": 8855,
-    "interactions": 0,
-    "viewers": 712
-   },
-   "2026-09-21": {
-    "posts": 13,
-    "likes": 1167,
-    "reach": 25654,
-    "shares": 367,
-    "comments": 234,
-    "views": 31387,
-    "interactions": 0,
-    "viewers": 1797
-   },
-   "2026-09-28": {
-    "posts": 11,
-    "likes": 411,
-    "reach": 7015,
-    "shares": 255,
-    "comments": 67,
-    "views": 11411,
-    "interactions": 0,
-    "viewers": 742
-   },
-   "2026-10-05": {
-    "posts": 12,
-    "likes": 519,
-    "reach": 7962,
-    "shares": 212,
-    "comments": 158,
-    "views": 17617,
-    "interactions": 0,
-    "viewers": 891
-   },
-   "2026-10-12": {
-    "posts": 11,
-    "likes": 641,
-    "reach": 13562,
-    "shares": 194,
-    "comments": 57,
-    "views": 26140,
-    "interactions": 0,
-    "viewers": 907
-   },
-   "2026-10-19": {
-    "posts": 11,
-    "likes": 564,
-    "reach": 11763,
-    "shares": 251,
-    "comments": 71,
-    "views": 15542,
-    "interactions": 0,
-    "viewers": 897
-   },
-   "2026-10-26": {
-    "posts": 11,
-    "likes": 404,
-    "reach": 7890,
-    "shares": 338,
-    "comments": 88,
-    "views": 11642,
-    "interactions": 0,
-    "viewers": 835
-   },
-   "2026-11-02": {
-    "posts": 14,
-    "likes": 743,
-    "reach": 0,
-    "shares": 616,
-    "comments": 138,
-    "views": 23993,
-    "interactions": 0,
-    "viewers": 1512
-   },
-   "2026-11-09": {
-    "posts": 14,
-    "likes": 471,
-    "reach": 0,
-    "shares": 233,
+    "likes": 643,
+    "reach": 13640,
+    "shares": 264,
     "comments": 59,
-    "views": 15584,
-    "interactions": 909,
-    "viewers": 11615
+    "views": 16778,
+    "interactions": 0,
+    "viewers": 978
    },
-   "2026-11-16": {
-    "posts": 9,
-    "likes": 395,
+   "2026-08-29": {
+    "posts": 10,
+    "likes": 383,
+    "reach": 6316,
+    "shares": 329,
+    "comments": 52,
+    "views": 12118,
+    "interactions": 0,
+    "viewers": 769
+   },
+   "2026-09-05": {
+    "posts": 12,
+    "likes": 701,
+    "reach": 13547,
+    "shares": 521,
+    "comments": 255,
+    "views": 25109,
+    "interactions": 0,
+    "viewers": 1488
+   },
+   "2026-09-12": {
+    "posts": 11,
+    "likes": 597,
+    "reach": 11438,
+    "shares": 392,
+    "comments": 81,
+    "views": 16449,
+    "interactions": 0,
+    "viewers": 1085
+   },
+   "2026-09-19": {
+    "posts": 12,
+    "likes": 910,
+    "reach": 19537,
+    "shares": 384,
+    "comments": 224,
+    "views": 25179,
+    "interactions": 0,
+    "viewers": 1542
+   },
+   "2026-09-26": {
+    "posts": 11,
+    "likes": 603,
+    "reach": 11982,
+    "shares": 198,
+    "comments": 64,
+    "views": 15745,
+    "interactions": 0,
+    "viewers": 880
+   },
+   "2026-10-03": {
+    "posts": 12,
+    "likes": 554,
+    "reach": 8738,
+    "shares": 285,
+    "comments": 164,
+    "views": 18635,
+    "interactions": 0,
+    "viewers": 1005
+   },
+   "2026-10-10": {
+    "posts": 11,
+    "likes": 330,
+    "reach": 5827,
+    "shares": 157,
+    "comments": 47,
+    "views": 14509,
+    "interactions": 0,
+    "viewers": 537
+   },
+   "2026-10-17": {
+    "posts": 11,
+    "likes": 814,
+    "reach": 18437,
+    "shares": 229,
+    "comments": 86,
+    "views": 26319,
+    "interactions": 0,
+    "viewers": 1147
+   },
+   "2026-10-24": {
+    "posts": 11,
+    "likes": 489,
+    "reach": 9716,
+    "shares": 335,
+    "comments": 65,
+    "views": 13681,
+    "interactions": 0,
+    "viewers": 899
+   },
+   "2026-10-31": {
+    "posts": 14,
+    "likes": 545,
+    "reach": 483,
+    "shares": 536,
+    "comments": 157,
+    "views": 15958,
+    "interactions": 0,
+    "viewers": 1247
+   },
+   "2026-11-07": {
+    "posts": 13,
+    "likes": 639,
     "reach": 0,
-    "shares": 288,
-    "comments": 20,
-    "views": 8941,
-    "interactions": 720,
-    "viewers": 7192
+    "shares": 392,
+    "comments": 73,
+    "views": 20977,
+    "interactions": 566,
+    "viewers": 9327
+   },
+   "2026-11-14": {
+    "posts": 10,
+    "likes": 221,
+    "reach": 0,
+    "shares": 188,
+    "comments": 18,
+    "views": 6060,
+    "interactions": 655,
+    "viewers": 3937
    }
   },
   "ig": {
-   "2026-08-24": {
+   "2026-08-22": {
     "posts": 9,
-    "likes": 179,
-    "reach": 1904,
+    "likes": 174,
+    "reach": 1872,
+    "shares": 8,
+    "comments": 6,
+    "views": 4989,
+    "interactions": 196,
+    "viewers": 0
+   },
+   "2026-08-29": {
+    "posts": 10,
+    "likes": 209,
+    "reach": 2139,
+    "shares": 2,
+    "comments": 28,
+    "views": 6321,
+    "interactions": 248,
+    "viewers": 0
+   },
+   "2026-09-05": {
+    "posts": 12,
+    "likes": 230,
+    "reach": 2797,
+    "shares": 5,
+    "comments": 34,
+    "views": 7411,
+    "interactions": 279,
+    "viewers": 0
+   },
+   "2026-09-12": {
+    "posts": 11,
+    "likes": 194,
+    "reach": 2228,
+    "shares": 9,
+    "comments": 34,
+    "views": 6576,
+    "interactions": 243,
+    "viewers": 0
+   },
+   "2026-09-19": {
+    "posts": 12,
+    "likes": 230,
+    "reach": 2697,
+    "shares": 18,
+    "comments": 60,
+    "views": 7432,
+    "interactions": 317,
+    "viewers": 0
+   },
+   "2026-09-26": {
+    "posts": 11,
+    "likes": 196,
+    "reach": 2113,
     "shares": 1,
-    "comments": 9,
-    "views": 5280,
+    "comments": 16,
+    "views": 6429,
+    "interactions": 219,
+    "viewers": 0
+   },
+   "2026-10-03": {
+    "posts": 14,
+    "likes": 322,
+    "reach": 4224,
+    "shares": 18,
+    "comments": 27,
+    "views": 9670,
+    "interactions": 388,
+    "viewers": 0
+   },
+   "2026-10-10": {
+    "posts": 11,
+    "likes": 268,
+    "reach": 3069,
+    "shares": 10,
+    "comments": 42,
+    "views": 7418,
+    "interactions": 330,
+    "viewers": 0
+   },
+   "2026-10-17": {
+    "posts": 11,
+    "likes": 221,
+    "reach": 2767,
+    "shares": 11,
+    "comments": 42,
+    "views": 6329,
+    "interactions": 283,
+    "viewers": 0
+   },
+   "2026-10-24": {
+    "posts": 11,
+    "likes": 174,
+    "reach": 2399,
+    "shares": 5,
+    "comments": 23,
+    "views": 5466,
     "interactions": 199,
     "viewers": 0
    },
-   "2026-08-31": {
-    "posts": 10,
-    "likes": 183,
-    "reach": 1927,
-    "shares": 2,
-    "comments": 37,
-    "views": 5885,
-    "interactions": 229,
+   "2026-10-31": {
+    "posts": 14,
+    "likes": 175,
+    "reach": 2514,
+    "shares": 26,
+    "comments": 36,
+    "views": 7155,
+    "interactions": 241,
     "viewers": 0
    },
-   "2026-09-07": {
-    "posts": 12,
-    "likes": 249,
-    "reach": 3083,
-    "shares": 10,
-    "comments": 29,
-    "views": 8163,
-    "interactions": 298,
-    "viewers": 0
-   },
-   "2026-09-14": {
-    "posts": 10,
-    "likes": 157,
-    "reach": 1682,
-    "shares": 3,
-    "comments": 29,
-    "views": 5399,
-    "interactions": 194,
-    "viewers": 0
-   },
-   "2026-09-21": {
+   "2026-11-07": {
     "posts": 13,
-    "likes": 241,
-    "reach": 2962,
-    "shares": 18,
-    "comments": 58,
-    "views": 8197,
-    "interactions": 326,
+    "likes": 222,
+    "reach": 3110,
+    "shares": 60,
+    "comments": 19,
+    "views": 6877,
+    "interactions": 308,
     "viewers": 0
    },
-   "2026-09-28": {
-    "posts": 11,
-    "likes": 207,
-    "reach": 2455,
-    "shares": 6,
-    "comments": 17,
-    "views": 6904,
-    "interactions": 238,
-    "viewers": 0
-   },
-   "2026-10-05": {
-    "posts": 14,
-    "likes": 358,
-    "reach": 4189,
-    "shares": 13,
-    "comments": 31,
-    "views": 9488,
-    "interactions": 421,
-    "viewers": 0
-   },
-   "2026-10-12": {
-    "posts": 11,
-    "likes": 223,
-    "reach": 2668,
-    "shares": 11,
-    "comments": 49,
-    "views": 6484,
-    "interactions": 292,
-    "viewers": 0
-   },
-   "2026-10-19": {
-    "posts": 11,
-    "likes": 241,
-    "reach": 2902,
-    "shares": 14,
-    "comments": 39,
-    "views": 6562,
-    "interactions": 291,
-    "viewers": 0
-   },
-   "2026-10-26": {
-    "posts": 11,
-    "likes": 123,
-    "reach": 2047,
-    "shares": 1,
-    "comments": 31,
-    "views": 4570,
-    "interactions": 162,
-    "viewers": 0
-   },
-   "2026-11-02": {
-    "posts": 14,
-    "likes": 211,
-    "reach": 2702,
-    "shares": 74,
-    "comments": 27,
-    "views": 7803,
-    "interactions": 318,
-    "viewers": 0
-   },
-   "2026-11-09": {
-    "posts": 14,
-    "likes": 198,
-    "reach": 3008,
-    "shares": 12,
-    "comments": 10,
-    "views": 6610,
-    "interactions": 226,
-    "viewers": 0
-   },
-   "2026-11-16": {
-    "posts": 11,
-    "likes": 108,
-    "reach": 1929,
-    "shares": 3,
+   "2026-11-14": {
+    "posts": 12,
+    "likes": 124,
+    "reach": 2019,
+    "shares": 2,
     "comments": 3,
-    "views": 4262,
-    "interactions": 118,
+    "views": 4586,
+    "interactions": 134,
     "viewers": 0
    }
   }
@@ -4029,169 +4029,174 @@
  ],
  "followerAdds": {
   "fb": {
-   "2026-08-24": 24,
-   "2026-08-31": 15,
-   "2026-09-07": 104,
-   "2026-09-14": 30,
-   "2026-09-21": 98,
-   "2026-09-28": 35,
-   "2026-10-05": 26,
-   "2026-10-12": 60,
-   "2026-10-19": 37,
-   "2026-10-26": 27,
-   "2026-11-02": 0,
-   "2026-11-09": 0,
-   "2026-11-16": 0
+   "2026-08-22": 50,
+   "2026-08-29": 11,
+   "2026-09-05": 87,
+   "2026-09-12": 48,
+   "2026-09-19": 71,
+   "2026-09-26": 60,
+   "2026-10-03": 31,
+   "2026-10-10": 21,
+   "2026-10-17": 71,
+   "2026-10-24": 29,
+   "2026-10-31": 5,
+   "2026-11-07": 0,
+   "2026-11-14": 0
   },
   "ig": {
-   "2026-08-24": 69,
-   "2026-08-31": 42,
-   "2026-09-07": 41,
-   "2026-09-14": 22,
-   "2026-09-21": 30,
-   "2026-09-28": 23,
-   "2026-10-05": 14,
-   "2026-10-12": 16,
-   "2026-10-19": 28,
-   "2026-10-26": 18,
-   "2026-11-02": 27,
-   "2026-11-09": 28,
-   "2026-11-16": 22
+   "2026-08-22": 66,
+   "2026-08-29": 41,
+   "2026-09-05": 39,
+   "2026-09-12": 30,
+   "2026-09-19": 31,
+   "2026-09-26": 20,
+   "2026-10-03": 17,
+   "2026-10-10": 15,
+   "2026-10-17": 26,
+   "2026-10-24": 21,
+   "2026-10-31": 25,
+   "2026-11-07": 26,
+   "2026-11-14": 27
   }
  },
  "followerTotals": [
   {
-   "week": "2026-03-16",
+   "week": "2026-03-14",
    "fb": 7475,
    "ig": 4355
   },
   {
-   "week": "2026-05-04",
+   "week": "2026-05-02",
    "fb": 7300,
    "ig": 4402
   },
   {
-   "week": "2026-05-18",
+   "week": "2026-05-16",
    "fb": 7433,
    "ig": 4410
   },
   {
-   "week": "2026-05-25",
+   "week": "2026-05-23",
+   "fb": 7477,
+   "ig": 4420
+  },
+  {
+   "week": "2026-05-30",
    "fb": 7490,
    "ig": 4439
   },
   {
-   "week": "2026-06-15",
-   "fb": 7436,
+   "week": "2026-06-13",
+   "fb": 7424,
    "ig": null
   },
   {
-   "week": "2026-06-22",
+   "week": "2026-06-20",
    "fb": 7481,
+   "ig": null
+  },
+  {
+   "week": "2026-06-27",
+   "fb": 7378,
    "ig": 4561
   },
   {
-   "week": "2026-06-29",
-   "fb": 7455,
+   "week": "2026-07-04",
+   "fb": 7529,
    "ig": 4599
   },
   {
-   "week": "2026-07-06",
-   "fb": 7581,
+   "week": "2026-07-11",
+   "fb": 7609,
    "ig": 4634
   },
   {
-   "week": "2026-07-13",
-   "fb": 7627,
+   "week": "2026-07-18",
+   "fb": 7639,
    "ig": 4687
   },
   {
-   "week": "2026-07-20",
-   "fb": 7641,
+   "week": "2026-07-25",
+   "fb": 7648,
    "ig": 4732
   },
   {
-   "week": "2026-07-27",
-   "fb": 7738,
+   "week": "2026-08-01",
+   "fb": 7822,
    "ig": 4786
   },
   {
-   "week": "2026-08-03",
-   "fb": 7831,
+   "week": "2026-08-08",
+   "fb": 7846,
    "ig": 4801
   },
   {
-   "week": "2026-08-10",
-   "fb": 7856,
+   "week": "2026-08-15",
+   "fb": 7877,
    "ig": 4817
   },
   {
-   "week": "2026-08-17",
-   "fb": 7804,
+   "week": "2026-08-22",
+   "fb": 7924,
    "ig": 4842
   },
   {
-   "week": "2026-08-24",
-   "fb": 7925,
+   "week": "2026-08-29",
+   "fb": 7934,
    "ig": 4902
   },
   {
-   "week": "2026-08-31",
+   "week": "2026-09-05",
    "fb": 7942,
-   "ig": null
-  },
-  {
-   "week": "2026-09-07",
-   "fb": null,
    "ig": 4940
   },
   {
-   "week": "2026-09-14",
+   "week": "2026-09-12",
    "fb": null,
    "ig": 4978
   },
   {
-   "week": "2026-09-21",
+   "week": "2026-09-19",
    "fb": null,
    "ig": 4992
   },
   {
-   "week": "2026-09-28",
+   "week": "2026-09-26",
    "fb": null,
    "ig": 5020
   },
   {
-   "week": "2026-10-05",
-   "fb": null,
+   "week": "2026-10-10",
+   "fb": 8261,
    "ig": 5036
   },
   {
-   "week": "2026-10-12",
+   "week": "2026-10-17",
    "fb": 8311,
    "ig": 5042
   },
   {
-   "week": "2026-10-19",
+   "week": "2026-10-24",
    "fb": 8324,
    "ig": 5063
   },
   {
-   "week": "2026-10-26",
+   "week": "2026-10-31",
    "fb": 8339,
    "ig": 5070
   },
   {
-   "week": "2026-11-02",
+   "week": "2026-11-07",
    "fb": null,
    "ig": 5098
   },
   {
-   "week": "2026-11-09",
+   "week": "2026-11-14",
    "fb": null,
    "ig": 5112
   },
   {
-   "week": "2026-11-16",
+   "week": "2026-11-21",
    "fb": null,
    "ig": 5134
   }

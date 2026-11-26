@@ -3,7 +3,7 @@
 彙總 FB_IG_流量報告_統計圖表.xlsx 的社群數據,輸出三層 JSON:
   monthly : 各平臺逐月合計
   topics  : 各平臺 × 月份 × 貼文主題 合計
-  weekly  : 各平臺逐週合計(週一~週日;僅列至最後一個完整週)
+  weekly  : 各平臺逐週合計(週六~週五;僅列至最後一個完整週)
 
 用法:
     python aggregate_social.py 輸出檔.json [起始年月]
@@ -31,7 +31,9 @@ def month_range(start, end):
 
 MONTHS = month_range(START, END)
 def week_monday(d):
-    return d - datetime.timedelta(days=d.isoweekday() - 1)
+    # 「週」以週六為起點(週六~週五)。配合週一例會:上週末貼文屬當週起點,須滿一週、
+    # 下週一才納入報告,避免剛發布數據不足導致判斷失準。(函式名沿用,語意為該週起始日)
+    return d - datetime.timedelta(days=(d.isoweekday() - 6) % 7)
 
 def num(v):
     if v is None: return 0
@@ -113,7 +115,7 @@ for sheet, key in (("FB", "fb"), ("IG", "ig")):
             topic = str(r[idx["貼文主題"]] or "未分類").strip() or "未分類"
             t = topics[ym].setdefault(topic, blank())
             add(t, r, idx, like_col)
-        # 週彙總:週一為週起,僅收最後完整週(含)以前
+        # 週彙總:週六為週起(週六~週五),僅收最後完整週(含)以前
         wm = week_monday(d)
         if wm + datetime.timedelta(days=6) < TODAY and ym >= START:
             wk = wm.isoformat()

@@ -306,7 +306,7 @@
     <div class="controls">
       <label for="w-select">週次</label>
       <select id="w-select"></select>
-      <span class="hint">自動與上一週比較(週一~週日)</span>
+      <span class="hint">自動與上一週比較(週六~週五)</span>
     </div>
 
     <h2 class="sec">網站流量(GA4)</h2>
@@ -408,7 +408,7 @@
     </details>
 
     <h2 class="sec">每週瀏覽量趨勢</h2>
-    <p class="sec-note">由每日瀏覽量加總為每週(週一~週日),僅列完整週。</p>
+    <p class="sec-note">由每日瀏覽量加總為每週(週六~週五),僅列完整週。</p>
     <div class="tiles" id="pv-tiles-w"></div>
     <div class="card wide">
       <div class="chart-box tall"><canvas id="pv-week"></canvas></div>
@@ -534,7 +534,7 @@
     <li>網站流量:Google Analytics 4(哈客網路學院,資源 322296549,時區 Asia/Taipei);使用者人數一律採「活躍使用者」。GA4 數值會回溯微調,與歷史報告快照有 0.1~0.3% 落差屬正常。</li>
     <li>流量管道:初次造訪管道(firstUserDefaultChannelGroup)× 活躍使用者;「其他」含影音、AI 助理等少量來源。</li>
     <li>熱門頁面:細分頁面標題自 114年12月 起設定,先前月份無明細;「首頁(異版標題)」「(未設定子標題)」為網站頁面標題設定不同所致,GA4 分列計算。</li>
-    <li>社群媒體:FB_IG_流量報告_統計圖表.xlsx 逐篇彙總;互動為 FB/IG 平臺原生值;週次以貼文發佈日期歸屬(週一~週日),僅列完整週。</li>
+    <li>社群媒體:FB_IG_流量報告_統計圖表.xlsx 逐篇彙總;互動為 FB/IG 平臺原生值;週次以貼文發佈日期歸屬(<strong>週六~週五</strong>,配合週一例會讓上週末貼文滿一週後才納入),僅列完整週。</li>
     <li><strong>社群曝光指標口徑(Meta 115年11月改制)</strong>:FB 與 IG 曝光指標已不同——<strong>FB 比較「瀏覽次數＋瀏覽者人數＋觸及」</strong>(Meta 自115年11月停用 FB 觸及,11月起觸及顯示「待補」;瀏覽者人數取自美君新增之「瀏覽者」欄,自115年10月起有資料);<strong>IG 比較「瀏覽次數＋觸及人數」</strong>(IG 觸及保留,無瀏覽者欄)。另 FB「互動次數」11月起基準改為 Views 量級之廣義互動(與過往≈讚+留+分不同),為維持可比,<strong>11月起 FB「互動」改以「讚+留言+分享」合計</strong>。跨 11月之 FB 指標增減請留意係改制所致。</li>
     <li>週比較之 GA4 活躍使用者為每日活躍之平均(日均),跨日去重之精確口徑以月數據為準。</li>
     <li>KPI:「115年社群行銷KPI設定」基線值 +5% 為年度目標;達成率=當月 FB+IG 合計 ÷ 年度目標值。</li>
@@ -796,7 +796,7 @@
   /* ============================================================
      週比較視圖
      ============================================================ */
-  const weeks = S.weeks;   // 各完整週的週一(ISO 日期),與 GA4 daily 起點對齊
+  const weeks = S.weeks;   // 各完整週的週六(ISO 日期,週六~週五),與 GA4 daily 起點對齊
   function weekLabel(iso) {
     const d = new Date(iso + "T00:00:00");
     const e = new Date(d); e.setDate(d.getDate() + 6);
@@ -1281,8 +1281,8 @@
     const isoLocal = dt => `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, "0")}-${String(dt.getDate()).padStart(2, "0")}`;
     daily.forEach((row, idx) => {
       const d = new Date(start); d.setDate(start.getDate() + idx);
-      const mon = new Date(d); mon.setDate(d.getDate() - ((d.getDay() + 6) % 7));
-      const key = isoLocal(mon);
+      const wkStart = new Date(d); wkStart.setDate(d.getDate() - ((d.getDay() + 1) % 7));  // 週六為週起
+      const key = isoLocal(wkStart);
       (wmap[key] = wmap[key] || { sum: 0, days: 0 }).sum += row[2];
       wmap[key].days++;
     });
